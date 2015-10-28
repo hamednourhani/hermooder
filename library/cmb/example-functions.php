@@ -2,7 +2,7 @@
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the CMB2 directory)
  *
- * Be sure to replace all instances of 'karait_' with your project's prefix.
+ * Be sure to replace all instances of 'hermooder_' with your project's prefix.
  * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
  *
  * @category YourThemeOrPlugin
@@ -28,7 +28,7 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
  *
  * @return bool             True if metabox should show
  */
-function karait_show_if_front_page( $cmb ) {
+function hermooder_show_if_front_page( $cmb ) {
 	// Don't show this metabox if it's not the front page template
 	if ( $cmb->object_id !== get_option( 'page_on_front' ) ) {
 		return false;
@@ -43,7 +43,7 @@ function karait_show_if_front_page( $cmb ) {
  *
  * @return bool                     True if metabox should show
  */
-function karait_hide_if_no_cats( $field ) {
+function hermooder_hide_if_no_cats( $field ) {
 	// Don't show this field if not in the cats category
 	if ( ! has_tag( 'cats', $field->object_id ) ) {
 		return false;
@@ -57,7 +57,7 @@ function karait_hide_if_no_cats( $field ) {
  * @param  array             $field_args Array of field parameters
  * @param  CMB2_Field object $field      Field object
  */
-function karait_before_row_if_2( $field_args, $field ) {
+function hermooder_before_row_if_2( $field_args, $field ) {
 	if ( 2 == $field->object_id ) {
 		echo '<p>Testing <b>"before_row"</b> parameter (on $post_id 2)</p>';
 	} else {
@@ -65,14 +65,14 @@ function karait_before_row_if_2( $field_args, $field ) {
 	}
 }
 
-add_action( 'cmb2_init', 'karait_register_demo_metabox' );
+add_action( 'cmb2_init', 'hermooder_register_demo_metabox' );
 /**
  * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
  */
-function karait_register_demo_metabox() {
+function hermooder_register_demo_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_karait_demo_';
+	$prefix = '_hermooder_demo_';
 
 	/**
 	 * Sample metabox to demonstrate each field type included
@@ -81,7 +81,7 @@ function karait_register_demo_metabox() {
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'Test Metabox', 'cmb2' ),
 		'object_types'  => array( 'page', 'post','tour','hotel','tour-cat','hotel_cat'), // Post type
-		// 'show_on_cb' => 'karait_show_if_front_page', // function should return a bool value
+		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
 		// 'show_names' => true, // Show field names on the left
@@ -94,7 +94,7 @@ function karait_register_demo_metabox() {
 		'desc'       => __( 'field description (optional)', 'cmb2' ),
 		'id'         => $prefix . 'text',
 		'type'       => 'text',
-		'show_on_cb' => 'karait_hide_if_no_cats', // function should return a bool value
+		'show_on_cb' => 'hermooder_hide_if_no_cats', // function should return a bool value
 		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
 		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
 		// 'on_front'        => false, // Optionally designate a field to wp-admin only
@@ -344,7 +344,7 @@ function karait_register_demo_metabox() {
 		'name'         => 'Testing Field Parameters',
 		'id'           => $prefix . 'parameters',
 		'type'         => 'text',
-		'before_row'   => 'karait_before_row_if_2', // callback
+		'before_row'   => 'hermooder_before_row_if_2', // callback
 		'before'       => '<p>Testing <b>"before"</b> parameter</p>',
 		'before_field' => '<p>Testing <b>"before_field"</b> parameter</p>',
 		'after_field'  => '<p>Testing <b>"after_field"</b> parameter</p>',
@@ -354,14 +354,14 @@ function karait_register_demo_metabox() {
 
 }
 
-add_action( 'cmb2_init', 'karait_register_about_page_metabox' );
+add_action( 'cmb2_init', 'hermooder_register_about_page_metabox' );
 /**
  * Hook in and add a metabox that only appears on the 'About' page
  */
-function karait_register_about_page_metabox() {
+function hermooder_register_about_page_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_karait_about_';
+	$prefix = '_hermooder_about_';
 
 	/**
 	 * Metabox to be displayed on a single page ID
@@ -385,14 +385,14 @@ function karait_register_about_page_metabox() {
 
 }
 
-add_action( 'cmb2_init', 'karait_register_repeatable_group_field_metabox' );
+add_action( 'cmb2_init', 'hermooder_register_repeatable_group_field_metabox' );
 /**
  * Hook in and add a metabox to demonstrate repeatable grouped fields
  */
-function karait_register_repeatable_group_field_metabox() {
+function hermooder_register_repeatable_group_field_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_karait_group_';
+	$prefix = '_hermooder_group_';
 
 	/**
 	 * Repeatable Field Groups
@@ -450,14 +450,14 @@ function karait_register_repeatable_group_field_metabox() {
 
 }
 
-add_action( 'cmb2_init', 'karait_register_user_profile_metabox' );
+add_action( 'cmb2_init', 'hermooder_register_user_profile_metabox' );
 /**
  * Hook in and add a metabox to add fields to the user profile pages
  */
-function karait_register_user_profile_metabox() {
+function hermooder_register_user_profile_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_karait_user_';
+	$prefix = '_hermooder_user_';
 
 	/**
 	 * Metabox for the user profile screen
@@ -522,14 +522,14 @@ function karait_register_user_profile_metabox() {
 
 }
 
-add_action( 'cmb2_init', 'karait_register_theme_options_metabox' );
+add_action( 'cmb2_init', 'hermooder_register_theme_options_metabox' );
 /**
  * Hook in and register a metabox to handle a theme options page
  */
-function karait_register_theme_options_metabox() {
+function hermooder_register_theme_options_metabox() {
 
 	// Start with an underscore to hide fields from custom fields list
-	$option_key = '_karait_theme_options';
+	$option_key = '_hermooder_theme_options';
 
 	/**
 	 * Metabox for an options page. Will not be added automatically, but needs to be called with

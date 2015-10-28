@@ -39,7 +39,7 @@
 						<?php } ?>
 					<?php } ?>		
 					<nav class="pagination">
-						<?php karait_pagination(); ?>
+						<?php hermooder_pagination(); ?>
 					</nav>		
 				</div><!-- primary -->
 				

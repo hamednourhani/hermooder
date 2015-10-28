@@ -16,11 +16,11 @@
 			</div>
 			<footer class="site-footer">
 				<section class="layout">
-					<span class="site-credit"><?php echo __("Farakaranet Co © 2015. All rights reserved.", "karait");?></span>
+					<span class="site-credit"><?php echo __("Farakaranet Co © 2015. All rights reserved.", "hermooder");?></span>
 
 					<span class="site-designer">
-<?php echo __('Designed by ', 'karait');?>
-						<a href="http://karait.com"><?php echo __('Farakaranet ', 'karait');?></a>
+<?php echo __('Designed by ', 'hermooder');?>
+						<a href="http://hermooder.com"><?php echo __('Farakaranet ', 'hermooder');?></a>
 					</span>
 				</section>
 			</footer> <!-- footer -->

@@ -1,5 +1,5 @@
 require 'susy'
-http_path = "karait"
+http_path = "hermooder"
 css_dir = (environment == :production) ? "css/temp" : "css"          #where the CSS will saved
 sass_dir = "css/sass"           #where our .scss files are
 javascripts = "js"

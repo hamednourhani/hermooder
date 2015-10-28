@@ -1,5 +1,5 @@
 <?php
-/* karait Custom Post Type Example
+/* hermooder Custom Post Type Example
 This page walks you through creating 
 a custom post type and taxonomies. You
 can edit this one or copy the following code 
@@ -11,7 +11,7 @@ and change things if they are concentrated
 in their own file.
 
 Developed by: Eddie Machado
-URL: http://themble.com/karait/
+URL: http://themble.com/hermooder/
 */
 
 // Flush rewrite rules for custom post types

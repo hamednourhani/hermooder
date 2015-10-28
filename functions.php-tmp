@@ -1,15 +1,15 @@
 <?php
 /*
 Author: Eddie Machado
-URL: http://themble.com/karait/
+URL: http://themble.com/hermooder/
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
  */
 
-// LOAD karait CORE (if you remove this, the theme will break)
-require_once ('library/karait.php');
+// LOAD hermooder CORE (if you remove this, the theme will break)
+require_once ('library/hermooder.php');
 // require_once( 'library/notifications.php' );
 
 //Include and setup custom metaboxes and fields.
@@ -22,53 +22,53 @@ require_once ('library/cmb-functions.php');
 //require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH karait
+LAUNCH hermooder
 Let's get everything up and running.
  *********************/
 
-function karait_ahoy() {
+function hermooder_ahoy() {
 
 	//Allow editor style.
 	//add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
 	// let's get language support going, if you need it
-	load_theme_textdomain('karait', get_template_directory().'/languages');
+	load_theme_textdomain('hermooder', get_template_directory().'/languages');
 
 	// USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
 	require_once ('library/custom-post-type.php');
 
 	// launching operation cleanup
-	add_action('init', 'karait_head_cleanup');
+	add_action('init', 'hermooder_head_cleanup');
 	// A better title
 	add_filter('wp_title', 'rw_title', 10, 3);
 	// remove WP version from RSS
-	add_filter('the_generator', 'karait_rss_version');
+	add_filter('the_generator', 'hermooder_rss_version');
 	// remove pesky injected css for recent comments widget
-	add_filter('wp_head', 'karait_remove_wp_widget_recent_comments_style', 1);
+	add_filter('wp_head', 'hermooder_remove_wp_widget_recent_comments_style', 1);
 	// clean up comment styles in the head
-	add_action('wp_head', 'karait_remove_recent_comments_style', 1);
+	add_action('wp_head', 'hermooder_remove_recent_comments_style', 1);
 	// clean up gallery output in wp
-	add_filter('gallery_style', 'karait_gallery_style');
+	add_filter('gallery_style', 'hermooder_gallery_style');
 
 	// enqueue base scripts and styles
-	add_action('wp_enqueue_scripts', 'karait_scripts_and_styles', 999);
+	add_action('wp_enqueue_scripts', 'hermooder_scripts_and_styles', 999);
 	// ie conditional wrapper
 
 	// launching this stuff after theme setup
-	karait_theme_support();
+	hermooder_theme_support();
 
 	// adding sidebars to Wordpress (these are created in functions.php)
-	add_action('widgets_init', 'karait_register_sidebars');
+	add_action('widgets_init', 'hermooder_register_sidebars');
 
 	// cleaning up random code around images
-	add_filter('the_content', 'karait_filter_ptags_on_images');
+	add_filter('the_content', 'hermooder_filter_ptags_on_images');
 	// cleaning up excerpt
-	add_filter('excerpt_more', 'karait_excerpt_more');
+	add_filter('excerpt_more', 'hermooder_excerpt_more');
 
-}/* end karait ahoy */
+}/* end hermooder ahoy */
 
 // let's get this party started
-add_action('after_setup_theme', 'karait_ahoy');
+add_action('after_setup_theme', 'hermooder_ahoy');
 
 /************* OEMBED SIZE OPTIONS *************/
 
@@ -81,9 +81,9 @@ add_action('after_setup_theme', 'karait_ahoy');
 // Thumbnail sizes
 add_image_size('banner', 1000, 250, array('center', 'center'));
 
-add_filter('image_size_names_choose', 'karait_custom_image_sizes');
+add_filter('image_size_names_choose', 'hermooder_custom_image_sizes');
 
-function karait_custom_image_sizes($sizes) {
+function hermooder_custom_image_sizes($sizes) {
 	return array_merge($sizes, array(
 			'banner'        => __('1200px by 500px'),
 			'product-thumb' => __('30px by 30px'),
@@ -102,7 +102,7 @@ new image size.
 
 /************* THEME CUSTOMIZE *********************/
 
-function karait_theme_customizer($wp_customize) {
+function hermooder_theme_customizer($wp_customize) {
 	// $wp_customize calls go here.
 	//
 	// Uncomment the below lines to remove the default customize sections
@@ -121,16 +121,16 @@ function karait_theme_customizer($wp_customize) {
 	// $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action('customize_register', 'karait_theme_customizer');
+add_action('customize_register', 'hermooder_theme_customizer');
 
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function karait_register_sidebars() {
+function hermooder_register_sidebars() {
 	register_sidebar(array(
 			'id'            => 'sidebar',
-			'name'          => __('Sidebar', 'karait'),
-			'description'   => __('The first (primary) sidebar.', 'karait'),
+			'name'          => __('Sidebar', 'hermooder'),
+			'description'   => __('The first (primary) sidebar.', 'hermooder'),
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
@@ -138,8 +138,8 @@ function karait_register_sidebars() {
 		));
 	register_sidebar(array(
 			'id'            => 'footer-col1',
-			'name'          => __('Footer first col', 'karait'),
-			'description'   => __('The first footer widget area', 'karait'),
+			'name'          => __('Footer first col', 'hermooder'),
+			'description'   => __('The first footer widget area', 'hermooder'),
 			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
@@ -147,8 +147,8 @@ function karait_register_sidebars() {
 		));
 	register_sidebar(array(
 			'id'            => 'footer-col2',
-			'name'          => __('Footer 2d col', 'karait'),
-			'description'   => __('The first footer widget area', 'karait'),
+			'name'          => __('Footer 2d col', 'hermooder'),
+			'description'   => __('The first footer widget area', 'hermooder'),
 			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
@@ -156,8 +156,8 @@ function karait_register_sidebars() {
 		));
 	register_sidebar(array(
 			'id'            => 'footer-col3',
-			'name'          => __('Footer 3rd col', 'karait'),
-			'description'   => __('The first footer widget area', 'karait'),
+			'name'          => __('Footer 3rd col', 'hermooder'),
+			'description'   => __('The first footer widget area', 'hermooder'),
 			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
@@ -165,8 +165,8 @@ function karait_register_sidebars() {
 		));
 	register_sidebar(array(
 			'id'            => 'footer-col4',
-			'name'          => __('Footer 4th Col', 'karait'),
-			'description'   => __('The first footer widget area', 'karait'),
+			'name'          => __('Footer 4th Col', 'hermooder'),
+			'description'   => __('The first footer widget area', 'hermooder'),
 			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
@@ -178,7 +178,7 @@ function karait_register_sidebars() {
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function karait_comments($comment, $args, $depth) {
+function hermooder_comments($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;?>
 	  <div id="comment-<?php comment_ID();?>" <?php comment_class('cf');
 	?>>
@@ -197,14 +197,14 @@ function karait_comments($comment, $args, $depth) {
 	?>
 	        <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5($bgauthemail);?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri();?>/library/images/nothing.gif" />
 	<?php // end custom gravatar call ?>
-	        <?php printf(__('<cite class="fn">%1$s</cite> %2$s', 'karait'), get_comment_author_link(), edit_comment_link(__('(Edit)', 'karait'), '  ', ''))?>
-	        <time datetime="<?php echo comment_time('Y-m-j');?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID))?>"><?php comment_time(__('F jS, Y', 'karait'));
+	        <?php printf(__('<cite class="fn">%1$s</cite> %2$s', 'hermooder'), get_comment_author_link(), edit_comment_link(__('(Edit)', 'hermooder'), '  ', ''))?>
+	        <time datetime="<?php echo comment_time('Y-m-j');?>"><a href="<?php echo htmlspecialchars(get_comment_link($comment->comment_ID))?>"><?php comment_time(__('F jS, Y', 'hermooder'));
 	?></a></time>
 
 	      </header>
 	<?php if ($comment->comment_approved == '0'):?>
 	        <div class="alert alert-info">
-	          <p><?php _e('Your comment is awaiting moderation.', 'karait')?></p>
+	          <p><?php _e('Your comment is awaiting moderation.', 'hermooder')?></p>
 	        </div>
 	<?php endif;?>
 	<section class="comment_content cf">
@@ -216,30 +216,30 @@ function karait_comments($comment, $args, $depth) {
 	<?php
 }// don't remove this bracket!
 
-function karait_pagination() {
+function hermooder_pagination() {
 	global $wp_query;
 
 	if ($wp_query->max_num_pages > 1) {
 		$big = 999999999;
-		echo /*__('Page : ','karait').*/paginate_links(array(
+		echo /*__('Page : ','hermooder').*/paginate_links(array(
 				'base'      => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
 				'format'    => '?paged=%#%',
 				'current'   => max(1, get_query_var('paged')),
 				'total'     => $wp_query->max_num_pages,
-				'prev_text' => __('<i class="fa fa-angle-double-left"></i>', 'karait'),
-				'next_text' => __('<i class="fa fa-angle-double-right"></i>', 'karait')
+				'prev_text' => __('<i class="fa fa-angle-double-left"></i>', 'hermooder'),
+				'next_text' => __('<i class="fa fa-angle-double-right"></i>', 'hermooder')
 			));
 	}
 }
 
-function karait_SearchFilter($query) {
+function hermooder_SearchFilter($query) {
 	if ($query->is_search) {
 		$query->set('post_type', array('page', 'post'));
 	}
 	return $query;
 }
 
-add_filter('pre_get_posts', 'karait_SearchFilter');
+add_filter('pre_get_posts', 'hermooder_SearchFilter');
 
 // Enable support for HTML5 markup.
 add_theme_support('html5', array(
@@ -250,14 +250,14 @@ add_theme_support('html5', array(
 
 /*---------------Widgets----------------------*/
 
-function karait_get_image_src($src = "", $size = "") {
+function hermooder_get_image_src($src = "", $size = "") {
 	$path_info = pathinfo($src);
 	return $path_info['dirname'].'/'.$path_info['filename'].'-'.$size.'.'.$path_info['extension'];
 }
 
 //-----------Menu Walker------------------------
 
-function karait_search_form($form) {
+function hermooder_search_form($form) {
 	global $post, $wp_query, $wpdb;
 
 	if (ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it') {
@@ -278,7 +278,7 @@ function karait_search_form($form) {
 	return $form;
 }
 
-add_filter('get_search_form', 'karait_search_form');
+add_filter('get_search_form', 'hermooder_search_form');
 
 if (ICL_LANGUAGE_CODE == 'en') {
 

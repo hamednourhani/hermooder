@@ -41,7 +41,7 @@
 			<footer class="site-footer">
 				<section class="layout">
 					<div class="social-links">
-						<a class="facebook-link" href="http://www.facebook.com/karait.sitedesign"></a>
+						<a class="facebook-link" href="http://www.facebook.com/hermooder.sitedesign"></a>
 						<a class="twitter-link" href="http://www.twitter.com/kara_sitedesign"></a>
 						<a class="gplus-link" href="http://google.com/+Karaitsitedesign"></a>
 						<a class="linkedin-link" href="http://www.linkedin.com/company/farakaranet"></a>

@@ -23,19 +23,19 @@
 <?php } elseif(is_search()) { ?>
 		<div class="single-cat-title">
 			<section class="layout">
-				<h1><?php printf( __( 'Search Results for: %s', 'karait' ), get_search_query() ); ?></h1>
+				<h1><?php printf( __( 'Search Results for: %s', 'hermooder' ), get_search_query() ); ?></h1>
 			</section>
 		</div>
 <?php } elseif(is_singular()) {
-		$banner_mod = get_post_meta(get_the_ID(),'_karait_banner_mod');
+		$banner_mod = get_post_meta(get_the_ID(),'_hermooder_banner_mod');
 		
 		switch ($banner_mod[0]) {
 			case 'slider':
-				$slider_shortcode = get_post_meta(get_the_ID(),'_karait_slider_shortcode');
+				$slider_shortcode = get_post_meta(get_the_ID(),'_hermooder_slider_shortcode');
 				echo do_shortcode($slider_shortcode[0] );
 				break;
 			case 'image':
-				$image = get_post_meta( get_the_ID(), '_karait_image' );
+				$image = get_post_meta( get_the_ID(), '_hermooder_image' );
 				echo '<div class="banner-inner"><img class="page-banner" src="'.$image[0].'"/></div>';
 				break;
 			default: 
