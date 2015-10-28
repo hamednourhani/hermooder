@@ -1,0 +1,24 @@
+/* button style */
+input[type=submit],button{
+    border: 0px;
+    padding: 10px 15px;
+    -webkit-box-shadow: inset 0 -2px 0 rgba(0,0,0,.25);
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,.25);
+    background-color: $black1;
+    color : $white;
+    //border-radius : 5px;
+    &:hover,&:focus{
+    	background-color: darken($grey2, 40%);
+    }
+    &#searchsubmit{
+    	padding : 8px 15px;
+    }
+}
+.sidebar-widget{
+    input[type=submit],button{
+        
+        &#searchsubmit{
+            padding : 3px 15px;
+        }
+    }
+}

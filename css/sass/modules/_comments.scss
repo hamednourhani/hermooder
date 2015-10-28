@@ -1,0 +1,79 @@
+
+.comment-area{
+	img.avatar{
+		@include border-radius(50%);
+	}
+	.bypostauthor .fn{
+		color : $orang;
+		padding : 5px;
+	}
+	.comment-metadata{
+		font-size : smaller;
+		float : right;
+
+		.edit-link{
+			padding : 5px;
+			color : $orang;
+			&:before{
+				@extend .fa;
+				content : "\f040";
+				padding : 5px;
+				vertical-align: middle;
+			}
+		}
+	}
+	.reply{
+		float : right;
+		&:before{
+			@extend .fa;
+			content : "\f112";
+			padding : 5px;
+			vertical-align: middle;
+			color : $orang;
+		}
+		//margin-bottom :15px;
+	}
+	.comment{
+		display : block;
+		overflow : hidden;
+		.comment-body{
+			
+			overflow : hidden;
+		}
+	}
+	.comment-content{
+		padding : 20px;
+	}
+	.depth-1{
+		@include at-breakpoint($medium) {
+		   margin-left : 0;
+		}
+	}
+	.depth-2{
+		@include at-breakpoint($medium) {
+		   margin-left : 20px;
+		}
+	}
+	.depth-3{
+		@include at-breakpoint($medium) {
+		   margin-left : 40px;
+		}
+	}
+	.depth-4{
+		@include at-breakpoint($medium) {
+		   margin-left : 60px;
+		}
+	}
+	.even>article{ 
+		background-color: $grey1;
+	}
+}
+#commentform{
+	label{
+		float: left;
+    	padding: 0 10px;
+    	display: inline-block;
+    	width: 40%;
+	}
+
+}

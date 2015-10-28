@@ -1,0 +1,182 @@
+.site-header{
+
+}
+.header-right-area,
+.header-left-area,
+.logo-wrapper{
+	@include span-columns(12,12);
+	@include at-breakpoint($medium) {
+		@include span-columns(4,12);
+	  
+	}
+}
+.header-right-area{
+	text-align : right;
+	
+	.user-links{
+		a{
+			@include single-transition(all, 0.3s, ease-in-out);
+		}
+		margin-top: 10px;
+		a.user-account-link{
+			background-color: $grey3;
+			color : $white;
+			padding : 2px 5px;
+			margin-left : 3px;
+			line-height	: 120%;
+			display : inline-block;
+			&:hover{
+				background-color: darken($grey2,25%);
+				color : $white;
+			}
+		}
+	}
+	ul.top-nav{
+		margin-top: 22px;
+		list-style:none;
+
+		li{
+			display : inline-block;
+			a{
+				@include single-transition(all, 0.3s, ease-in-out);
+				border-left : 1px solid darken($grey2,25%);
+				padding : 0 5px;
+				display : inline-block ;
+				line-height: 120%;
+				
+				&:hover{
+					color : $orangHover;
+				}
+			}
+			&:last-child a{
+					border-left : 0px;
+				}
+		}
+	}
+}
+.logo-wrapper{
+	padding-top : 10px;
+	text-align : center;
+	.menu-toggler{
+		display: none;
+	}
+}
+
+.header-left-area{
+	text-align : left;
+	@include at-breakpoint($medium) {
+		@include omega;
+	  
+	}
+	.contact-info-links{
+		padding-top : 10px;
+		color : $orang;
+		span{
+			font-weight: bold;
+		}
+		a.contact-button{
+			@include single-transition(all, 0.3s, ease-in-out);
+			background-color: $orang;
+			color : $white;
+			display: inline-block;
+			line-height: 120%;
+			padding : 2px 5px;
+			margin-right : 10px;
+			&:hover{
+				background-color: $orangHover;
+				color : $white;
+			}
+		}
+	}
+	div.livezilla-links{
+		margin-top : 20px;
+	}
+}
+// ---------- NAVIGATION---------------------------------
+@include keyframes(move-up) {
+  0%   { opacity : 0;display:none; }
+  100% { opacity : 1;display :inline-block; }
+}
+@include keyframes(move-down) {
+  0%   { opacity : 1;display : inline-block; }
+  100% { opacity : 0;display : none  }
+}
+
+
+/*------------- main menu--------------------*/
+nav.main-menu{
+	
+	margin-top : 10px;
+	width : 100%;
+	text-align: center;
+	background-color: $grey2;
+	border-bottom : 4px solid $green2;
+	ul.main-nav{
+
+		li{
+			display : inline-block;
+			padding : 0px;
+			margin : 0px;
+			position : relative;
+			a{
+				@include single-transition(all, 0.3s, ease-in-out);
+				font-size: 18px;
+				font-weight: normal;
+				display: block;
+				padding : 15px 22px;
+				background-color: $grey2;
+				color : $black1;
+				&:hover{
+					background-color: $grey1;
+					color : $black1;
+				}
+			}
+			&.featured-menu a{
+				background-color: $green;
+				color : $white;
+				&:hover{
+					background-color: $greenHover;
+				}
+			}
+			ul.sub-menu{
+				@include display-none;
+				border : 1px solid $grey2;
+				padding : 0;
+
+				border-top : 0px;
+				z-index : 99999;
+				position : absolute;
+				top : 100%;
+				right : 0;
+				width : 240px;
+				li{
+					width : 100%;
+					text-align : right;
+				}
+				a{
+					
+					width : 100%;
+					@include single-transition(all, 0s, ease-in);
+					background-color : $grey1;
+					border-bottom : 1px solid $grey2;
+					color : $grey3;
+					padding : 5px 20px 5px 10px;
+					&:hover{
+						color : black;
+
+					}
+				}
+
+			}
+
+			&:hover>ul.sub-menu{
+				opacity: 1;
+				visibility: visible;
+		  		transition-delay:0s;
+		  		
+
+				
+			}
+		}
+	}
+}

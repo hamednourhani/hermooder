@@ -1,0 +1,38 @@
+<!-- ********************************************************************* -->
+	<!--****************** Site footer      ***********************************-->
+	<!-- ********************************************************************* -->
+
+
+<?php get_sidebar('footer-first');?>
+
+
+			<div class="related-compnies">
+				<img src="<?php echo get_template_directory_uri().'/images/woda.png';?>"/>
+				<img src="<?php echo get_template_directory_uri().'/images/tejarat.png';?>"/>
+				<img src="<?php echo get_template_directory_uri().'/images/eleci.png';?>"/>
+				<img src="<?php echo get_template_directory_uri().'/images/nic.png';?>"/>
+				<img src="<?php echo get_template_directory_uri().'/images/icann.png';?>"/>
+				<img src="<?php echo get_template_directory_uri().'/images/onlinenic.png';?>"/>
+			</div>
+			<footer class="site-footer">
+				<section class="layout">
+					<span class="site-credit"><?php echo __("Farakaranet Co © 2015. All rights reserved.", "karait");?></span>
+
+					<span class="site-designer">
+<?php echo __('Designed by ', 'karait');?>
+						<a href="http://karait.com"><?php echo __('Farakaranet ', 'karait');?></a>
+					</span>
+				</section>
+			</footer> <!-- footer -->
+
+
+
+
+	<!-- scrolltofixed menu -->
+
+
+		</div>
+
+<?php wp_footer();?>
+	</body><!-- body -->
+</html><!-- html -->

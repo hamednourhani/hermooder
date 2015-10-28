@@ -1,0 +1,8 @@
+/* fonts */
+// @include font-face("Bgothic", font-files("bank-gothic-medium.ttf", "bank-gothic-medium.woff"),"bank_gothic_medium.eot");
+@include font-face("open-sans", font-files("OpenSans-Regular.ttf", "OpenSans-Regular.woff"),"OpenSans-Regular.eot","OpenSans-Regular.svg");
+
+
+$serif: "Georgia", Cambria, Times New Roman, Times, serif;
+// $Bgothic : "Bgothic";
+$open-sans : "open-sans","Georgia", Cambria, Times New Roman, Times, serif;

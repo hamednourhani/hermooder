@@ -1,0 +1,51 @@
+
+.comment-area{
+		
+	.comment-metadata{
+		
+		float : left;
+
+	}
+	.reply{
+		float : left;
+		
+		//margin-bottom :15px;
+	}
+	
+	.depth-1{
+		@include at-breakpoint($medium) {
+		   margin-right : 0;
+		   margin-left : auto;
+		}
+	}
+	.depth-2{
+		@include at-breakpoint($medium) {
+		   margin-right : 20px;
+		   margin-left : auto;
+		}
+	}
+	.depth-3{
+		@include at-breakpoint($medium) {
+		   margin-right : 40px;
+		   margin-left : auto;
+		}
+	}
+	.depth-4{
+		@include at-breakpoint($medium) {
+		   margin-left : auto;
+		   margin-right : 60px;
+		}
+	}
+	.even>article{ 
+		background-color: $grey1;
+	}
+}
+
+#commentform{
+	label{
+		float: right;
+		width : 33%;
+    	
+	}
+
+}

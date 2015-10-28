@@ -1,0 +1,21 @@
+/* form style */
+input#s {
+    outline: none;
+    border: 1px solid $grey2;
+    background-color: $white2;
+    padding: 7px;
+    //padding-left : 30px;
+}
+.widget{
+	 input#s{
+	 	max-width : 175px;
+	 }
+}
+.search-area{
+	input#s {
+		padding:{
+			top : 0;
+			bottom : 0;
+		}
+	}	
+}
