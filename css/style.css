@@ -661,7 +661,7 @@ a {
   color: #282828; }
   /* line 38, sass/base/_base.scss */
   a:hover {
-    color: #FFB257; }
+    color: #4BAE4F; }
 
 /* line 45, sass/base/_base.scss */
 img, video, audio, iframe {
@@ -974,7 +974,7 @@ img.wp-smiley,
   border-radius: 50%; }
 /* line 6, sass/modules/_comments.scss */
 .comment-area .bypostauthor .fn {
-  color: #FF910F;
+  color: #4BAE4F;
   padding: 5px; }
 /* line 10, sass/modules/_comments.scss */
 .comment-area .comment-metadata {
@@ -983,7 +983,7 @@ img.wp-smiley,
   /* line 14, sass/modules/_comments.scss */
   .comment-area .comment-metadata .edit-link {
     padding: 5px;
-    color: #FF910F; }
+    color: #4BAE4F; }
     /* line 17, sass/modules/_comments.scss */
     .comment-area .comment-metadata .edit-link:before {
       content: "\f040";
@@ -997,7 +997,7 @@ img.wp-smiley,
     content: "\f112";
     padding: 5px;
     vertical-align: middle;
-    color: #FF910F; }
+    color: #4BAE4F; }
 /* line 36, sass/modules/_comments.scss */
 .comment-area .comment {
   display: block;
