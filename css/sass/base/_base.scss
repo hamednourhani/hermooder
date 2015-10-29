@@ -13,9 +13,12 @@ body,html{
 
 }
 body {
-	// font-family : $open-sans,$serif;
+	@extend .back-gradiant-ltr;
+	font-family : $open-sans,$serif;
 	direction : ltr;
 	font-size : 100%;
+	max-width : 1400px;
+	z-index : 1;	
 	margin : auto !important;
 	line-height : 180%;
 	p{
@@ -25,8 +28,30 @@ body {
 	form{
 		text-align:left;
 		direction : ltr;
-	}		
+	}
+		
 	
+}
+.body-wrapper{
+	width : 100%;
+	margin:auto;
+	overflow : hidden;
+	position : relative;
+	
+}
+.layout{
+	@include container;
+	position : relative;
+}
+
+
+div.side-back{
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 181px;
+	height : 798px;
+	background: image-url("side-back.png");
 }
 
 .fa {
@@ -36,7 +61,7 @@ a{
 	text-decoration : none;
 	color : $black2;
 	&:hover{
-		color : $green2;
+		color : $green;
 	}
 }
 // #wpadminbar{

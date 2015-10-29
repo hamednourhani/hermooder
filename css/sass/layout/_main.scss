@@ -1,34 +1,6 @@
 /* main style */
 
-.layout{
-	@include container;
-	position : relative;
-}
-body{
-	max-width : 1400px;
-	background-color : $grey2;
-	margin : auto;
-	
-	z-index : 1;
-	// &.body-wrapper {
-	//   display: none;
-	// }
-	// &.pg-loaded > .body-wrapper {
-	//   display: block;
-	// }
-}
-.body-wrapper{
-	width : 100%;
-	background-color : $white;
-	margin:auto;
-	overflow : hidden;
 
-	
-
-	//display : none;
-
-	
-}
 
 //-------------site-content-------------------
 .primary{
@@ -37,35 +9,6 @@ body{
  		@include span-columns(8,12);
  	}
  	
-}
-.without-sidebar{
-	.primary{
-		@include span-columns(12,12);
-		margin : auto;
-		article .featured-image{
-			@include span-columns(12,12);
-		 	@include at-breakpoint($medium){
-		 		@include span-columns(5,12);
-		 	}
-			img{
-				max-width : 100%;
-				height : auto;
-				margin-top : 15px;
-			}
-		}
-		article .article-body{
-			@include span-columns(12,12);
-		 	@include at-breakpoint($medium){
-		 		@include span-columns(7 omega,12);
-		 	}
-			p{
-				padding : 5px;
-				text-align: justify;
-			}
-		}
-
-	}
-	
 }
 
 .secondary{

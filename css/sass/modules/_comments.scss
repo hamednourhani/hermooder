@@ -4,7 +4,7 @@
 		@include border-radius(50%);
 	}
 	.bypostauthor .fn{
-		color : $green2;
+		color : $green;
 		padding : 5px;
 	}
 	.comment-metadata{
@@ -13,7 +13,7 @@
 
 		.edit-link{
 			padding : 5px;
-			color : $green2;
+			color : $green;
 			&:before{
 				@extend .fa;
 				content : "\f040";
@@ -29,7 +29,7 @@
 			content : "\f112";
 			padding : 5px;
 			vertical-align: middle;
-			color : $green2;
+			color : $green;
 		}
 		//margin-bottom :15px;
 	}
