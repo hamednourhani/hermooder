@@ -8,6 +8,17 @@
  	@include at-breakpoint($medium){
  		@include span-columns(8,12);
  	}
+ 	padding:{
+		top :20px;
+		bottom : 20px;
+	}
+ 	article.hentry{
+		@extend .def-box-shadow;
+		border-top : 4px solid $blue2;
+ 		background-color: $glassyWhite;
+ 		padding : 20px;
+
+ 	}
  	
 }
 
@@ -29,7 +40,7 @@
 		background-color: $grey1;
 		opacity : 0.9;
 		color : $black2;
-		border-top : 3px solid $blue2;
+		border-top : 4px solid $blue2;
 		.widgettitle{
 			margin : 10px auto;
 			padding-bottom : 10px;
