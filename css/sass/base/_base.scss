@@ -35,24 +35,20 @@ body {
 .body-wrapper{
 	width : 100%;
 	margin:auto;
+	margin-top : -1px;
 	overflow : hidden;
 	position : relative;
+	background: image-url("side-back.png");
+	background-position : top left;
+	background-repeat : no-repeat;
 	
 }
 .layout{
 	@include container;
 	position : relative;
+	
 }
 
-
-div.side-back{
-	position : absolute;
-	top : 0;
-	left : 0;
-	width : 181px;
-	height : 798px;
-	background: image-url("side-back.png");
-}
 
 .fa {
 	@include fa-icon;
@@ -72,6 +68,7 @@ img,video,audio,iframe{
 }
 input,textarea,button{
 	max-width : 100%;
+	@include border-radius(5px);
 }
 h1,h2,h3,h4,h5,h6{
 	color : $black1;

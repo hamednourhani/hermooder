@@ -1,0 +1,73 @@
+.site-footer{
+	background-color: $blue2;
+	border-top : 4px solid $green;
+	overflow : hidden;
+	@extend .def-box-shadow;
+	
+}
+div.footer-widget-area{
+	border-bottom : 1px solid $white;
+
+	.footer-col1,
+	.footer-col2,
+	.footer-col3,
+	.footer-col4{
+		@include span-columns(12,12);
+		@include at-breakpoint($medium) {
+			@include span-columns(3,12);
+		}
+
+	}
+	.footer-col4{
+		@include at-breakpoint($medium) {
+			@include omega;
+		}
+	}
+	aside.widget{
+		padding : 10px 20px;
+		margin-bottom : 20px;
+		p,h4,h3,span,a{
+			color : $white;
+		}
+		.widgettitle{
+			
+			margin : 10px auto;
+			padding-bottom : 10px;
+			border-bottom : 1px solid $white;
+		}
+	}
+
+}
+.credit{
+	padding : 10px;
+	ul.socials{
+		li{
+			display : inline-block;
+		}
+		.social.icon{
+			background: image-url("social-icons.png");
+			display: inline-block;
+			width : 30px;
+			height : 30px;
+			&.facebook{
+				background-position: 0 0;
+			}
+			&.instagram{
+				background-position: 0 0;
+			}
+			&.linkedin{
+				background-position: 0 0;
+			}
+			&.gplus{
+				background-position: 0 0;
+			}
+		}
+
+	}
+	span.site-holder{
+		display: inline-block;
+		padding : 5px;
+		font-size :80%;
+		float : right;
+	}
+}

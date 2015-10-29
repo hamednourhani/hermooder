@@ -1,5 +1,5 @@
 
-// ---------- NAVIGATION---------------------------------
+// ---------- keyframes---------------------------------
 @include keyframes(move-up) {
   0%   { opacity : 0;display:none; }
   100% { opacity : 1;display :inline-block; }
@@ -13,6 +13,58 @@
   0%   { opacity : 1;display : inline-block; }
   100% { opacity : 1;display : inline-block  }
 }
+
+// ---------- site-header---------------------------------
+.site-header{
+	div.hero{
+		text-align : center;
+		a.site-url{
+			display: block;
+			width : 100%;
+			.site-logo{
+				display: block;
+				margin : 25px auto 5px;
+				max-width : 240px;
+			}
+			span.site-desc{
+				margin-bottom : 10px;
+				display: inline-block;
+				color : $blue2;
+			}
+		}
+	}
+	nav.main-menu{
+		
+		width : 100%;
+		
+	}
+
+}
+ul.main-nav{
+	@extend .green-cube-gradiant;
+	@extend .def-box-shadow;
+	@extend .def-transition;
+	width : 100%;
+	border-bottom : 4px solid $blue2;
+	@include border-top-radius(20px);
+	text-align : center;
+	
+	li{
+		display : inline-block;
+		a{
+			@extend .def-transition;
+			color : $white; 
+			padding: 15px 10px;
+    		display: inline-block;
+    		&:hover{
+    			background-color : lighten($green , 5%);
+    		}
+		}
+	 }
+}
+
+
+
 
 
 

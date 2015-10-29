@@ -22,6 +22,64 @@
 		top :20px;
 		bottom : 20px;
 	}
+	aside.widget{
+		@extend .def-box-shadow;
+		padding : 10px 20px;
+		margin-bottom : 20px;
+		background-color: $grey1;
+		opacity : 0.9;
+		color : $black2;
+		border-top : 3px solid $blue2;
+		.widgettitle{
+			margin : 10px auto;
+			padding-bottom : 10px;
+			border-bottom : 1px solid $grey3;
+		}
+		&.green-widget{
+			background-color: $green;
+			border : 0px;
+		}
+
+		&.orang-widget{
+			background-color: $orang;
+			border : 0px;
+		}
+		&.blue-widget{
+			background-color: $blue2;
+			border : 0px;
+		}
+		&.light-blue-widget{
+			background-color: $blue1;
+			border : 0px;
+		}
+		&.green-widget,
+		&.orang-widget,
+		&.blue-widget,
+		&.light-blue-widget{
+			p,h4,h3,span,a{
+				color : $white;
+			}
+			.widgettitle{
+				border-color : $white;
+			}
+		}
+		
+		
+		input,textarea{
+			width : 100%;
+			max-width: 100%;
+			margin-bottom : 10px;
+			padding : 5px;
+		}
+		input[type="submit"],
+		input[type="button"]{
+			width : auto;
+			padding : 5px 10px;
+		}
+		p{
+			margin : auto;
+		}
+	}
 	
 
 }
