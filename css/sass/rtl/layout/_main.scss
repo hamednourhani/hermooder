@@ -1,36 +1,25 @@
 /* main style */
 
-.layout{
-	@include container;
-	position : relative;
-}
+
 
 //-------------site-content-------------------
 .primary{
  	@include span-columns(12,12);
  	@include at-breakpoint($medium){
  		@include span-columns(8,12);
- 		margin-right : auto;
+ 		margin-right: auto;
  	}
- 	
- 	padding:{
-		top :20px;
-		bottom : 20px;
-	}
-	
+ 	 	
 }
 
 .secondary{
 	@include span-columns(12,12);
-	@include at-breakpoint($medium){
-		@include span-columns(4 omega,12);
-		margin-right : auto;
-		
-	}
-	display : block;
+ 	@include at-breakpoint($medium){
+ 		@include span-columns(4 omega,12);
+ 		margin-right: auto;
+
+ 	}
 	
-	padding:{
-		top :20px;
-		bottom : 20px;
-	}
+	
 }
+

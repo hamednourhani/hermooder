@@ -1,0 +1,36 @@
+
+div.footer-widget-area{
+	
+
+	.footer-col1,
+	.footer-col2,
+	.footer-col3,
+	.footer-col4{
+		@include span-columns(12,12);
+		@include at-breakpoint($medium) {
+			@include span-columns(3,12);
+			margin-right: auto;
+		}
+
+	}
+	.footer-col4{
+		@include at-breakpoint($medium) {
+			@include omega;
+		}
+	}
+	
+}
+.credit-holder{
+	
+	.socials{
+		float : right;
+		
+		
+	}
+	
+	span.site-holder{
+		
+		float : left;
+		
+	}
+}

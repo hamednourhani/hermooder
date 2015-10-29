@@ -52,42 +52,15 @@
 			
 			<div class="hero">
 				<section class="layout">
-					<div class="header-right-area ">
-						
-						<div class="user-links">
-							<?php echo '<a href="http://market.hermooder.com/clientarea.php "class="user-account-link">'.__('My Account','hermooder').'</a>'.__('OR','hermooder').'<a href="http://market.hermooder.com/register.php" class="user-register-link">'.__('Create Acount','hermooder').'</a>'; ?>
-						</div>
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'Top Menu', 'hermooder' ),  // nav name
-    					         'menu_class' => 'nav top-nav cf', 
-    					         // 'walker' => $walker,             // adding custom nav class
-    					         'theme_location' => 'top-menu',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 3,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-					</div>
-					<div class="logo-wrapper">
-						<!-- menu-toggler -->
-						<a id="menu-toggler" class="menu-toggler" >
-							<i class="fa fa-navicon"></i>
-						</a>
-
-						<a href="<?php echo get_bloginfo('url'); ?>">
-							<img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php echo get_bloginfo('name'); ?>"/>
-						</a>
-					</div>
-					<div class="header-left-area">
-						<div class="contact-info-links"><span>(+98) 21 23087</span><a class="contact-button"><?php echo __('Contact Us','hermooder');?></a></div>
-						<div class="livezilla-links"><a href=""><img src="<?php echo get_template_directory_uri().'/images/image.png';?>" /></a></div>
-					</div>
+					<a class="site-url" href="<?php echo get_bloginfo('url'); ?>">
+						<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+						<span class="site-desc"><?php echo '-| '.__('Your Ultimate Depilatory Solution','hermooder').' |-'; ?></span>
+					</a>
 					
+					<?php do_action('icl_language_selector'); ?>
+
 				</section>
+			</div><!-- hero -->
 			
 
 				<nav role="navigation" class="main-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
@@ -111,7 +84,7 @@
 					</section>
 		
 				</nav>
-			</div>
+			
 		</header>	
 
 <!-- ********************************************************************* -->

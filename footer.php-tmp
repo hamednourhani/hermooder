@@ -3,27 +3,29 @@
 	<!-- ********************************************************************* -->
 
 
-<?php get_sidebar('footer-first');?>
 
 
-			<div class="related-compnies">
-				<img src="<?php echo get_template_directory_uri().'/images/woda.png';?>"/>
-				<img src="<?php echo get_template_directory_uri().'/images/tejarat.png';?>"/>
-				<img src="<?php echo get_template_directory_uri().'/images/eleci.png';?>"/>
-				<img src="<?php echo get_template_directory_uri().'/images/nic.png';?>"/>
-				<img src="<?php echo get_template_directory_uri().'/images/icann.png';?>"/>
-				<img src="<?php echo get_template_directory_uri().'/images/onlinenic.png';?>"/>
-			</div>
+
 			<footer class="site-footer">
-				<section class="layout">
-					<span class="site-credit"><?php echo __("Farakaranet Co © 2015. All rights reserved.", "hermooder");?></span>
 
-					<span class="site-designer">
-<?php echo __('Designed by ', 'hermooder');?>
-						<a href="http://hermooder.com"><?php echo __('Farakaranet ', 'hermooder');?></a>
-					</span>
-				</section>
-			</footer> <!-- footer -->
+<?php get_sidebar('footer-first');?>
+<div class="credit-holder">
+					<section class="layout">
+						<ul class="socials">
+							<li><a href="#" class="social-icon facebook"></a></li>
+							<li><a href="#" class="social-icon instagram"></a></li>
+							<li><a href="#" class="social-icon linkedin"></a></li>
+							<li><a href="#" class="social-icon gplus"></a></li>
+						</ul>
+						<span class="site-holder">
+<?php echo __('Designed by', 'hermooder').'<a href="http://Karait.com">'.__('Farakaranet', 'hermooder').'</a>';?>
+</span>
+						<span class="credit">
+<?php echo __('Hermooder © 2015. All Right Reserved', 'hermooder');?>
+</span>
+					</section>
+				</div>
+			</footer>
 
 
 

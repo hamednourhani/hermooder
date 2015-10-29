@@ -37,14 +37,16 @@
 		@extend .def-box-shadow;
 		padding : 10px 20px;
 		margin-bottom : 20px;
+		font-size: 90%;
 		background-color: $grey1;
 		opacity : 0.9;
 		color : $black2;
 		border-top : 4px solid $blue2;
 		.widgettitle{
 			margin : 10px auto;
+			color : $green;
 			padding-bottom : 10px;
-			border-bottom : 1px solid $grey3;
+			border-bottom : 1px solid darken($grey2,5%);
 		}
 		&.green-widget{
 			background-color: $green;
@@ -68,10 +70,11 @@
 		&.blue-widget,
 		&.light-blue-widget{
 			p,h4,h3,span,a{
-				color : $white;
+				color : $white2;
 			}
 			.widgettitle{
-				border-color : $white;
+				border-color : $blue1;
+
 			}
 		}
 		
@@ -85,7 +88,7 @@
 		input[type="submit"],
 		input[type="button"]{
 			width : auto;
-			padding : 5px 10px;
+			padding : 7px 15px;
 		}
 		p{
 			margin : auto;

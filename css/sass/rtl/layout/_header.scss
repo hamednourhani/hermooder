@@ -1,0 +1,22 @@
+
+// ---------- keyframes---------------------------------
+@include keyframes(move-up) {
+  0%   { opacity : 0;display:none; }
+  100% { opacity : 1;display :inline-block; }
+}
+@include keyframes(move-down) {
+  0%   { opacity : 1;display : inline-block; }
+  100% { opacity : 0;display : none  }
+}
+
+@include keyframes(move-slow) {
+  0%   { opacity : 1;display : inline-block; }
+  100% { opacity : 1;display : inline-block  }
+}
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
-/* base style */
+
 body {
+	@extend .back-gradiant-rtl;
 	font-family : $web_yekan,$b_koodak;
 	direction : rtl;
 	font-size : 100%;
@@ -8,15 +9,34 @@ body {
 		direction: rtl;
 		text-align: right;
 	}
+	
+		
+	
 }
+.body-wrapper{
+	
+	background: image-url("side-back-rtl.png");
+	background-position : top right;
+	background-repeat : no-repeat;
+	background-attachment: fixed;
+	
+		
+}
+.layout{
+	@include container;
+	position : relative;
+	
+}
+
+
 .fa {
 	@include fa-icon;
 }
 
+
 .gallery {
-	
-	margin-right: -4px;
 	margin-left: auto;
+	margin-right: -4px;
 }
 
 .gallery-item {
@@ -24,6 +44,7 @@ body {
 	margin: 0 0px 4px 4px;
 	
 }
+
 
 .gallery-columns-1 .gallery-item:nth-of-type(1n),
 .gallery-columns-2 .gallery-item:nth-of-type(2n),
@@ -46,6 +67,7 @@ body {
 }
 
 .gallery-caption {
+	
 	left: auto;
 	right: 0;
 	text-align: right;
@@ -53,8 +75,9 @@ body {
 }
 
 .gallery-caption:before {
-	left: auto;
+	
 	right: 0;
+	left: auto;
+	
 }
-
 
