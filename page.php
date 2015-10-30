@@ -29,6 +29,10 @@
 							</article>
 											
 						</div><!-- primary -->
+						
+						<div class="secondary">
+							<?php get_sidebar(); ?>
+						</div><!-- secondary -->
 
 					</section>
 				</div>

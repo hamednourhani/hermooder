@@ -52,12 +52,17 @@
 			
 			<div class="hero">
 				<section class="layout">
+					
+					<div class="lang-container">
+						<?php do_action('icl_language_selector'); ?>
+					</div>
+					
 					<a class="site-url" href="<?php echo get_bloginfo('url'); ?>">
 						<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php echo get_bloginfo('url'); ?>"/>
 						<span class="site-desc"><?php echo '-| '.__('Your Ultimate Depilatory Solution','hermooder').' |-'; ?></span>
 					</a>
 					
-					<?php do_action('icl_language_selector'); ?>
+
 
 				</section>
 			</div><!-- hero -->

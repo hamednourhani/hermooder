@@ -1,0 +1,299 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hermooder\n"
+"POT-Creation-Date: 2015-10-30 14:10+0330\n"
+"PO-Revision-Date: 2015-10-30 14:25+0330\n"
+"Last-Translator: \n"
+"Language-Team: iTstar <itstarir@gmail.com>\n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .sass-cache\n"
+"X-Poedit-SearchPathExcluded-1: .git\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: library/cmb\n"
+
+#: 404.php:20
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "این باعث تاسف است!"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+"به نظر می رسد آنچه به دنبال آن هستید در این صفحه وجود ندارد . شاید جستجو "
+"بتواند به شما کمک نماید!"
+
+#: comments.php:18
+#, php-format
+msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr "%1$s دیدگاه برای &ldquo;%2$s&rdquo;"
+
+#: comments.php:28
+msgid "Reply<i class=\" fa fa-mail-reply\"></i>"
+msgstr "پاسخ <i class=\" fa fa-mail-reply\"></i>"
+
+#: comments.php:34
+msgid "<i class=\"icon-left-open\"></i> Older Comments"
+msgstr "دیدگاه های قدیمی تر"
+
+#: comments.php:35
+msgid "Newer Comments <i class=\"icon-right-open\"></i>"
+msgstr "دیدگاه های جدیدتر"
+
+#: comments.php:40
+msgid "Comments are closed."
+msgstr "دیدگاه ها بسته است."
+
+#: footer.php:22
+msgid "Designed by"
+msgstr "طراحی شده توسط "
+
+#: footer.php:22
+msgid "Farakaranet"
+msgstr "فراکارانت"
+
+#: footer.php:25
+msgid "Hermooder © 2015. All Right Reserved"
+msgstr "هرمودر © 2015 . تمامی حقوق محفوظ می باشد."
+
+#: functions.php:90
+msgid "1200px by 500px"
+msgstr ""
+
+#: functions.php:91
+msgid "30px by 30px"
+msgstr ""
+
+#: functions.php:92
+msgid "53px by 53px"
+msgstr ""
+
+#: functions.php:93
+msgid "130px by 130px"
+msgstr ""
+
+#: functions.php:135
+msgid "Sidebar"
+msgstr "ستون کناری"
+
+#: functions.php:136
+msgid "The first (primary) sidebar."
+msgstr "منطقه ابزارک های ستون کناری سایت"
+
+#: functions.php:144
+msgid "Footer first col"
+msgstr "ستون اول پانوشت"
+
+#: functions.php:145 functions.php:154 functions.php:163 functions.php:172
+msgid "The first footer widget area"
+msgstr "منطقه ابزارک پانوشت"
+
+#: functions.php:153
+msgid "Footer 2d col"
+msgstr "ستون دوم پانوشت"
+
+#: functions.php:162
+msgid "Footer 3rd col"
+msgstr "ستون سوم پانوشت"
+
+#: functions.php:171
+msgid "Footer 4th Col"
+msgstr "ستون چهارم پانوشت"
+
+#: functions.php:205
+#, php-format
+msgid "<cite class=\"fn\">%1$s</cite> %2$s"
+msgstr ""
+
+#: functions.php:205
+msgid "(Edit)"
+msgstr "(ویرایش)"
+
+#: functions.php:206
+msgid "F jS, Y"
+msgstr ""
+
+#: functions.php:211
+msgid "Your comment is awaiting moderation."
+msgstr "دیدگاه شما در دست بررسی است."
+
+#: functions.php:234
+msgid "<i class=\"fa fa-angle-double-left\"></i>"
+msgstr "<i class=\"fa fa-angle-double-right\"></i>"
+
+#: functions.php:235
+msgid "<i class=\"fa fa-angle-double-right\"></i>"
+msgstr "<i class=\"fa fa-angle-double-left\"></i>"
+
+#: functions.php:277 functions.php:285 searchform.php:3
+msgid "Search for:"
+msgstr "جستجو برای : "
+
+#: functions.php:279 functions.php:287 searchform.php:6
+msgid "Search"
+msgstr "جستجو"
+
+#: header.php:62
+msgid "Your Ultimate Depilatory Solution"
+msgstr "تجربه لذت سبکبالی"
+
+#: header.php:77
+msgid "Main Menu"
+msgstr "فهرست اصلی"
+
+#: library/banner-maker.php:26
+#, php-format
+msgid "Search Results for: %s"
+msgstr "نتایج جستجو برای : %s"
+
+#: library/cmb-functions.php:120
+msgid "Page Banner"
+msgstr "بنر صفحه"
+
+#: library/cmb-functions.php:133
+msgid "Banner"
+msgstr "بنر"
+
+#: library/cmb-functions.php:134
+msgid "Choose Banner Mod, SlideShow , Image Banner or Nothing"
+msgstr "لطفا نوع بنر صفحه را انتخاب نمایید . اسلایدشو ، بنر تصویری یا هیچکدام"
+
+#: library/cmb-functions.php:139
+msgid "Slider"
+msgstr "اسلایدشو"
+
+#: library/cmb-functions.php:140
+msgid "Image"
+msgstr "تصویر"
+
+#: library/cmb-functions.php:153
+msgid "Slider Shortcode"
+msgstr "کدکوتاه اسلایدشو"
+
+#: library/cmb-functions.php:154
+msgid "write this page Revolotion Slider shortcode with alis name here"
+msgstr "کد کوتاه اسلایدشو مورد نظر را در این بخش وارد نمایید"
+
+#: library/cmb-functions.php:161
+msgid "Banner Image"
+msgstr "بنر تصویری"
+
+#: library/cmb-functions.php:162
+msgid "Upload an image to show as the banner"
+msgstr "تصویری جهت نمایش به عنوان بنر سایت بارگذاری نمایید"
+
+#: library/comment-form.php:8
+msgid ""
+"<span class=\"required\">Please fill the fields marked by <i class=\"icon-"
+"star\"></i></span>"
+msgstr "لطفا تمامی فیلد های ضروری را تکمیل نمایید."
+
+#: library/comment-form.php:13
+msgid "Leave a Reply"
+msgstr "ارسال پاسخ"
+
+#: library/comment-form.php:14
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "ارسال پاسخ برای %s"
+
+#: library/comment-form.php:15
+msgid "Cancel Reply<i class=\"fa fa-remove\"></i>"
+msgstr "لغو پاسخ <i class=\"fa fa-remove\"></i>"
+
+#: library/comment-form.php:16
+msgid "Post Comment"
+msgstr "ارسال پاسخ"
+
+#: library/comment-form.php:18
+msgid "<i class=\"icon-doc-text\"></i> Comment"
+msgstr "دیدگاه"
+
+#: library/comment-form.php:19
+msgid "your message"
+msgstr "پیام شما"
+
+#: library/comment-form.php:24
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "برای ارسال پاسخ باید <a href=\"%s\">وارد سایت شوید</a>"
+
+#: library/comment-form.php:30
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
+"this account\">Log out?</a>"
+msgstr ""
+"شما با عنوان <a href=\"%1$s\">%2$s</a> وارد سایت شده اید . آیا می خواهید <a "
+"href=\"%3$s\" title=\"Log out of this account\">خارج شوید؟</a>"
+
+#: library/comment-form.php:37
+msgid "Your email address will not be published."
+msgstr "آدرس ایمیل شما منتشر نخواهد شد"
+
+#: library/comment-form.php:42
+#, php-format
+msgid ""
+"You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
+"and attributes: %s"
+msgstr "شما می توانید از این تگ های html استفاده نمایید : %s"
+
+#: library/comment-form.php:50
+msgid "<i class=\"fa fa-user\"></i> Name"
+msgstr "<i class=\"fa fa-user\"></i> نام "
+
+#: library/comment-form.php:50
+msgid "yourname"
+msgstr "نام شما"
+
+#: library/comment-form.php:56
+msgid "<i class=\"fa fa-envelope\"></i> Email"
+msgstr "<i class=\"fa fa-envelope\"></i> ایمیل "
+
+#: library/comment-form.php:56
+msgid "yourname@example.com"
+msgstr ""
+
+#: library/comment-form.php:63
+msgid "<i class=\"fa fa-link\"></i> Website"
+msgstr "<i class=\"fa fa-link\"></i>  وب سایت / وبلاگ"
+
+#: library/comment-form.php:64
+msgid "www.example.com"
+msgstr ""
+
+#: library/hermooder.php:87
+#, php-format
+msgid "Page %s"
+msgstr "صفحه  %s"
+
+#: library/hermooder.php:272
+msgid "The Main Menu"
+msgstr "فهرست اصلی"
+
+#: library/hermooder.php:273
+msgid "The Top Menu"
+msgstr "فهرست فوقانی"
+
+#: library/hermooder.php:304
+msgid "No Related Posts Yet!"
+msgstr "هنوز مطلب مرتبطی منتشر نشده است!"
+
+#: library/hermooder.php:349
+msgid "Read "
+msgstr "مشاهده"
+
+#: library/hermooder.php:349
+msgid "Read more &raquo;"
+msgstr "ادامه مطلب &raquo;"
+
+#: library/post-meta.php:11 library/post-meta.php:32 library/post-meta.php:48
+msgid "Tags :"
+msgstr "برچسب ها : "

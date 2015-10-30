@@ -19,8 +19,8 @@
 	div.hero{
 		text-align : center;
 		a.site-url{
-			display: block;
-			width : 100%;
+			display: inline-block;
+			margin : auto;
 			.site-logo{
 				display: block;
 				margin : 25px auto 5px;
@@ -30,6 +30,23 @@
 				margin-bottom : 10px;
 				display: inline-block;
 				color : $orang;
+			}
+		}
+		.lang-container{
+			float : right;
+			display : inline-block;
+			padding : 10px;
+			#lang_sel_list ul a.lang_sel_other,
+			#lang_sel li ul a:link,
+			 #lang_sel_list ul a.lang_sel_other:visited,
+			 span.icl_lang_sel_current.icl_lang_sel_native,
+			 a.lang_sel_sel {
+    			background-color: rgba(0,0,0,0) !important;
+    			background: rgba(0,0,0,0) !important;
+    			border : 0px;
+			}
+			#lang_sel_list ul {
+			    border-top: 0px;
 			}
 		}
 	}
