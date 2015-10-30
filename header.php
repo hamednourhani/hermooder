@@ -48,28 +48,33 @@
 	<!--****************** Site header ***************************************-->
 	<!-- ********************************************************************* -->
 
-		<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 			
-			<div class="hero">
-				<section class="layout">
+		<section class="layout">	
+			<div class="header-inner">
+				<div class="hero">
 					
-					<div class="lang-container">
-						<?php do_action('icl_language_selector'); ?>
-					</div>
-					
-					<a class="site-url" href="<?php echo get_bloginfo('url'); ?>">
-						<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php echo get_bloginfo('url'); ?>"/>
-						<span class="site-desc"><?php echo '-| '.__('Your Ultimate Depilatory Solution','hermooder').' |-'; ?></span>
-					</a>
-					
+						
+						<div class="lang-container">
+							<?php do_action('icl_language_selector'); ?>
+						</div>
+						
+						<a class="site-url" href="<?php echo get_bloginfo('url'); ?>">
+							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+							<span class="site-desc"><?php echo '-| '.__('Your Ultimate Depilatory Solution','hermooder').' |-'; ?></span>
+						</a>
+
+						<span class="menu-toggler" id="menu-toggler">
+							<i class="fa fa-bars"></i>
+						</span>
+						
 
 
-				</section>
-			</div><!-- hero -->
+					
+				</div><!-- hero -->
 			
 
 				<nav role="navigation" class="main-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
-					<section class="layout">
 																	
 							<?php wp_nav_menu(array(
 	    					         'container' => false,                           // remove nav container
@@ -86,11 +91,12 @@
 	    					         'fallback_cb' => ''                             // fallback function (if there is one)
 							)); ?>
 											
-					</section>
 		
-				</nav>
+					</nav>
+				</div>
+		</section>
 			
-		</header>	
+	</header>	
 
 <!-- ********************************************************************* -->
 <!--****************** Site Main ******************************************-->

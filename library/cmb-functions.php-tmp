@@ -155,4 +155,18 @@ function hermooder_register_page_banner_metabox() {
 
 		));
 
+	$cmb_demo->add_field(array(
+			'name'    => __('Page Title', 'hermooder'),
+			'desc'    => __('show Page Title or Not?', 'hermooder'),
+			'id'      => $prefix.'title',
+			'type'    => 'radio_inline',
+			'options' => array(
+				'yes'    => __('Yes', 'hermooder'),
+				'no'     => __('No', 'hermooder'),
+
+			),
+			'default' => 'yes',
+
+		));
+
 }

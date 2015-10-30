@@ -165,7 +165,7 @@ p {
 
 /*----------------gradiant----------------------*/
 /* line 85, sass/rtl/base/_variables.scss */
-.back-gradiant-rtl, body {
+.back-gradiant-rtl {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dae1ea+0,ffffff+100 */
   background: #dae1ea;
   /* Old browsers */
@@ -265,7 +265,7 @@ body {
     clear: both; }
 
 /* line 32, sass/rtl/base/_base.scss */
-.fa {
+.fa, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -400,9 +400,44 @@ body {
   100% {
     opacity: 1;
     display: inline-block; } }
-/* line 20, sass/rtl/layout/_header.scss */
+/* line 18, sass/rtl/layout/_header.scss */
+.site-header .header-inner {
+  background-position: 5% 100%; }
+/* line 23, sass/rtl/layout/_header.scss */
 .site-header div.hero .lang-container {
-  float: left; }
+  right: 40px;
+  left: auto; }
+/* line 29, sass/rtl/layout/_header.scss */
+.site-header div.hero span.site-desc {
+  font-size: 140%; }
+/* line 33, sass/rtl/layout/_header.scss */
+.site-header ul.main-nav {
+  text-align: right; }
+
+/* line 38, sass/rtl/layout/_header.scss */
+ul.main-nav {
+  text-align: right; }
+  /* line 42, sass/rtl/layout/_header.scss */
+  ul.main-nav > li.menu-item-has-children > a:after {
+    left: -8px;
+    right: auto; }
+  /* line 49, sass/rtl/layout/_header.scss */
+  ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
+    left: auto;
+    right: -30%; }
+    /* line 55, sass/rtl/layout/_header.scss */
+    ul.main-nav > li > ul.sub-menu li.menu-item-has-children > a:after, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after {
+      content: "\f0d9";
+      left: 12px;
+      right: auto; }
+  /* line 66, sass/rtl/layout/_header.scss */
+  ul.main-nav > li > ul.sub-menu li ul {
+    right: 100%;
+    left: auto; }
+  /* line 73, sass/rtl/layout/_header.scss */
+  ul.main-nav ul.sub-menu li:hover ul {
+    right: 100%;
+    left: auto; }
 
 /* main style */
 /* line 6, sass/rtl/layout/_main.scss */
@@ -458,12 +493,29 @@ div.footer-widget-area .footer-col4 {
     float: left;
     margin-left: 0; } }
 
-/* line 25, sass/rtl/layout/_footer.scss */
-.credit-holder .socials {
-  float: right; }
-/* line 31, sass/rtl/layout/_footer.scss */
-.credit-holder span.site-holder {
-  float: left; }
+/* line 23, sass/rtl/layout/_footer.scss */
+.credit-holder {
+  text-align: center; }
+  /* line 26, sass/rtl/layout/_footer.scss */
+  .credit-holder .socials {
+    float: none;
+    text-align: center;
+    display: block; }
+    @media (min-width: 45em) {
+      /* line 26, sass/rtl/layout/_footer.scss */
+      .credit-holder .socials {
+        float: right;
+        display: inline-block; } }
+  /* line 38, sass/rtl/layout/_footer.scss */
+  .credit-holder span.site-holder {
+    display: block;
+    text-align: center;
+    float: none; }
+    @media (min-width: 45em) {
+      /* line 38, sass/rtl/layout/_footer.scss */
+      .credit-holder span.site-holder {
+        float: left;
+        display: inline-block; } }
 
 /* dividers style */
 /* form style */

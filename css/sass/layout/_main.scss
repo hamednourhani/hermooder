@@ -10,7 +10,17 @@
  	}
  	padding:{
 		top :20px;
-		bottom : 20px;
+		// bottom : 20px;
+	}
+	.banner-wrapper{
+		@extend .def-box-shadow;
+		background-color: $glassyWhite;
+		padding:5px;
+		margin-bottom : 20px;
+		h1{
+			font-size : 1.3em;
+		}
+
 	}
  	article.hentry{
 		@extend .def-box-shadow;

@@ -13,7 +13,9 @@ body,html{
 
 }
 body {
-	@extend .back-gradiant-ltr;
+	
+	// @extend .back-gradiant-ltr;
+	@include background(image-url("pattern_6.png") top left);
 	font-family : $open-sans,$serif;
 	direction : ltr;
 	font-size : 100%;
@@ -65,7 +67,7 @@ a{
 // 	display :none;
 // }
 img,video,audio,iframe{
-	max-width : 100;
+	max-width : 100%;
 }
 input,textarea,button{
 	max-width : 100%;

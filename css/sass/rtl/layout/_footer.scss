@@ -21,16 +21,30 @@ div.footer-widget-area{
 	
 }
 .credit-holder{
-	
+	text-align : center;
+
 	.socials{
-		float : right;
+		float : none;
+		text-align : center;
+		display: block;
 		
+		@include at-breakpoint($medium) {
+			float : right;
+				display : inline-block;
+		}
 		
 	}
 	
 	span.site-holder{
 		
-		float : left;
-		
+		display: block;
+		text-align : center;
+
+		float : none;
+		@include at-breakpoint($medium) {
+			float : left;
+				display: inline-block;
+
+		}
 	}
 }

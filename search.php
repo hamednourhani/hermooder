@@ -1,16 +1,19 @@
 <?php get_header(); ?>
 	
 	<main class="site-main">
-		<div class="banner-wrapper">
-			
-				<?php get_template_part('library/banner','maker'); ?>
-			
-		</div><!-- banner-wrapper -->
+		
 		
 		<div class="site-content">
 			<section class="layout">
 				
 				<div class="primary">
+
+					
+						
+							<?php get_template_part('library/banner','maker'); ?>
+						
+					
+
 					<article>
 						<?php echo get_search_form('true'); ?>
 					</article>

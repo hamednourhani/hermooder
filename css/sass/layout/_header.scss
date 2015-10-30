@@ -16,6 +16,11 @@
 
 // ---------- site-header---------------------------------
 .site-header{
+	.header-inner {
+		@include at-breakpoint($medium){
+			@include background(image-url("header-back.png") 95% 100% no-repeat);
+		}
+	}
 	div.hero{
 		text-align : center;
 		a.site-url{
@@ -33,7 +38,9 @@
 			}
 		}
 		.lang-container{
-			float : right;
+			position : absolute;
+			top : 0;
+			left : 40px;
 			display : inline-block;
 			padding : 10px;
 			#lang_sel_list ul a.lang_sel_other,
@@ -55,6 +62,25 @@
 		width : 100%;
 		
 	}
+	span.menu-toggler{
+		display: inline-block;
+		@include at-breakpoint($medium){
+			display: none;
+		}
+		cursor: pointer;
+		i:before{
+			@extend .def-box-shadow;
+			padding : 5px;
+			background-color: $blue2;
+			color : $white;
+			font-size: 	140%;
+		}
+		&:hover{
+			i:before{
+				opacity : 0.9;
+			}
+		}
+	}
 
 }
 ul.main-nav{
@@ -64,10 +90,16 @@ ul.main-nav{
 	width : 100%;
 	border-bottom : 4px solid $blue2;
 	@include border-top-radius(20px);
-	text-align : center;
-	
-	li{
+	text-align : left;
+	padding-left : 40px;
+	padding-right : 40px;
+	display : none;
+	@include at-breakpoint($medium){
+		display: block;
+	}
+	&>li{
 		display : inline-block;
+		position : relative;
 		a{
 			@extend .def-transition;
 			color : $white; 
@@ -77,7 +109,133 @@ ul.main-nav{
     			background-color : lighten($green , 5%);
     		}
 		}
+		
 	 }
+	 &>li.menu-item-has-children>a:after{
+		@extend .fa;
+		content: "\f0d7";
+		vertical-align : middle;
+		padding-left: 5px;
+		// width walker added
+		position: absolute;
+    	right: -4px;
+    	top: 41%;
+	}
+	&>li>ul.sub-menu{
+		border-top : 4px solid $blue2;
+	}
+	&>li>ul.sub-menu,li ul.sub-menu{
+		//@include single-transition(all , 0.8s , ease-in-out);
+		@extend .def-box-shadow;
+		z-index : 0;
+		text-align : center;
+		padding : 0;
+		margin : 0;
+		opacity: 0;
+		position : absolute;
+		top : 100%;
+		left : -30%;
+		@include display-none;
+		
+		
+		
+		li{
+			//display: none;
+			background-color : $white2;
+	 		@include animation('move-down .5s 1');
+	 		position : relative;
+		}
+		
+		a{
+			min-width : 220px;
+			padding : 10px 20px;
+			color : $black2;
+			&:hover{
+				color : $white;
+				// background-color : $black2;
+			}
+		}
+		li.menu-item-has-children>a:after{
+			@extend .fa;
+			content: "\f0da";
+		    right: 12px;
+		    position: absolute;
+		        top: 16px;
+		    vertical-align : middle;
+		}
+	}
+	&>li:hover{
+		
+		&>ul.sub-menu{
+			opacity: 1;
+			visibility: visible;
+	  		transition-delay:0s;
+	  		z-index : 9999;
+			&>li{
+				//display: inline-block;
+				//opacity : 1;
+				@include animation('move-up .5s 1');
+			}
+
+			
+		}
+	}
+	
+	&>li>ul.sub-menu li ul{
+		//@include single-transition(all , 0.8s , ease-in-out);
+		z-index : 0;
+		text-align : center;
+		padding : 0;
+		margin : 0;
+		opacity: 0;
+		display: inline-block;
+		left : 100%;
+		top : 0;
+		@include display-none;
+		
+		
+		
+		
+		li{
+			//display: none;
+			background-color : $white2;
+	 		@include animation('move-down .5s 1');
+	 		position : relative;
+		}
+		
+		a{
+			min-width : 180px;
+			padding : 15px;
+			&:hover{
+				// color : $white2;
+				// background-color : $black2;
+			}
+		}
+	}
+	&>li>ul.sub-menu li:hover{
+		
+		&>ul.sub-menu{
+			opacity: 1;
+			visibility: visible;
+	  		transition-delay:0s;
+	  		z-index : 9999;
+	  		
+			&>li{
+				//display: inline-block;
+				//opacity : 1;
+				@include animation('move-up .5s 1');
+				
+			}
+
+			
+		}
+	}
+	ul.sub-menu li:hover ul{
+		display: inline-block;
+		left : 100%;
+		top : 0;
+
+	}
 }
 
 
