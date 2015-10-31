@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2015-10-30 14:10+0330\n"
-"PO-Revision-Date: 2015-10-30 14:25+0330\n"
+"POT-Creation-Date: 2015-10-31 10:01+0330\n"
+"PO-Revision-Date: 2015-10-31 10:02+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -51,15 +51,15 @@ msgstr "دیدگاه های جدیدتر"
 msgid "Comments are closed."
 msgstr "دیدگاه ها بسته است."
 
-#: footer.php:22
+#: footer.php:23
 msgid "Designed by"
 msgstr "طراحی شده توسط "
 
-#: footer.php:22
+#: footer.php:23
 msgid "Farakaranet"
 msgstr "فراکارانت"
 
-#: footer.php:25
+#: footer.php:27
 msgid "Hermooder © 2015. All Right Reserved"
 msgstr "هرمودر © 2015 . تمامی حقوق محفوظ می باشد."
 
@@ -140,15 +140,15 @@ msgstr "جستجو برای : "
 msgid "Search"
 msgstr "جستجو"
 
-#: header.php:62
+#: header.php:64
 msgid "Your Ultimate Depilatory Solution"
 msgstr "تجربه لذت سبکبالی"
 
-#: header.php:77
+#: header.php:82
 msgid "Main Menu"
 msgstr "فهرست اصلی"
 
-#: library/banner-maker.php:26
+#: library/banner-maker.php:29
 #, php-format
 msgid "Search Results for: %s"
 msgstr "نتایج جستجو برای : %s"
@@ -188,6 +188,22 @@ msgstr "بنر تصویری"
 #: library/cmb-functions.php:162
 msgid "Upload an image to show as the banner"
 msgstr "تصویری جهت نمایش به عنوان بنر سایت بارگذاری نمایید"
+
+#: library/cmb-functions.php:169
+msgid "Page Title"
+msgstr "عنوان صفحه"
+
+#: library/cmb-functions.php:170
+msgid "show Page Title or Not?"
+msgstr "عنوان صفحه نمایش داده شود ؟"
+
+#: library/cmb-functions.php:174
+msgid "Yes"
+msgstr "بله"
+
+#: library/cmb-functions.php:175
+msgid "No"
+msgstr "خیر"
 
 #: library/comment-form.php:8
 msgid ""
@@ -278,22 +294,21 @@ msgstr "صفحه  %s"
 msgid "The Main Menu"
 msgstr "فهرست اصلی"
 
-#: library/hermooder.php:273
-msgid "The Top Menu"
-msgstr "فهرست فوقانی"
-
-#: library/hermooder.php:304
+#: library/hermooder.php:303
 msgid "No Related Posts Yet!"
 msgstr "هنوز مطلب مرتبطی منتشر نشده است!"
 
-#: library/hermooder.php:349
+#: library/hermooder.php:348
 msgid "Read "
 msgstr "مشاهده"
 
-#: library/hermooder.php:349
+#: library/hermooder.php:348
 msgid "Read more &raquo;"
 msgstr "ادامه مطلب &raquo;"
 
 #: library/post-meta.php:11 library/post-meta.php:32 library/post-meta.php:48
 msgid "Tags :"
 msgstr "برچسب ها : "
+
+#~ msgid "The Top Menu"
+#~ msgstr "فهرست فوقانی"

@@ -274,7 +274,7 @@ function hermooder_search_form( $form ) {
 
   if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label><br />
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder' ) . '</label><br />
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
@@ -282,7 +282,7 @@ function hermooder_search_form( $form ) {
       </form>';
   } else {
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:' ) . '</label><br />
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder') . '</label><br />
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       </div>

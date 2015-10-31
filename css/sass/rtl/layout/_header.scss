@@ -37,42 +37,53 @@
 }
 ul.main-nav{
 	text-align : right;
-		
+	&>li{
+		@include at-breakpoint($medium){
+			margin-right : auto;
+			margin-left : 10px;
+		}
+	}	
 	
 	&>li.menu-item-has-children>a:after{
-		
-    	left: -8px;
-    	right: auto;
+		@include at-breakpoint($medium){
+	    	left: -8px;
+	    	right: auto;
+	    }
     	
 	}
 	
 	&>li>ul.sub-menu,li ul.sub-menu{
-		
-		left : auto;
-		right : -30%;
+		@include at-breakpoint($medium){
+			left : auto;
+			right : -30%;
+		}
 		
 			
 		li.menu-item-has-children>a:after{
 			@extend .fa;
-			content: "\f0d9";
-			 left: 12px;
-			 right: auto;
-
+			@include at-breakpoint($medium){
+				content: "\f0d9";
+				 left: 12px;
+				 right: auto;
+			}
 		    
 		}
 	}
 	
 	
 	&>li>ul.sub-menu li ul{
-		
-		right : 100%;
-		left : auto;
+		@include at-breakpoint($medium){
+			right : 100%;
+			left : auto;
+		}
 		
 	}
 	
 	ul.sub-menu li:hover ul{
-		right : 100%;
-		left : auto;
+		@include at-breakpoint($medium){
+			right : 100%;
+			left : auto;
+		}
 
 	}
 }
