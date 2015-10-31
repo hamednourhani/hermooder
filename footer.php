@@ -20,7 +20,7 @@
 						</ul>
 						
 						<span class="site-holder">
-							<?php echo __('Designed by','hermooder').'<a href="http://Karait.com">'.__('Farakaranet','hermooder').'</a>'; ?>
+							<?php echo __('Designed by','hermooder').'<a href="http://Karait.com">'.' '.__('Farakaranet','hermooder').'</a>'; ?>
 						</span>
 						
 						<span class="credit">

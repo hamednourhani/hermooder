@@ -3,6 +3,7 @@
 
 
 //-------------site-content-------------------
+
 .primary{
  	@include span-columns(12,12);
  	@include at-breakpoint($medium){
@@ -35,6 +36,7 @@
  		margin-bottom : 20px;
  	}
 }
+
 
 .secondary{
 	@include span-columns(12,12);

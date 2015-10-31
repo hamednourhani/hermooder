@@ -70,7 +70,10 @@ function hermooder_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'hermooder_ahoy' );
 
-
+add_action( 'after_setup_theme', 'hermooder_woocommerce_support' );
+function hermooder_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 /************* OEMBED SIZE OPTIONS *************/
 
 // if ( ! isset( $content_width ) ) {

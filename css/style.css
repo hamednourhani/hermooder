@@ -1484,7 +1484,7 @@ ul.main-nav {
       top: 0; } }
 
 /* main style */
-/* line 6, sass/layout/_main.scss */
+/* line 7, sass/layout/_main.scss */
 .primary {
   width: 100%;
   float: left;
@@ -1492,30 +1492,30 @@ ul.main-nav {
   display: inline;
   padding-top: 20px; }
   @media (min-width: 45em) {
-    /* line 6, sass/layout/_main.scss */
+    /* line 7, sass/layout/_main.scss */
     .primary {
       width: 66.15385%;
       float: left;
       margin-right: 1.53846%; } }
-  /* line 15, sass/layout/_main.scss */
+  /* line 16, sass/layout/_main.scss */
   .primary .banner-wrapper {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 5px;
     margin-bottom: 20px; }
-    /* line 20, sass/layout/_main.scss */
+    /* line 21, sass/layout/_main.scss */
     .primary .banner-wrapper h1 {
       font-size: 1.3em; }
-  /* line 25, sass/layout/_main.scss */
+  /* line 26, sass/layout/_main.scss */
   .primary article.hentry {
     border-top: 4px solid #00a7d4;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 20px;
     margin-bottom: 20px; }
-  /* line 34, sass/layout/_main.scss */
+  /* line 35, sass/layout/_main.scss */
   .primary form.searchform {
     margin-bottom: 20px; }
 
-/* line 39, sass/layout/_main.scss */
+/* line 41, sass/layout/_main.scss */
 .secondary {
   width: 100%;
   float: left;
@@ -1525,12 +1525,12 @@ ul.main-nav {
   padding-top: 20px;
   padding-bottom: 20px; }
   @media (min-width: 45em) {
-    /* line 39, sass/layout/_main.scss */
+    /* line 41, sass/layout/_main.scss */
     .secondary {
       width: 32.30769%;
       float: right;
       margin-right: 0; } }
-  /* line 50, sass/layout/_main.scss */
+  /* line 52, sass/layout/_main.scss */
   .secondary aside.widget {
     padding: 10px 20px;
     margin-bottom: 20px;
@@ -1539,46 +1539,46 @@ ul.main-nav {
     opacity: 0.9;
     color: #282828;
     border-top: 4px solid #00a7d4; }
-    /* line 59, sass/layout/_main.scss */
+    /* line 61, sass/layout/_main.scss */
     .secondary aside.widget .widgettitle {
       margin: 10px auto;
       color: #8db63f;
       padding-bottom: 10px;
       border-bottom: 1px solid #d9dbdb; }
-    /* line 65, sass/layout/_main.scss */
+    /* line 67, sass/layout/_main.scss */
     .secondary aside.widget.green-widget {
       background-color: #8db63f;
       border: 0px; }
-    /* line 70, sass/layout/_main.scss */
+    /* line 72, sass/layout/_main.scss */
     .secondary aside.widget.orang-widget {
       background-color: #e47a26;
       border: 0px; }
-    /* line 74, sass/layout/_main.scss */
+    /* line 76, sass/layout/_main.scss */
     .secondary aside.widget.blue-widget {
       background-color: #00a7d4;
       border: 0px; }
-    /* line 78, sass/layout/_main.scss */
+    /* line 80, sass/layout/_main.scss */
     .secondary aside.widget.light-blue-widget {
       background-color: #c0dbe9;
       border: 0px; }
-    /* line 86, sass/layout/_main.scss */
+    /* line 88, sass/layout/_main.scss */
     .secondary aside.widget.green-widget p, .secondary aside.widget.green-widget h4, .secondary aside.widget.green-widget h3, .secondary aside.widget.green-widget span, .secondary aside.widget.green-widget a, .secondary aside.widget.orang-widget p, .secondary aside.widget.orang-widget h4, .secondary aside.widget.orang-widget h3, .secondary aside.widget.orang-widget span, .secondary aside.widget.orang-widget a, .secondary aside.widget.blue-widget p, .secondary aside.widget.blue-widget h4, .secondary aside.widget.blue-widget h3, .secondary aside.widget.blue-widget span, .secondary aside.widget.blue-widget a, .secondary aside.widget.light-blue-widget p, .secondary aside.widget.light-blue-widget h4, .secondary aside.widget.light-blue-widget h3, .secondary aside.widget.light-blue-widget span, .secondary aside.widget.light-blue-widget a {
       color: #F8F8F8; }
-    /* line 89, sass/layout/_main.scss */
+    /* line 91, sass/layout/_main.scss */
     .secondary aside.widget.green-widget .widgettitle, .secondary aside.widget.orang-widget .widgettitle, .secondary aside.widget.blue-widget .widgettitle, .secondary aside.widget.light-blue-widget .widgettitle {
       border-color: #c0dbe9; }
-    /* line 96, sass/layout/_main.scss */
+    /* line 98, sass/layout/_main.scss */
     .secondary aside.widget input, .secondary aside.widget textarea {
       width: 100%;
       max-width: 100%;
       margin-bottom: 10px;
       padding: 5px; }
-    /* line 102, sass/layout/_main.scss */
+    /* line 104, sass/layout/_main.scss */
     .secondary aside.widget input[type="submit"],
     .secondary aside.widget input[type="button"] {
       width: auto;
       padding: 7px 15px; }
-    /* line 107, sass/layout/_main.scss */
+    /* line 109, sass/layout/_main.scss */
     .secondary aside.widget p {
       margin: auto; }
 
