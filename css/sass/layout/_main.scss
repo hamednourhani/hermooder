@@ -28,9 +28,20 @@
 		@extend .def-box-shadow;
 		border-top : 4px solid $blue2;
  		background-color: $glassyWhite;
- 		padding : 20px;
+ 		padding : 20px 30px;
  		margin-bottom : 20px;
 
+ 		.article-title h3{
+ 			border-bottom : 1px dashed $grey2;
+ 			margin-bottom : 20px;
+ 			padding-bottom: 15px;
+ 		}
+		ul {
+			list-style-type: disc;
+		}
+		ol{
+			list-style-type: decimal;
+		}
  	}
  	
  	form.searchform{

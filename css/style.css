@@ -2,8 +2,8 @@
 /* fonts */
 @font-face {
   font-family: "open-sans";
-  src: url('fonts/OpenSans-Regular.eot?1445920942');
-  src: url('fonts/OpenSans-Regular.eot?&1445920942#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular.ttf?1445920942') format('truetype'), url('fonts/OpenSans-Regular.woff?1445920942') format('woff');
+  src: url('fonts/OpenSans-Regular.eot?1446133650');
+  src: url('fonts/OpenSans-Regular.eot?&1446133650#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular.ttf?1446133651') format('truetype'), url('fonts/OpenSans-Regular.woff?1446133651') format('woff');
   font-weight: "OpenSans-Regular.svg"; }
 /* normalize style */
 /* normalize-scss 3.0.2+normalize.3.0.2 | MIT/GPLv2 License | bit.ly/normalize-scss */
@@ -12,7 +12,7 @@
  * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
  * body `font-size` is set using `em` units.
  */
-/* line 106, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.5em; }
@@ -618,7 +618,7 @@ p {
   font-feature-settings: "liga", "dlig"; }
 
 /* ------------susy-------- */
-/* line 14, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susyone/_grid.scss */
+/* line 14, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/susy-2.2.2/sass/susy/language/susyone/_grid.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -791,7 +791,7 @@ body, html {
 
 /* line 15, sass/base/_base.scss */
 body {
-  background: url('../images/pattern_6.png?1446270473') top left;
+  background: url('../images/pattern_6.png?1443641700') top left;
   font-family: "open-sans", "Georgia", Cambria, Times New Roman, Times, serif, "Georgia", Cambria, Times New Roman, Times, serif;
   direction: ltr;
   font-size: 100%;
@@ -815,7 +815,7 @@ body {
   margin-top: -1px;
   overflow: hidden;
   position: relative;
-  background: url('../images/side-back.png?1446105459');
+  background: url('../images/side-back.png?1446133654');
   background-position: top left;
   background-repeat: no-repeat;
   background-attachment: fixed; }
@@ -830,7 +830,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative; }
-  /* line 38, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .layout:after {
     content: "";
     display: table;
@@ -1248,7 +1248,7 @@ img.wp-smiley,
 @media (min-width: 45em) {
   /* line 19, sass/layout/_header.scss */
   .site-header .header-inner {
-    background: url('../images/header-back.png?1446270472') 95% 100% no-repeat; } }
+    background: url('../images/header-back.png?1446236080') 95% 100% no-repeat; } }
 /* line 24, sass/layout/_header.scss */
 .site-header div.hero {
   text-align: center; }
@@ -1513,13 +1513,24 @@ ul.main-nav {
   .primary article.hentry {
     border-top: 4px solid #00a7d4;
     background-color: rgba(255, 255, 255, 0.85);
-    padding: 20px;
+    padding: 20px 30px;
     margin-bottom: 20px; }
-  /* line 36, sass/layout/_main.scss */
+    /* line 34, sass/layout/_main.scss */
+    .primary article.hentry .article-title h3 {
+      border-bottom: 1px dashed #E6E7E7;
+      margin-bottom: 20px;
+      padding-bottom: 15px; }
+    /* line 39, sass/layout/_main.scss */
+    .primary article.hentry ul {
+      list-style-type: disc; }
+    /* line 42, sass/layout/_main.scss */
+    .primary article.hentry ol {
+      list-style-type: decimal; }
+  /* line 47, sass/layout/_main.scss */
   .primary form.searchform {
     margin-bottom: 20px; }
 
-/* line 42, sass/layout/_main.scss */
+/* line 53, sass/layout/_main.scss */
 .secondary {
   width: 100%;
   float: left;
@@ -1529,12 +1540,12 @@ ul.main-nav {
   padding-top: 20px;
   padding-bottom: 20px; }
   @media (min-width: 45em) {
-    /* line 42, sass/layout/_main.scss */
+    /* line 53, sass/layout/_main.scss */
     .secondary {
       width: 32.30769%;
       float: right;
       margin-right: 0; } }
-  /* line 53, sass/layout/_main.scss */
+  /* line 64, sass/layout/_main.scss */
   .secondary aside.widget {
     padding: 10px 20px;
     margin-bottom: 20px;
@@ -1543,46 +1554,46 @@ ul.main-nav {
     opacity: 0.9;
     color: #282828;
     border-top: 4px solid #00a7d4; }
-    /* line 62, sass/layout/_main.scss */
+    /* line 73, sass/layout/_main.scss */
     .secondary aside.widget .widgettitle {
       margin: 10px auto;
       color: #8db63f;
       padding-bottom: 10px;
       border-bottom: 1px solid #d9dbdb; }
-    /* line 68, sass/layout/_main.scss */
+    /* line 79, sass/layout/_main.scss */
     .secondary aside.widget.green-widget {
       background-color: #8db63f;
       border: 0px; }
-    /* line 73, sass/layout/_main.scss */
+    /* line 84, sass/layout/_main.scss */
     .secondary aside.widget.orang-widget {
       background-color: #e47a26;
       border: 0px; }
-    /* line 77, sass/layout/_main.scss */
+    /* line 88, sass/layout/_main.scss */
     .secondary aside.widget.blue-widget {
       background-color: #00a7d4;
       border: 0px; }
-    /* line 81, sass/layout/_main.scss */
+    /* line 92, sass/layout/_main.scss */
     .secondary aside.widget.light-blue-widget {
       background-color: #c0dbe9;
       border: 0px; }
-    /* line 89, sass/layout/_main.scss */
+    /* line 100, sass/layout/_main.scss */
     .secondary aside.widget.green-widget p, .secondary aside.widget.green-widget h4, .secondary aside.widget.green-widget h3, .secondary aside.widget.green-widget span, .secondary aside.widget.green-widget a, .secondary aside.widget.orang-widget p, .secondary aside.widget.orang-widget h4, .secondary aside.widget.orang-widget h3, .secondary aside.widget.orang-widget span, .secondary aside.widget.orang-widget a, .secondary aside.widget.blue-widget p, .secondary aside.widget.blue-widget h4, .secondary aside.widget.blue-widget h3, .secondary aside.widget.blue-widget span, .secondary aside.widget.blue-widget a, .secondary aside.widget.light-blue-widget p, .secondary aside.widget.light-blue-widget h4, .secondary aside.widget.light-blue-widget h3, .secondary aside.widget.light-blue-widget span, .secondary aside.widget.light-blue-widget a {
       color: #F8F8F8; }
-    /* line 92, sass/layout/_main.scss */
+    /* line 103, sass/layout/_main.scss */
     .secondary aside.widget.green-widget .widgettitle, .secondary aside.widget.orang-widget .widgettitle, .secondary aside.widget.blue-widget .widgettitle, .secondary aside.widget.light-blue-widget .widgettitle {
       border-color: #c0dbe9; }
-    /* line 99, sass/layout/_main.scss */
+    /* line 110, sass/layout/_main.scss */
     .secondary aside.widget input, .secondary aside.widget textarea {
       width: 100%;
       max-width: 100%;
       margin-bottom: 10px;
       padding: 5px; }
-    /* line 105, sass/layout/_main.scss */
+    /* line 116, sass/layout/_main.scss */
     .secondary aside.widget input[type="submit"],
     .secondary aside.widget input[type="button"] {
       width: auto;
       padding: 7px 15px; }
-    /* line 110, sass/layout/_main.scss */
+    /* line 121, sass/layout/_main.scss */
     .secondary aside.widget p {
       margin: auto; }
 
@@ -1654,7 +1665,7 @@ div.footer-widget-area {
       display: inline-block; }
       /* line 61, sass/layout/_footer.scss */
       .credit-holder .socials li .social-icon {
-        background: url('../images/social-icons.png?1446117499');
+        background: url('../images/social-icons.png?1446133654');
         display: block;
         width: 30px;
         height: 30px; }
