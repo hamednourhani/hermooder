@@ -1345,8 +1345,11 @@ ul.main-nav {
       /* line 116, sass/layout/_header.scss */
       ul.main-nav > li a:hover {
         background-color: #99c14d; }
+    /* line 121, sass/layout/_header.scss */
+    ul.main-nav > li.current_page_item a {
+      background-color: #99c14d; }
   @media (min-width: 45em) {
-    /* line 122, sass/layout/_header.scss */
+    /* line 127, sass/layout/_header.scss */
     ul.main-nav > li.menu-item-has-children > a:after {
       content: "\f0d7";
       vertical-align: middle;
@@ -1355,16 +1358,16 @@ ul.main-nav {
       right: -4px;
       top: 41%; } }
   @media (min-width: 45em) {
-    /* line 134, sass/layout/_header.scss */
+    /* line 139, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu {
       border-top: 4px solid #00a7d4; } }
-  /* line 139, sass/layout/_header.scss */
+  /* line 144, sass/layout/_header.scss */
   ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
     z-index: 0;
     padding: 0;
     margin: 0; }
     @media (min-width: 45em) {
-      /* line 139, sass/layout/_header.scss */
+      /* line 144, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
         -moz-box-shadow: 0px 0px 7px #4E4E4E;
         -webkit-box-shadow: 0px 0px 7px #4E4E4E;
@@ -1382,7 +1385,7 @@ ul.main-nav {
         transition: opacity .45s linear, visibility .2s linear .4s;
         visibility: hidden; } }
     @media (min-width: 45em) {
-      /* line 162, sass/layout/_header.scss */
+      /* line 167, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li, ul.main-nav li ul.sub-menu li {
         background-color: #F8F8F8;
         -webkit-animation: move-down .5s 1;
@@ -1390,24 +1393,24 @@ ul.main-nav {
         -o-animation: move-down .5s 1;
         animation: move-down .5s 1;
         position: relative; } }
-    /* line 171, sass/layout/_header.scss */
+    /* line 176, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu a, ul.main-nav li ul.sub-menu a {
       min-width: 220px;
       padding: 5px; }
       @media (min-width: 45em) {
-        /* line 171, sass/layout/_header.scss */
+        /* line 176, sass/layout/_header.scss */
         ul.main-nav > li > ul.sub-menu a, ul.main-nav li ul.sub-menu a {
           padding: 10px 20px; } }
       @media (min-width: 45em) {
-        /* line 171, sass/layout/_header.scss */
+        /* line 176, sass/layout/_header.scss */
         ul.main-nav > li > ul.sub-menu a, ul.main-nav li ul.sub-menu a {
           border: 0px;
           color: #282828; }
-          /* line 180, sass/layout/_header.scss */
+          /* line 185, sass/layout/_header.scss */
           ul.main-nav > li > ul.sub-menu a:hover, ul.main-nav li ul.sub-menu a:hover {
             color: #FFFFFF; } }
     @media (min-width: 45em) {
-      /* line 186, sass/layout/_header.scss */
+      /* line 191, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li.menu-item-has-children > a:after, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after {
         content: "\f0da";
         right: 12px;
@@ -1415,25 +1418,25 @@ ul.main-nav {
         top: 16px;
         vertical-align: middle; } }
   @media (min-width: 45em) {
-    /* line 200, sass/layout/_header.scss */
+    /* line 205, sass/layout/_header.scss */
     ul.main-nav > li:hover > ul.sub-menu {
       opacity: 1;
       visibility: visible;
       transition-delay: 0s;
       z-index: 9999; }
-      /* line 205, sass/layout/_header.scss */
+      /* line 210, sass/layout/_header.scss */
       ul.main-nav > li:hover > ul.sub-menu > li {
         -webkit-animation: move-up .5s 1;
         -moz-animation: move-up .5s 1;
         -o-animation: move-up .5s 1;
         animation: move-up .5s 1; } }
-  /* line 216, sass/layout/_header.scss */
+  /* line 221, sass/layout/_header.scss */
   ul.main-nav > li > ul.sub-menu li ul {
     padding: 0;
     margin: 0;
     display: block; }
     @media (min-width: 45em) {
-      /* line 216, sass/layout/_header.scss */
+      /* line 221, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li ul {
         text-align: center;
         z-index: 0;
@@ -1447,7 +1450,7 @@ ul.main-nav {
         transition: opacity .45s linear, visibility .2s linear .4s;
         visibility: hidden; } }
     @media (min-width: 45em) {
-      /* line 238, sass/layout/_header.scss */
+      /* line 243, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li ul li {
         background-color: #F8F8F8;
         -webkit-animation: move-down .5s 1;
@@ -1455,29 +1458,29 @@ ul.main-nav {
         -o-animation: move-down .5s 1;
         animation: move-down .5s 1;
         position: relative; } }
-    /* line 247, sass/layout/_header.scss */
+    /* line 252, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li ul a {
       min-width: 180px;
       padding: 5px; }
       @media (min-width: 45em) {
-        /* line 247, sass/layout/_header.scss */
+        /* line 252, sass/layout/_header.scss */
         ul.main-nav > li > ul.sub-menu li ul a {
           padding: 15px; } }
   @media (min-width: 45em) {
-    /* line 261, sass/layout/_header.scss */
+    /* line 266, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li:hover > ul.sub-menu {
       opacity: 1;
       visibility: visible;
       transition-delay: 0s;
       z-index: 9999; }
-      /* line 267, sass/layout/_header.scss */
+      /* line 272, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li:hover > ul.sub-menu > li {
         -webkit-animation: move-up .5s 1;
         -moz-animation: move-up .5s 1;
         -o-animation: move-up .5s 1;
         animation: move-up .5s 1; } }
   @media (min-width: 45em) {
-    /* line 278, sass/layout/_header.scss */
+    /* line 283, sass/layout/_header.scss */
     ul.main-nav ul.sub-menu li:hover ul {
       display: inline-block;
       left: 100%;
@@ -1501,21 +1504,22 @@ ul.main-nav {
   .primary .banner-wrapper {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 5px;
+    max-height: 473px;
     margin-bottom: 20px; }
-    /* line 21, sass/layout/_main.scss */
+    /* line 22, sass/layout/_main.scss */
     .primary .banner-wrapper h1 {
       font-size: 1.3em; }
-  /* line 26, sass/layout/_main.scss */
+  /* line 27, sass/layout/_main.scss */
   .primary article.hentry {
     border-top: 4px solid #00a7d4;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 20px;
     margin-bottom: 20px; }
-  /* line 35, sass/layout/_main.scss */
+  /* line 36, sass/layout/_main.scss */
   .primary form.searchform {
     margin-bottom: 20px; }
 
-/* line 41, sass/layout/_main.scss */
+/* line 42, sass/layout/_main.scss */
 .secondary {
   width: 100%;
   float: left;
@@ -1525,12 +1529,12 @@ ul.main-nav {
   padding-top: 20px;
   padding-bottom: 20px; }
   @media (min-width: 45em) {
-    /* line 41, sass/layout/_main.scss */
+    /* line 42, sass/layout/_main.scss */
     .secondary {
       width: 32.30769%;
       float: right;
       margin-right: 0; } }
-  /* line 52, sass/layout/_main.scss */
+  /* line 53, sass/layout/_main.scss */
   .secondary aside.widget {
     padding: 10px 20px;
     margin-bottom: 20px;
@@ -1539,46 +1543,46 @@ ul.main-nav {
     opacity: 0.9;
     color: #282828;
     border-top: 4px solid #00a7d4; }
-    /* line 61, sass/layout/_main.scss */
+    /* line 62, sass/layout/_main.scss */
     .secondary aside.widget .widgettitle {
       margin: 10px auto;
       color: #8db63f;
       padding-bottom: 10px;
       border-bottom: 1px solid #d9dbdb; }
-    /* line 67, sass/layout/_main.scss */
+    /* line 68, sass/layout/_main.scss */
     .secondary aside.widget.green-widget {
       background-color: #8db63f;
       border: 0px; }
-    /* line 72, sass/layout/_main.scss */
+    /* line 73, sass/layout/_main.scss */
     .secondary aside.widget.orang-widget {
       background-color: #e47a26;
       border: 0px; }
-    /* line 76, sass/layout/_main.scss */
+    /* line 77, sass/layout/_main.scss */
     .secondary aside.widget.blue-widget {
       background-color: #00a7d4;
       border: 0px; }
-    /* line 80, sass/layout/_main.scss */
+    /* line 81, sass/layout/_main.scss */
     .secondary aside.widget.light-blue-widget {
       background-color: #c0dbe9;
       border: 0px; }
-    /* line 88, sass/layout/_main.scss */
+    /* line 89, sass/layout/_main.scss */
     .secondary aside.widget.green-widget p, .secondary aside.widget.green-widget h4, .secondary aside.widget.green-widget h3, .secondary aside.widget.green-widget span, .secondary aside.widget.green-widget a, .secondary aside.widget.orang-widget p, .secondary aside.widget.orang-widget h4, .secondary aside.widget.orang-widget h3, .secondary aside.widget.orang-widget span, .secondary aside.widget.orang-widget a, .secondary aside.widget.blue-widget p, .secondary aside.widget.blue-widget h4, .secondary aside.widget.blue-widget h3, .secondary aside.widget.blue-widget span, .secondary aside.widget.blue-widget a, .secondary aside.widget.light-blue-widget p, .secondary aside.widget.light-blue-widget h4, .secondary aside.widget.light-blue-widget h3, .secondary aside.widget.light-blue-widget span, .secondary aside.widget.light-blue-widget a {
       color: #F8F8F8; }
-    /* line 91, sass/layout/_main.scss */
+    /* line 92, sass/layout/_main.scss */
     .secondary aside.widget.green-widget .widgettitle, .secondary aside.widget.orang-widget .widgettitle, .secondary aside.widget.blue-widget .widgettitle, .secondary aside.widget.light-blue-widget .widgettitle {
       border-color: #c0dbe9; }
-    /* line 98, sass/layout/_main.scss */
+    /* line 99, sass/layout/_main.scss */
     .secondary aside.widget input, .secondary aside.widget textarea {
       width: 100%;
       max-width: 100%;
       margin-bottom: 10px;
       padding: 5px; }
-    /* line 104, sass/layout/_main.scss */
+    /* line 105, sass/layout/_main.scss */
     .secondary aside.widget input[type="submit"],
     .secondary aside.widget input[type="button"] {
       width: auto;
       padding: 7px 15px; }
-    /* line 109, sass/layout/_main.scss */
+    /* line 110, sass/layout/_main.scss */
     .secondary aside.widget p {
       margin: auto; }
 

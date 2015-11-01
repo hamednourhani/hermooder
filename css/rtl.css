@@ -422,29 +422,32 @@ ul.main-nav {
     ul.main-nav > li {
       margin-right: auto;
       margin-left: 10px; } }
+  /* line 46, sass/rtl/layout/_header.scss */
+  ul.main-nav a {
+    font-size: 110%; }
   @media (min-width: 45em) {
-    /* line 47, sass/rtl/layout/_header.scss */
+    /* line 50, sass/rtl/layout/_header.scss */
     ul.main-nav > li.menu-item-has-children > a:after {
       left: -8px;
       right: auto; } }
   @media (min-width: 45em) {
-    /* line 55, sass/rtl/layout/_header.scss */
+    /* line 58, sass/rtl/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
       left: auto;
       right: -30%; } }
   @media (min-width: 45em) {
-    /* line 62, sass/rtl/layout/_header.scss */
+    /* line 65, sass/rtl/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li.menu-item-has-children > a:after, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after {
       content: "\f0d9";
       left: 12px;
       right: auto; } }
   @media (min-width: 45em) {
-    /* line 74, sass/rtl/layout/_header.scss */
+    /* line 77, sass/rtl/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li ul {
       right: 100%;
       left: auto; } }
   @media (min-width: 45em) {
-    /* line 82, sass/rtl/layout/_header.scss */
+    /* line 85, sass/rtl/layout/_header.scss */
     ul.main-nav ul.sub-menu li:hover ul {
       right: 100%;
       left: auto; } }

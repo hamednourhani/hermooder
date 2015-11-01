@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
 	//  }, 1000);
 
 	$('nav.main-menu').scrollToFixed({
-		minWidth : '45em',
+		minWidth : '700',
 	});
 
  //    $('aside,article').onScreen({
