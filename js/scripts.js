@@ -9,6 +9,21 @@ jQuery(document).ready(function($){
 		minWidth : '700',
 	});
 
+	// var smh = $('.sidebar-widget').outerHeight(true) + 40;
+	// $('.secondary').css('min-height',smh);
+ 
+	// $('.sidebar-widget').scrollToFixed({
+ //            limit: function() {
+ //                var limit = $('.site-footer').offset().top - $('.sidebar-widget').outerHeight(true) - 40;
+ //                return limit;
+ //            },
+	// 		marginTop: 50,
+	// 		minWidth: 750,
+ //            zIndex: 998,
+ //            fixed: function() {  },
+ //            dontCheckForPositionFixedSupport: true
+ //        });
+
  //    $('aside,article').onScreen({
 	//    container: window,
 	//    direction: 'vertical',

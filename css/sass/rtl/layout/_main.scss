@@ -11,6 +11,10 @@
  	}
  	 	
 }
+.grid-excerpt{
+	font-size : 100%;
+}
+
 
 .secondary{
 	@include span-columns(12,12);
@@ -18,6 +22,9 @@
  		@include span-columns(4 omega,12);
  		margin-right: auto;
 
+ 	}
+ 	aside.widget{
+ 		font-size: 110%;
  	}
 	
 	

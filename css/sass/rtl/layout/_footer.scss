@@ -4,18 +4,27 @@ div.footer-widget-area{
 
 	.footer-col1,
 	.footer-col2,
-	.footer-col3,
-	.footer-col4{
+	.footer-col3{
 		@include span-columns(12,12);
 		@include at-breakpoint($medium) {
-			@include span-columns(3,12);
+			@include span-columns(4,12);
 			margin-right: auto;
 		}
 
 	}
-	.footer-col4{
+	.footer-col3{
 		@include at-breakpoint($medium) {
 			@include omega;
+		}
+	}
+	aside.widget{
+		font-size: 105%;
+	}
+	aside.widget_contact_info_widget{
+		
+		i:before{
+		    margin-right: auto;
+		    margin-left: 10px;
 		}
 	}
 	

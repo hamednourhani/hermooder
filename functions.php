@@ -146,7 +146,7 @@ function hermooder_register_sidebars() {
     'id' => 'footer-col1',
     'name' => __( 'Footer first col', 'hermooder' ),
     'description' => __( 'The first footer widget area', 'hermooder' ),
-    'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+    'before_widget' => '<aside id="%1$s" class="footer-first footer-col1 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => '</h4>',
@@ -155,7 +155,7 @@ function hermooder_register_sidebars() {
     'id' => 'footer-col2',
     'name' => __( 'Footer 2d col', 'hermooder' ),
     'description' => __( 'The first footer widget area', 'hermooder' ),
-    'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+    'before_widget' => '<aside id="%1$s" class="footer-first footer-col2 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => '</h4>',
@@ -164,20 +164,20 @@ function hermooder_register_sidebars() {
     'id' => 'footer-col3',
     'name' => __( 'Footer 3rd col', 'hermooder' ),
     'description' => __( 'The first footer widget area', 'hermooder' ),
-    'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+    'before_widget' => '<aside id="%1$s" class="footer-first footer-col3 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
     'after_title' => '</h4>',
   ));
-  register_sidebar(array(
-    'id' => 'footer-col4',
-    'name' => __( 'Footer 4th Col', 'hermooder' ),
-    'description' => __( 'The first footer widget area', 'hermooder' ),
-    'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
-    'after_widget' => '</aside>',
-    'before_title' => '<h4 class="widgettitle">',
-    'after_title' => '</h4>',
-  ));
+  // register_sidebar(array(
+  //   'id' => 'footer-col4',
+  //   'name' => __( 'Footer 4th Col', 'hermooder' ),
+  //   'description' => __( 'The first footer widget area', 'hermooder' ),
+  //   'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+  //   'after_widget' => '</aside>',
+  //   'before_title' => '<h4 class="widgettitle">',
+  //   'after_title' => '</h4>',
+  // ));
   
 
   
@@ -297,6 +297,13 @@ function hermooder_search_form( $form ) {
 
 add_filter( 'get_search_form', 'hermooder_search_form' );
 
+function hermooder_excerpt_length( $length ) {
+  return 20;
+}
+add_filter( 'excerpt_length', 'hermooder_excerpt_length', 999 );
+
+
+
 if ( ICL_LANGUAGE_CODE=='en'){ 
   
         remove_filter('the_title', 'ztjalali_persian_num');
@@ -314,5 +321,141 @@ if ( ICL_LANGUAGE_CODE=='en'){
 }
 
 
+/*------------------Widgets------------------------------------*/
+
+class contact_info_widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+        // Base ID of your widget
+        'contact_info_widget', 
+
+        // Widget name will appear in UI
+        __('Contact Informaion Widget', 'hermooder'), 
+
+        // Widget description
+        array( 'description' => __( 'Display Contact Information', 'hermooder' ), ) 
+        );
+    }
+
+    // Creating widget front-end
+    // This is where the action happens
+    public function widget( $args, $instance ) {
+        global $wp_query;
+
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $address = $instance['address'];
+        $zip = $instance['zip'];
+        $telfax = $instance['telfax'];
+        $email = $instance['email'];
+        $smspanel = $instance['smspanel'];
+        
+                
+        $content = '<main class="widgetbody">';
+        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','hermooder').$address.'</p>';
+        $content .='<p><i class="fa fa-fire"></i>'.__('Zip : ','hermooder').$zip.'</p>';
+        $content .='<p><i class="fa fa-fax"></i>'.__('TelFax : ','hermooder').$telfax.'</p>';
+        $content .='<p><i class="fa fa-tablet"></i></i>'.__('Sms Panel : ','hermooder').$smspanel.'</p>';
+        $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','hermooder').$email.'</p>';
+        $content .= '</main>';
+      
+        // before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+        
+        if ( ! empty( $title ) )
+          echo $args['before_title'] . $title . $args['after_title'];
+          echo $content;
+        // This is where you run the code and display the output
+          echo $args['after_widget'];
+    }
+        
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        }else {
+            $title = __( 'Last Posts', 'hermooder' );
+        }
+
+        if ( isset( $instance[ 'address' ] ) ) {
+            $address = $instance[ 'address' ];
+        }else {
+            $address = "No. ----";
+        }
+
+        if ( isset( $instance[ 'zip' ] ) ) {
+            $zip = $instance[ 'zip' ];
+        }else {
+            $zip = "+98 ----";
+        }
+
+        if ( isset( $instance[ 'telfax' ] ) ) {
+            $telfax = $instance[ 'telfax' ];
+        }else {
+            $telfax = "+98 ----";
+        }
+
+        if ( isset( $instance[ 'email' ] ) ) {
+            $email = $instance[ 'email' ];
+        }else {
+            $email = "info@email.com";
+        }
+
+        if ( isset( $instance['smspanel'] ) ) {
+           $smspanel = $instance['smspanel'];
+        }else {
+            $smspanel = '300000000';
+        } $smspanel = $instance['smspanel'];
+        
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+         <p>
+            <label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>" />
+        </p>
+         <p>
+            <label for="<?php echo $this->get_field_id( 'zip' ); ?>"><?php _e( 'Zip :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'zip' ); ?>" name="<?php echo $this->get_field_name( 'zip' ); ?>" type="text" value="<?php echo esc_attr( $zip ); ?>" />
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'telfax' ); ?>"><?php _e( 'TelFax :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'telfax' ); ?>" name="<?php echo $this->get_field_name( 'telfax' ); ?>" type="text" value="<?php echo esc_attr( $telfax ); ?>" />
+        </p>
+
+         <p>
+            <label for="<?php echo $this->get_field_id( 'smspanel' ); ?>"><?php _e( 'Sms Panel :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'smspanel' ); ?>" name="<?php echo $this->get_field_name( 'smspanel' ); ?>" type="text" value="<?php echo esc_attr( $smspanel ); ?>" />
+        </p>
+
+        <p>
+            <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" type="text" value="<?php echo esc_attr( $email ); ?>" />
+        </p>
+        
+        <?php 
+    }
+      
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['address'] = ( ! empty( $new_instance['address'] ) ) ? strip_tags( $new_instance['address'] ) : '';
+        $instance['zip'] = ( ! empty( $new_instance['zip'] ) ) ? strip_tags( $new_instance['zip'] ) : '';
+        $instance['telfax'] = ( ! empty( $new_instance['telfax'] ) ) ? strip_tags( $new_instance['telfax'] ) : '';
+        $instance['email'] = ( ! empty( $new_instance['email'] ) ) ? strip_tags( $new_instance['email'] ) : '';
+        $instance['smspanel'] = ( ! empty( $new_instance['smspanel'] ) ) ? strip_tags( $new_instance['smspanel'] ) : '';
+        return $instance;
+    }
+} // Class wpb_widget ends here
+
+function hermooder_widget() {
+  register_widget( 'contact_info_widget' );
+}
+add_action( 'widgets_init', 'hermooder_widget' );
 
 ?>

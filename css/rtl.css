@@ -467,25 +467,31 @@ ul.main-nav {
       margin-left: 1.53846%;
       margin-right: auto; } }
 
-/* line 15, sass/rtl/layout/_main.scss */
+/* line 14, sass/rtl/layout/_main.scss */
+.grid-excerpt {
+  font-size: 100%; }
+
+/* line 19, sass/rtl/layout/_main.scss */
 .secondary {
   width: 100%;
   float: right;
   margin-left: 1.53846%;
   display: inline; }
   @media (min-width: 45em) {
-    /* line 15, sass/rtl/layout/_main.scss */
+    /* line 19, sass/rtl/layout/_main.scss */
     .secondary {
       width: 32.30769%;
       float: left;
       margin-left: 0;
       margin-right: auto; } }
+  /* line 26, sass/rtl/layout/_main.scss */
+  .secondary aside.widget {
+    font-size: 110%; }
 
 /* line 5, sass/rtl/layout/_footer.scss */
 div.footer-widget-area .footer-col1,
 div.footer-widget-area .footer-col2,
-div.footer-widget-area .footer-col3,
-div.footer-widget-area .footer-col4 {
+div.footer-widget-area .footer-col3 {
   width: 100%;
   float: right;
   margin-left: 1.53846%;
@@ -494,38 +500,44 @@ div.footer-widget-area .footer-col4 {
     /* line 5, sass/rtl/layout/_footer.scss */
     div.footer-widget-area .footer-col1,
     div.footer-widget-area .footer-col2,
-    div.footer-widget-area .footer-col3,
-    div.footer-widget-area .footer-col4 {
-      width: 23.84615%;
+    div.footer-widget-area .footer-col3 {
+      width: 32.30769%;
       float: right;
       margin-left: 1.53846%;
       margin-right: auto; } }
 @media (min-width: 45em) {
-  /* line 16, sass/rtl/layout/_footer.scss */
-  div.footer-widget-area .footer-col4 {
+  /* line 15, sass/rtl/layout/_footer.scss */
+  div.footer-widget-area .footer-col3 {
     float: left;
     margin-left: 0; } }
+/* line 20, sass/rtl/layout/_footer.scss */
+div.footer-widget-area aside.widget {
+  font-size: 105%; }
+/* line 25, sass/rtl/layout/_footer.scss */
+div.footer-widget-area aside.widget_contact_info_widget i:before {
+  margin-right: auto;
+  margin-left: 10px; }
 
-/* line 23, sass/rtl/layout/_footer.scss */
+/* line 32, sass/rtl/layout/_footer.scss */
 .credit-holder {
   text-align: center; }
-  /* line 26, sass/rtl/layout/_footer.scss */
+  /* line 35, sass/rtl/layout/_footer.scss */
   .credit-holder .socials {
     float: none;
     text-align: center;
     display: block; }
     @media (min-width: 45em) {
-      /* line 26, sass/rtl/layout/_footer.scss */
+      /* line 35, sass/rtl/layout/_footer.scss */
       .credit-holder .socials {
         float: right;
         display: inline-block; } }
-  /* line 38, sass/rtl/layout/_footer.scss */
+  /* line 47, sass/rtl/layout/_footer.scss */
   .credit-holder span.site-holder {
     display: block;
     text-align: center;
     float: none; }
     @media (min-width: 45em) {
-      /* line 38, sass/rtl/layout/_footer.scss */
+      /* line 47, sass/rtl/layout/_footer.scss */
       .credit-holder span.site-holder {
         float: left;
         display: inline-block; } }

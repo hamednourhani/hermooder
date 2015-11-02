@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2015-10-31 10:01+0330\n"
-"PO-Revision-Date: 2015-10-31 10:02+0330\n"
+"POT-Creation-Date: 2015-11-02 12:31+0330\n"
+"PO-Revision-Date: 2015-11-02 12:31+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -63,82 +63,134 @@ msgstr "فراکارانت"
 msgid "Hermooder © 2015. All Right Reserved"
 msgstr "هرمودر © 2015 . تمامی حقوق محفوظ می باشد."
 
-#: functions.php:90
+#: functions.php:93
 msgid "1200px by 500px"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:94
 msgid "30px by 30px"
 msgstr ""
 
-#: functions.php:92
+#: functions.php:95
 msgid "53px by 53px"
 msgstr ""
 
-#: functions.php:93
+#: functions.php:96
 msgid "130px by 130px"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:138
 msgid "Sidebar"
 msgstr "ستون کناری"
 
-#: functions.php:136
+#: functions.php:139
 msgid "The first (primary) sidebar."
 msgstr "منطقه ابزارک های ستون کناری سایت"
 
-#: functions.php:144
+#: functions.php:147
 msgid "Footer first col"
 msgstr "ستون اول پانوشت"
 
-#: functions.php:145 functions.php:154 functions.php:163 functions.php:172
+#: functions.php:148 functions.php:157 functions.php:166
 msgid "The first footer widget area"
 msgstr "منطقه ابزارک پانوشت"
 
-#: functions.php:153
+#: functions.php:156
 msgid "Footer 2d col"
 msgstr "ستون دوم پانوشت"
 
-#: functions.php:162
+#: functions.php:165
 msgid "Footer 3rd col"
 msgstr "ستون سوم پانوشت"
 
-#: functions.php:171
-msgid "Footer 4th Col"
-msgstr "ستون چهارم پانوشت"
-
-#: functions.php:205
+#: functions.php:208
 #, php-format
 msgid "<cite class=\"fn\">%1$s</cite> %2$s"
 msgstr ""
 
-#: functions.php:205
+#: functions.php:208
 msgid "(Edit)"
 msgstr "(ویرایش)"
 
-#: functions.php:206
+#: functions.php:209
 msgid "F jS, Y"
 msgstr ""
 
-#: functions.php:211
+#: functions.php:214
 msgid "Your comment is awaiting moderation."
 msgstr "دیدگاه شما در دست بررسی است."
 
-#: functions.php:234
+#: functions.php:237
 msgid "<i class=\"fa fa-angle-double-left\"></i>"
 msgstr "<i class=\"fa fa-angle-double-right\"></i>"
 
-#: functions.php:235
+#: functions.php:238
 msgid "<i class=\"fa fa-angle-double-right\"></i>"
 msgstr "<i class=\"fa fa-angle-double-left\"></i>"
 
-#: functions.php:277 functions.php:285 searchform.php:3
+#: functions.php:280 functions.php:288 searchform.php:3
 msgid "Search for:"
 msgstr "جستجو برای : "
 
-#: functions.php:279 functions.php:287 searchform.php:6
+#: functions.php:282 functions.php:290 searchform.php:6
 msgid "Search"
 msgstr "جستجو"
+
+#: functions.php:334
+msgid "Contact Informaion Widget"
+msgstr "ابزارک اطلاعات تماس"
+
+#: functions.php:337
+msgid "Display Contact Information"
+msgstr "اطلاعات تماس را نمایش خواهد داد"
+
+#: functions.php:355
+msgid "Address : "
+msgstr "آدرس : "
+
+#: functions.php:356
+msgid "Zip : "
+msgstr "کد پستی : "
+
+#: functions.php:357
+msgid "TelFax : "
+msgstr "تلفکس : "
+
+#: functions.php:358
+msgid "Sms Panel : "
+msgstr "سامانه پیامکی : "
+
+#: functions.php:359
+msgid "Email : "
+msgstr "پست الکترونیک : "
+
+#: functions.php:377
+msgid "Last Posts"
+msgstr "آخرین پست ها"
+
+#: functions.php:413
+msgid "Title:"
+msgstr "عنوان : "
+
+#: functions.php:417
+msgid "Address :"
+msgstr "آدرس : "
+
+#: functions.php:421
+msgid "Zip :"
+msgstr "کد پستی : "
+
+#: functions.php:426
+msgid "TelFax :"
+msgstr "تلفکس : "
+
+#: functions.php:431
+msgid "Sms Panel :"
+msgstr "سامانه پیامکی : "
+
+#: functions.php:436
+msgid "Email Address :"
+msgstr "پست الکترونیک : "
 
 #: header.php:64
 msgid "Your Ultimate Depilatory Solution"
@@ -302,13 +354,15 @@ msgstr "هنوز مطلب مرتبطی منتشر نشده است!"
 msgid "Read "
 msgstr "مشاهده"
 
-#: library/hermooder.php:348
-msgid "Read more &raquo;"
-msgstr "ادامه مطلب &raquo;"
-
 #: library/post-meta.php:11 library/post-meta.php:32 library/post-meta.php:48
 msgid "Tags :"
 msgstr "برچسب ها : "
+
+#~ msgid "Footer 4th Col"
+#~ msgstr "ستون چهارم پانوشت"
+
+#~ msgid "Read more &raquo;"
+#~ msgstr "ادامه مطلب &raquo;"
 
 #~ msgid "The Top Menu"
 #~ msgstr "فهرست فوقانی"

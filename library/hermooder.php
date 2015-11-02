@@ -345,7 +345,7 @@ function hermooder_filter_ptags_on_images($content){
 function hermooder_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '...  <a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'hermooder' ) . esc_attr( get_the_title( $post->ID ) ).'">'. __( 'Read more &raquo;', 'hermooder' ) .'</a>';
+	return '<a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'hermooder' ) . esc_attr( get_the_title( $post->ID ) ).'">'. '[...]' .'</a>';
 }
 
 add_action('wp_head','hermooder_inline_style' );
