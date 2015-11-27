@@ -778,4 +778,71 @@ function hermooder_widget() {
 }
 add_action('widgets_init', 'hermooder_widget');
 
+/*----------------Pharmacy search -----------------------*/
+// class Pharmacy {
+//       public $name = "";
+//       public $hobbies  = "";
+//       public $birthdate = "";
+//    }
+
+//    $p = new Pharmacy();
+//    $p->name = "sachin";
+//    $p->hobbies  = "sports";
+//    $p->birthdate = date('m/d/Y h:i:s a', "8/5/1974 12:20:03 p");
+//    $p->birthdate = date('m/d/Y h:i:s a', strtotime("8/5/1974 12:20:03"));
+
+//   json_encode($p);
+//   json_decode ($json [,$assoc = false [, $depth = 512 [, $options = 0 ]]])
+
+// $jsonIterator = new RecursiveIteratorIterator(
+//     new RecursiveArrayIterator(json_decode($json, TRUE)),
+//     RecursiveIteratorIterator::SELF_FIRST);
+
+// foreach ($jsonIterator as $key => $val) {
+//     if(is_array($val)) {
+//         echo "$key:\n";
+//     } else {
+//         echo "$key => $val\n";
+//     }
+// }
+
+// $fruits = array("a" => "lemon", "b" => "orange", array("a" => "apple", "p" => "pear"));
+
+// $iterator = new RecursiveArrayIterator($fruits);
+
+// while ($iterator->valid()) {
+
+//     if ($iterator->hasChildren()) {
+//         // print all children
+//         foreach ($iterator->getChildren() as $key => $value) {
+//             echo $key . ' : ' . $value . "\n";
+//         }
+//     } else {
+//         echo "No children.\n";
+//     }
+
+//     $iterator->next();
+// }
+
+// $string = file_get_contents("/home/michael/test.json");
+// dirname(__FILE__)
+// string dirname ( string $path [, int $levels = 1 ] )
+// getcwd();
+// chdir( $dir );
+
+// function get_file_dir() {
+//     global $argv;
+//     $dir = dirname(getcwd() . '/' . $argv[0]);
+//     $curDir = getcwd();
+//     chdir($dir);
+//     $dir = getcwd();
+//     chdir($curDir);
+//     return $dir;
+// }
+// So you can use it like this:
+// include get_file_dir() . '/otherfile.php';
+// // or even..
+// chdir(get_file_dir());
+// include './otherfile.php';
+
 ?>

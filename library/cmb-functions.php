@@ -101,6 +101,113 @@ function hermooder_before_row_if_2( $field_args, $field ) {
 
 
 
+
+/******************************************************************/
+/*--------------------Product Features-------------------------------*/
+/******************************************************************/
+//  add_action( 'cmb2_init', 'hermooder_register_product_features_metabox' );
+// function hermooder_register_product_features_metabox() {
+
+// 	$prefix = '_hermooder_';
+
+// 	/**
+// 	 * Sample metabox to demonstrate each field type included
+// 	 */
+// 	$cmb_demo = new_cmb2_box( array(
+// 		'id'            => $prefix . 'prodct_features',
+// 		'title'         => __( 'Product Features', 'hermooder' ),
+// 		'object_types'  => array( 'pharmacy' ), // Post type
+		
+// 	) );
+
+
+	
+// 	$cmb_demo->add_field( array(
+// 		'name'         => __( 'address', 'hermooder' ),
+// 		'desc'         => __( 'Enter pharmacy address', 'hermooder' ),
+// 		'id'           => $prefix . 'address',
+// 		'type'         => 'text',
+		
+// 	) );
+
+	
+// }
+/******************************************************************/
+/*--------------------Pharmacy-------------------------------*/
+/******************************************************************/
+add_action( 'cmb2_init', 'hermooder_register_pharmacy_images_metabox' );
+/**
+ * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
+ */
+function hermooder_register_pharmacy_images_metabox() {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_hermooder_';
+
+	/**
+	 * Sample metabox to demonstrate each field type included
+	 */
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'pharmacy_images',
+		'title'         => __( 'pharmacy Images', 'hermooder' ),
+		'object_types'  => array( 'pharmacy' ), // Post type
+		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
+		// 'context'    => 'normal',
+		// 'priority'   => 'high',
+		// 'show_names' => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+
+	
+	$cmb_demo->add_field( array(
+		'name'         => __( 'address', 'hermooder' ),
+		'desc'         => __( 'Enter pharmacy address', 'hermooder' ),
+		'id'           => $prefix . 'address',
+		'type'         => 'text',
+		
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'         => __( 'Latitude', 'hermooder' ),
+		'desc'         => __( 'Enter address Latitude', 'hermooder' ),
+		'id'           => $prefix . 'Latitude',
+		'type'         => 'text',
+		
+	) );
+	
+	$cmb_demo->add_field( array(
+		'name'         => __( 'Longitude', 'hermooder' ),
+		'desc'         => __( 'Enter address Longitude', 'hermooder' ),
+		'id'           => $prefix . 'Longitude',
+		'type'         => 'text',
+		
+	) );
+
+	
+
+	$cmb_demo->add_field( array(
+		'name'         => __( 'email', 'hermooder' ),
+		'desc'         => __( 'Enter pharmacy email address', 'hermooder' ),
+		'id'           => $prefix . 'email',
+		'type'         => 'text',
+		
+	) );
+
+	$cmb_demo->add_field( array(
+		'name'         => __( 'phone', 'hermooder' ),
+		'desc'         => __( 'Enter pharmacy phone', 'hermooder' ),
+		'id'           => $prefix . 'phone',
+		'type'         => 'text',
+		
+	) );
+
+	
+
+}
+
+
 /******************************************************************/
 /*--------------------Page Banner -------------------------------*/
 /******************************************************************/
@@ -118,7 +225,7 @@ function hermooder_register_page_banner_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'page_banner',
 		'title'         => __( 'Page Banner', 'hermooder' ),
-		'object_types'  => array( 'post','page'), // Post type
+		'object_types'  => array( 'post','page','product','pharmacy'), // Post type
 		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
@@ -183,159 +290,4 @@ function hermooder_register_page_banner_metabox() {
 	
 }
 
-/******************************************************************/
-/*--------------------Product Features-------------------------------*/
-/******************************************************************/
- add_action( 'cmb2_init', 'hermooder_register_product_features_metabox' );
-function hermooder_register_product_features_metabox() {
 
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_hermooder_group_';
-	
-	$cmb_group = new_cmb2_box( array(
-		'id'           => $prefix . 'product_features',
-		'title'        => __( 'Product Features', 'hermooder' ),
-		'object_types' => array( 'product', ),
-	) );
-
-	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
-	$group_field_id = $cmb_group->add_field( array(
-		'id'          => $prefix.'feature',
-		'type'        => 'group',
-		'description' => __( 'Add Product features', 'hermooder' ),
-		'options'     => array(
-			'group_title'   => __( 'feature {#}', 'hermooder' ), // {#} gets replaced by row number
-			'add_button'    => __( 'Add Another feature', 'hermooder' ),
-			'remove_button' => __( 'Remove feature', 'hermooder' ),
-			'sortable'      => true, // beta
-		),
-	) );
-
-		
- 	
- 	$cmb_group->add_group_field($group_field_id , array(
-		'name'    => __( 'Feature Name', 'hermooder' ),
-		'desc'    => __( 'write the feature name ', 'hermooder' ),
-		'id'      => 'feature_name',
-		'type'    => 'text',
-		
-			
-	) );
-	
-	$cmb_group->add_group_field($group_field_id , array(
-		'name'    => __( 'Feature Description ', 'hermooder' ),
-		'desc'    => __( 'write the feature Description if needed', 'hermooder' ),
-		'id'      => 'feature_desc',
-		'type'    => 'textarea',
-		
-			
-	) );
-
-	$cmb_group->add_group_field($group_field_id , array(
-		'name'         => __( 'Images', 'hermooder' ),
-		'desc'         => __( 'Upload or add multiple images/attachments.', 'hermooder' ),
-		'id'           => $prefix . 'image_list',
-		'type'         => 'file_list',
-		'preview_size' => array( 54	, 54 ), // Default: array( 50, 50 )
-	) );
-	
-	
-}
-/******************************************************************/
-/*--------------------Product Features-------------------------------*/
-/******************************************************************/
- add_action( 'cmb2_init', 'hermooder_register_product_features_metabox' );
-function hermooder_register_product_features_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_hermooder_group_';
-	
-	$cmb_group = new_cmb2_box( array(
-		'id'           => $prefix . 'product_features',
-		'title'        => __( 'Product Features', 'hermooder' ),
-		'object_types' => array( 'product', ),
-	) );
-
-	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
-	$group_field_id = $cmb_group->add_field( array(
-		'id'          => $prefix.'feature',
-		'type'        => 'group',
-		'description' => __( 'Add Product features', 'hermooder' ),
-		'options'     => array(
-			'group_title'   => __( 'feature {#}', 'hermooder' ), // {#} gets replaced by row number
-			'add_button'    => __( 'Add Another feature', 'hermooder' ),
-			'remove_button' => __( 'Remove feature', 'hermooder' ),
-			'sortable'      => true, // beta
-		),
-	) );
-
-		
- 	
- 	$cmb_group->add_group_field($group_field_id , array(
-		'name'    => __( 'Feature Name', 'hermooder' ),
-		'desc'    => __( 'write the feature name ', 'hermooder' ),
-		'id'      => 'feature_name',
-		'type'    => 'text',
-		
-			
-	) );
-	
-	$cmb_group->add_group_field($group_field_id , array(
-		'name'    => __( 'Feature Description ', 'hermooder' ),
-		'desc'    => __( 'write the feature Description if needed', 'hermooder' ),
-		'id'      => 'feature_desc',
-		'type'    => 'textarea',
-		
-			
-	) );
-
-	$cmb_group->add_group_field($group_field_id , array(
-		'name'         => __( 'Images', 'hermooder' ),
-		'desc'         => __( 'Upload or add multiple images/attachments.', 'hermooder' ),
-		'id'           => $prefix . 'image_list',
-		'type'         => 'file_list',
-		'preview_size' => array( 54	, 54 ), // Default: array( 50, 50 )
-	) );
-	
-	
-}
-/******************************************************************/
-/*--------------------Pharmacy-------------------------------*/
-/******************************************************************/
-add_action( 'cmb2_init', 'hermooder_register_pharmacy_images_metabox' );
-/**
- * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
- */
-function hermooder_register_pharmacy_images_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_hermooder_';
-
-	/**
-	 * Sample metabox to demonstrate each field type included
-	 */
-	$cmb_demo = new_cmb2_box( array(
-		'id'            => $prefix . 'pharmacy_images',
-		'title'         => __( 'pharmacy Images', 'hermooder' ),
-		'object_types'  => array( 'pharmacy' ), // Post type
-		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
-		// 'context'    => 'normal',
-		// 'priority'   => 'high',
-		// 'show_names' => true, // Show field names on the left
-		// 'cmb_styles' => false, // false to disable the CMB stylesheet
-		// 'closed'     => true, // true to keep the metabox closed by default
-	) );
-
-
-	
-	$cmb_demo->add_field( array(
-		'name'         => __( 'Images', 'hermooder' ),
-		'desc'         => __( 'Upload or add multiple images/attachments.', 'hermooder' ),
-		'id'           => $prefix . 'image_list',
-		'type'         => 'file_list',
-		'preview_size' => array( 130, 130 ), // Default: array( 50, 50 )
-	) );
-
-	
-
-}

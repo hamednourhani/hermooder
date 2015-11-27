@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Products Page
+ * Template Name: search nearest pharmacy
  *
  * 
  */

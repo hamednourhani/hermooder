@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hermooder 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
-"POT-Creation-Date: 2015-11-02 09:20:20+00:00\n"
+"POT-Creation-Date: 2015-11-27 16:33:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -153,11 +153,11 @@ msgstr ""
 msgid "Email : "
 msgstr ""
 
-#: functions.php:377
+#: functions.php:377 functions.php:737
 msgid "Last Posts"
 msgstr ""
 
-#: functions.php:413
+#: functions.php:413 functions.php:535 functions.php:644 functions.php:752
 msgid "Title:"
 msgstr ""
 
@@ -179,6 +179,62 @@ msgstr ""
 
 #: functions.php:436
 msgid "Email Address :"
+msgstr ""
+
+#: functions.php:468
+msgid "Last Products Widget"
+msgstr ""
+
+#: functions.php:471
+msgid "Display Last Products"
+msgstr ""
+
+#: functions.php:520
+msgid "Last Products"
+msgstr ""
+
+#: functions.php:539
+msgid "product Numbers :"
+msgstr ""
+
+#: functions.php:543
+msgid "Product Category :"
+msgstr ""
+
+#: functions.php:578
+msgid "Last Projects Widget"
+msgstr ""
+
+#: functions.php:581
+msgid "Display Last Projects"
+msgstr ""
+
+#: functions.php:629
+msgid "Last Projects"
+msgstr ""
+
+#: functions.php:648
+msgid "Project Numbers :"
+msgstr ""
+
+#: functions.php:652
+msgid "Project Category :"
+msgstr ""
+
+#: functions.php:684
+msgid "Last Posts By Category Widget"
+msgstr ""
+
+#: functions.php:687
+msgid "Display Last Posts in Category"
+msgstr ""
+
+#: functions.php:756
+msgid "Post Numbers :"
+msgstr ""
+
+#: functions.php:760
+msgid "Post Category :"
 msgstr ""
 
 #: header.php:64
@@ -616,55 +672,99 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: library/cmb-functions.php:120
-msgid "Page Banner"
+#: library/cmb-functions.php:152
+msgid "pharmacy Images"
 msgstr ""
 
-#: library/cmb-functions.php:133
-msgid "Banner"
+#: library/cmb-functions.php:165
+msgid "address"
 msgstr ""
 
-#: library/cmb-functions.php:134
-msgid "Choose Banner Mod, SlideShow , Image Banner or Nothing"
+#: library/cmb-functions.php:166
+msgid "Enter pharmacy address"
 msgstr ""
 
-#: library/cmb-functions.php:139
-msgid "Slider"
-msgstr ""
-
-#: library/cmb-functions.php:140
-msgid "Image"
-msgstr ""
-
-#: library/cmb-functions.php:153
-msgid "Slider Shortcode"
-msgstr ""
-
-#: library/cmb-functions.php:154
-msgid "write this page Revolotion Slider shortcode with alis name here"
-msgstr ""
-
-#: library/cmb-functions.php:161
-msgid "Banner Image"
-msgstr ""
-
-#: library/cmb-functions.php:162
-msgid "Upload an image to show as the banner"
-msgstr ""
-
-#: library/cmb-functions.php:169
-msgid "Page Title"
-msgstr ""
-
-#: library/cmb-functions.php:170
-msgid "show Page Title or Not?"
+#: library/cmb-functions.php:173
+msgid "Latitude"
 msgstr ""
 
 #: library/cmb-functions.php:174
+msgid "Enter address Latitude"
+msgstr ""
+
+#: library/cmb-functions.php:181
+msgid "Longitude"
+msgstr ""
+
+#: library/cmb-functions.php:182
+msgid "Enter address Longitude"
+msgstr ""
+
+#: library/cmb-functions.php:191
+msgid "email"
+msgstr ""
+
+#: library/cmb-functions.php:192
+msgid "Enter pharmacy email address"
+msgstr ""
+
+#: library/cmb-functions.php:199
+msgid "phone"
+msgstr ""
+
+#: library/cmb-functions.php:200
+msgid "Enter pharmacy phone"
+msgstr ""
+
+#: library/cmb-functions.php:227
+msgid "Page Banner"
+msgstr ""
+
+#: library/cmb-functions.php:240
+msgid "Banner"
+msgstr ""
+
+#: library/cmb-functions.php:241
+msgid "Choose Banner Mod, SlideShow , Image Banner or Nothing"
+msgstr ""
+
+#: library/cmb-functions.php:246
+msgid "Slider"
+msgstr ""
+
+#: library/cmb-functions.php:247
+msgid "Image"
+msgstr ""
+
+#: library/cmb-functions.php:260
+msgid "Slider Shortcode"
+msgstr ""
+
+#: library/cmb-functions.php:261
+msgid "write this page Revolotion Slider shortcode with alis name here"
+msgstr ""
+
+#: library/cmb-functions.php:268
+msgid "Banner Image"
+msgstr ""
+
+#: library/cmb-functions.php:269
+msgid "Upload an image to show as the banner"
+msgstr ""
+
+#: library/cmb-functions.php:276
+msgid "Page Title"
+msgstr ""
+
+#: library/cmb-functions.php:277
+msgid "show Page Title or Not?"
+msgstr ""
+
+#: library/cmb-functions.php:281
 msgid "Yes"
 msgstr ""
 
-#: library/cmb-functions.php:175
+#: library/cmb-functions.php:282
 msgid "No"
 msgstr ""
 
@@ -742,6 +842,166 @@ msgstr ""
 msgid "www.example.com"
 msgstr ""
 
+#: library/custom-post-type.php:31 library/custom-post-type.php:32
+msgid "Product"
+msgstr ""
+
+#: library/custom-post-type.php:33
+msgid "All Products"
+msgstr ""
+
+#: library/custom-post-type.php:34 library/custom-post-type.php:79
+msgid "Add New"
+msgstr ""
+
+#: library/custom-post-type.php:35
+msgid "Add New Products"
+msgstr ""
+
+#: library/custom-post-type.php:36 library/custom-post-type.php:81
+msgid "Edit"
+msgstr ""
+
+#: library/custom-post-type.php:37
+msgid "Edit Product"
+msgstr ""
+
+#: library/custom-post-type.php:38
+msgid "New Product"
+msgstr ""
+
+#: library/custom-post-type.php:39
+msgid "View Product"
+msgstr ""
+
+#: library/custom-post-type.php:40
+msgid "Search Products"
+msgstr ""
+
+#: library/custom-post-type.php:41 library/custom-post-type.php:86
+msgid "Nothing found in the Database."
+msgstr ""
+
+#: library/custom-post-type.php:42 library/custom-post-type.php:87
+msgid "Nothing found in Trash"
+msgstr ""
+
+#: library/custom-post-type.php:45
+msgid "This is a Product"
+msgstr ""
+
+#: library/custom-post-type.php:76 library/custom-post-type.php:77
+msgid "pharmacy"
+msgstr ""
+
+#: library/custom-post-type.php:78
+msgid "All pharmacys"
+msgstr ""
+
+#: library/custom-post-type.php:80
+msgid "Add New pharmacy"
+msgstr ""
+
+#: library/custom-post-type.php:82
+msgid "Edit pharmacy"
+msgstr ""
+
+#: library/custom-post-type.php:83
+msgid "New pharmacy"
+msgstr ""
+
+#: library/custom-post-type.php:84
+msgid "View pharmacy"
+msgstr ""
+
+#: library/custom-post-type.php:85
+msgid "Search pharmacys"
+msgstr ""
+
+#: library/custom-post-type.php:90
+msgid "This is a pharmacy"
+msgstr ""
+
+#: library/custom-post-type.php:135
+msgid "Product Categories"
+msgstr ""
+
+#: library/custom-post-type.php:136
+msgid "Product Category"
+msgstr ""
+
+#: library/custom-post-type.php:137
+msgid "Search Product Categories"
+msgstr ""
+
+#: library/custom-post-type.php:138
+msgid "All Product Categories"
+msgstr ""
+
+#: library/custom-post-type.php:139
+msgid "Parent Product Category"
+msgstr ""
+
+#: library/custom-post-type.php:140
+msgid "Parent Product Category:"
+msgstr ""
+
+#: library/custom-post-type.php:141
+msgid "Edit Product Category"
+msgstr ""
+
+#: library/custom-post-type.php:142
+msgid "Update Product Category"
+msgstr ""
+
+#: library/custom-post-type.php:143
+msgid "Add New Product Category"
+msgstr ""
+
+#: library/custom-post-type.php:144
+msgid "New Product Category Name"
+msgstr ""
+
+#: library/custom-post-type.php:160
+msgid "Product Tags"
+msgstr ""
+
+#: library/custom-post-type.php:161
+msgid "Product Tag"
+msgstr ""
+
+#: library/custom-post-type.php:162
+msgid "Search Product Tags"
+msgstr ""
+
+#: library/custom-post-type.php:163
+msgid "All Product Tags"
+msgstr ""
+
+#: library/custom-post-type.php:164
+msgid "Parent Product Tag"
+msgstr ""
+
+#: library/custom-post-type.php:165
+msgid "Parent Product Tag:"
+msgstr ""
+
+#: library/custom-post-type.php:166
+msgid "Edit Product Tag"
+msgstr ""
+
+#: library/custom-post-type.php:167
+msgid "Update Product Tag"
+msgstr ""
+
+#: library/custom-post-type.php:168
+msgid "Add New Product Tag"
+msgstr ""
+
+#: library/custom-post-type.php:169
+msgid "New Product Tag Name"
+msgstr ""
+
 #: library/hermooder.php:87
 msgid "Page %s"
 msgstr ""
@@ -783,11 +1043,7 @@ msgid "http://www.itstar.ir"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Front Page"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Products Page"
+msgid "search nearest pharmacy"
 msgstr ""
 
 #: library/cmb/includes/CMB2_JS.php:109
