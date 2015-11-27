@@ -70,6 +70,10 @@ function hermooder_ahoy() {
 // let's get this party started
 add_action('after_setup_theme', 'hermooder_ahoy');
 
+add_action('after_setup_theme', 'hermooder_woocommerce_support');
+function hermooder_woocommerce_support() {
+	add_theme_support('woocommerce');
+}
 /************* OEMBED SIZE OPTIONS *************/
 
 // if ( ! isset( $content_width ) ) {
@@ -140,7 +144,7 @@ function hermooder_register_sidebars() {
 			'id'            => 'footer-col1',
 			'name'          => __('Footer first col', 'hermooder'),
 			'description'   => __('The first footer widget area', 'hermooder'),
-			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="footer-first footer-col1 widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
 			'after_title'   => '</h4>',
@@ -149,7 +153,7 @@ function hermooder_register_sidebars() {
 			'id'            => 'footer-col2',
 			'name'          => __('Footer 2d col', 'hermooder'),
 			'description'   => __('The first footer widget area', 'hermooder'),
-			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="footer-first footer-col2 widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
 			'after_title'   => '</h4>',
@@ -158,20 +162,20 @@ function hermooder_register_sidebars() {
 			'id'            => 'footer-col3',
 			'name'          => __('Footer 3rd col', 'hermooder'),
 			'description'   => __('The first footer widget area', 'hermooder'),
-			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="footer-first footer-col3 widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h4 class="widgettitle">',
 			'after_title'   => '</h4>',
 		));
-	register_sidebar(array(
-			'id'            => 'footer-col4',
-			'name'          => __('Footer 4th Col', 'hermooder'),
-			'description'   => __('The first footer widget area', 'hermooder'),
-			'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h4 class="widgettitle">',
-			'after_title'   => '</h4>',
-		));
+	// register_sidebar(array(
+	//   'id' => 'footer-col4',
+	//   'name' => __( 'Footer 4th Col', 'hermooder' ),
+	//   'description' => __( 'The first footer widget area', 'hermooder' ),
+	//   'before_widget' => '<aside id="%1$s" class="footer-first widget %2$s">',
+	//   'after_widget' => '</aside>',
+	//   'before_title' => '<h4 class="widgettitle">',
+	//   'after_title' => '</h4>',
+	// ));
 
 }// don't remove this bracket!
 
@@ -262,7 +266,7 @@ function hermooder_search_form($form) {
 
 	if (ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it') {
 		$form = '<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'" >
-      <div><label class="screen-reader-text" for="s">'.__('Search for:').'</label><br />
+      <div><label class="screen-reader-text" for="s">'.__('Search for:', 'hermooder').'</label><br />
       <input type="text" value="'.get_search_query().'" name="s" id="s" />
       <input type="submit" value="'.__('Search').'" name="submit" id="submit" />
       <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
@@ -270,7 +274,7 @@ function hermooder_search_form($form) {
       </form>';
 	} else {
 		$form = '<form role="search" method="get" id="searchform" class="searchform" action="'.home_url('/').'" >
-      <div><label class="screen-reader-text" for="s">'.__('Search for:').'</label><br />
+      <div><label class="screen-reader-text" for="s">'.__('Search for:', 'hermooder').'</label><br />
       <input type="text" value="'.get_search_query().'" name="s" id="s" />
       <input type="submit" value="'.__('Search').'" name="submit" id="submit" />
       </div>
@@ -281,6 +285,11 @@ function hermooder_search_form($form) {
 }
 
 add_filter('get_search_form', 'hermooder_search_form');
+
+function hermooder_excerpt_length($length) {
+	return 20;
+}
+add_filter('excerpt_length', 'hermooder_excerpt_length', 999);
 
 if (ICL_LANGUAGE_CODE == 'en') {
 
@@ -295,5 +304,478 @@ if (ICL_LANGUAGE_CODE == 'en') {
 	remove_filter('comment_text', 'ztjalali_ch_arabic_to_persian');
 
 }
+
+/*------------------Widgets------------------------------------*/
+
+class contact_info_widget extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			// Base ID of your widget
+			'contact_info_widget',
+
+			// Widget name will appear in UI
+			__('Contact Informaion Widget', 'hermooder'),
+
+			// Widget description
+			array('description' => __('Display Contact Information', 'hermooder'), )
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+	public function widget($args, $instance) {
+		global $wp_query;
+
+		$title    = apply_filters('widget_title', $instance['title']);
+		$address  = $instance['address'];
+		$zip      = $instance['zip'];
+		$telfax   = $instance['telfax'];
+		$email    = $instance['email'];
+		$smspanel = $instance['smspanel'];
+
+		$content = '<main class="widgetbody">';
+		$content .= '<p><i class="fa fa-map-marker"></i>'.__('Address : ', 'hermooder').$address.'</p>';
+		$content .= '<p><i class="fa fa-fire"></i>'.__('Zip : ', 'hermooder').$zip.'</p>';
+		$content .= '<p><i class="fa fa-fax"></i>'.__('TelFax : ', 'hermooder').$telfax.'</p>';
+		$content .= '<p><i class="fa fa-tablet"></i></i>'.__('Sms Panel : ', 'hermooder').$smspanel.'</p>';
+		$content .= '<p><i class="fa fa-envelope"></i>'.__('Email : ', 'hermooder').$email.'</p>';
+		$content .= '</main>';
+
+		// before and after widget arguments are defined by themes
+		echo $args['before_widget'];
+
+		if (!empty($title)) {
+			echo $args['before_title'].$title.$args['after_title'];
+		}
+
+		echo $content;
+		// This is where you run the code and display the output
+		echo $args['after_widget'];
+	}
+
+	// Widget Backend
+	public function form($instance) {
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		} else {
+			$title = __('Last Posts', 'hermooder');
+		}
+
+		if (isset($instance['address'])) {
+			$address = $instance['address'];
+		} else {
+			$address = "No. ----";
+		}
+
+		if (isset($instance['zip'])) {
+			$zip = $instance['zip'];
+		} else {
+			$zip = "+98 ----";
+		}
+
+		if (isset($instance['telfax'])) {
+			$telfax = $instance['telfax'];
+		} else {
+			$telfax = "+98 ----";
+		}
+
+		if (isset($instance['email'])) {
+			$email = $instance['email'];
+		} else {
+			$email = "info@email.com";
+		}
+
+		if (isset($instance['smspanel'])) {
+			$smspanel = $instance['smspanel'];
+		} else {
+			$smspanel = '300000000';
+		}$smspanel = $instance['smspanel'];
+
+		// Widget admin form
+		?>
+		        <p>
+		            <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
+		        </p>
+		         <p>
+		            <label for="<?php echo $this->get_field_id('address');?>"><?php _e('Address :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('address');?>" name="<?php echo $this->get_field_name('address');?>" type="text" value="<?php echo esc_attr($address);?>" />
+		        </p>
+		         <p>
+		            <label for="<?php echo $this->get_field_id('zip');?>"><?php _e('Zip :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('zip');?>" name="<?php echo $this->get_field_name('zip');?>" type="text" value="<?php echo esc_attr($zip);?>" />
+		        </p>
+
+		        <p>
+		            <label for="<?php echo $this->get_field_id('telfax');?>"><?php _e('TelFax :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('telfax');?>" name="<?php echo $this->get_field_name('telfax');?>" type="text" value="<?php echo esc_attr($telfax);?>" />
+		        </p>
+
+		         <p>
+		            <label for="<?php echo $this->get_field_id('smspanel');?>"><?php _e('Sms Panel :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('smspanel');?>" name="<?php echo $this->get_field_name('smspanel');?>" type="text" value="<?php echo esc_attr($smspanel);?>" />
+		        </p>
+
+		        <p>
+		            <label for="<?php echo $this->get_field_id('email');?>"><?php _e('Email Address :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('email');?>" name="<?php echo $this->get_field_name('email');?>" type="text" value="<?php echo esc_attr($email);?>" />
+		        </p>
+
+		<?php
+	}
+
+	// Updating widget replacing old instances with new
+	public function update($new_instance, $old_instance) {
+		$instance             = array();
+		$instance['title']    = (!empty($new_instance['title']))?strip_tags($new_instance['title']):'';
+		$instance['address']  = (!empty($new_instance['address']))?strip_tags($new_instance['address']):'';
+		$instance['zip']      = (!empty($new_instance['zip']))?strip_tags($new_instance['zip']):'';
+		$instance['telfax']   = (!empty($new_instance['telfax']))?strip_tags($new_instance['telfax']):'';
+		$instance['email']    = (!empty($new_instance['email']))?strip_tags($new_instance['email']):'';
+		$instance['smspanel'] = (!empty($new_instance['smspanel']))?strip_tags($new_instance['smspanel']):'';
+		return $instance;
+	}
+}// Class wpb_widget ends here
+
+/* DON'T DELETE THIS CLOSING TAG */
+/*---------------Widgets----------------------*/
+
+// Creating the widget
+class last_products_widget extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			// Base ID of your widget
+			'last_products_widget',
+
+			// Widget name will appear in UI
+			__('Last Products Widget', 'hermooder'),
+
+			// Widget description
+			array('description' => __('Display Last Products', 'hermooder'), )
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+	public function widget($args, $instance) {
+		global $wp_query;
+
+		$title  = apply_filters('widget_title', $instance['title']);
+		$number = $instance['number'];
+		$term   = get_term($instance['cat'], 'product_cat');
+
+		//var_dump($instance);
+		$products = get_posts(array(
+				'post_type'      => 'product',
+				'posts_per_page' => $number,
+				'product_cat'    => $term->slug,
+			)
+		);
+
+		$content = '<ul class="widget-list">';
+		foreach ($products as $product):setup_postdata($product);
+		$url   = get_the_permalink($product->ID);
+		$thumb = get_the_post_thumbnail($product->ID, 'product-thumb');
+		$name  = $product->post_title;
+		$content .= '<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+		endforeach;
+		$content .= '</ul>';
+
+		// before and after widget arguments are defined by themes
+		echo $args['before_widget'];
+
+		if (!empty($title)) {
+			echo $args['before_title'].$title.$args['after_title'];
+		}
+
+		echo $content;
+		// This is where you run the code and display the output
+		echo $args['after_widget'];
+	}
+
+	// Widget Backend
+	public function form($instance) {
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		} else {
+			$title = __('Last Products', 'hermooder');
+		}
+		if (isset($instance['number'])) {
+			$number = $instance['number'];
+		} else {
+			$number = 5;
+		}
+		if (isset($instance['cat'])) {
+			$cat = $instance['cat'];
+		} else {
+			$cat = "";
+		}
+		// Widget admin form
+		?>
+		        <p>
+		            <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
+		        </p>
+		         <p>
+		            <label for="<?php echo $this->get_field_id('number');?>"><?php _e('product Numbers :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('number');?>" name="<?php echo $this->get_field_name('number');?>" type="text" value="<?php echo esc_attr($number);?>" />
+		        </p>
+		        <p>
+		            <label for="<?php echo $this->get_field_id('cat');?>"><?php _e('Product Category :', 'hermooder');
+		?></label>
+		<?php wp_dropdown_categories(array(
+				'name'     => $this->get_field_name('cat'),
+				'id'       => $this->get_field_id('cat'),
+				'class'    => 'widefat',
+				'taxonomy' => 'product_cat',
+				'echo'     => '1',
+				'selected' => esc_attr($cat),
+			));?>
+		</p>
+
+		<?php
+	}
+
+	// Updating widget replacing old instances with new
+	public function update($new_instance, $old_instance) {
+		$instance           = array();
+		$instance['title']  = (!empty($new_instance['title']))?strip_tags($new_instance['title']):'';
+		$instance['number'] = (!empty($new_instance['number']))?strip_tags($new_instance['number']):'';
+		$instance['cat']    = (!empty($new_instance['cat']))?strip_tags($new_instance['cat']):'';
+		//var_dump($instance);
+		return $instance;
+	}
+}// Class wpb_widget ends here
+
+class last_projects_widget extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			// Base ID of your widget
+			'last_projects_widget',
+
+			// Widget name will appear in UI
+			__('Last Projects Widget', 'hermooder'),
+
+			// Widget description
+			array('description' => __('Display Last Projects', 'hermooder'), )
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+	public function widget($args, $instance) {
+		global $wp_query;
+
+		$title  = apply_filters('widget_title', $instance['title']);
+		$number = $instance['number'];
+		$term   = get_term($instance['cat'], 'project_cat');
+
+		$projects = get_posts(array(
+				'post_type'      => 'project',
+				'posts_per_page' => $number,
+				'project_cat'    => $term->slug,
+			)
+		);
+		//var_dump($notifies);
+		$content = '<ul class="widget-list">';
+		foreach ($projects as $project):setup_postdata($project);
+		$url   = get_the_permalink($project->ID);
+		$thumb = get_the_post_thumbnail($project->ID, 'product-thumb');
+		$name  = $project->post_title;
+		$content .= '<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+		endforeach;
+		$content .= '</ul>';
+
+		// before and after widget arguments are defined by themes
+		echo $args['before_widget'];
+
+		if (!empty($title)) {
+			echo $args['before_title'].$title.$args['after_title'];
+		}
+
+		echo $content;
+		// This is where you run the code and display the output
+		echo $args['after_widget'];
+	}
+
+	// Widget Backend
+	public function form($instance) {
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		} else {
+			$title = __('Last Projects', 'hermooder');
+		}
+		if (isset($instance['number'])) {
+			$number = $instance['number'];
+		} else {
+			$number = 5;
+		}
+		if (isset($instance['cat'])) {
+			$cat = $instance['cat'];
+		} else {
+			$cat = "";
+		}
+		// Widget admin form
+		?>
+		        <p>
+		            <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
+		        </p>
+		         <p>
+		            <label for="<?php echo $this->get_field_id('number');?>"><?php _e('Project Numbers :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('number');?>" name="<?php echo $this->get_field_name('number');?>" type="text" value="<?php echo esc_attr($number);?>" />
+		        </p>
+		        <p>
+		            <label for="<?php echo $this->get_field_id('cat');?>"><?php _e('Project Category :', 'hermooder');
+		?></label>
+		<?php wp_dropdown_categories(array(
+				'name'     => $this->get_field_name('cat'),
+				'id'       => $this->get_field_id('cat'),
+				'class'    => 'widefat',
+				'taxonomy' => 'project_cat',
+				'echo'     => '1',
+				'selected' => esc_attr($cat),
+			));?>
+		</p>
+		<?php
+	}
+
+	// Updating widget replacing old instances with new
+	public function update($new_instance, $old_instance) {
+		$instance           = array();
+		$instance['title']  = (!empty($new_instance['title']))?strip_tags($new_instance['title']):'';
+		$instance['number'] = (!empty($new_instance['number']))?strip_tags($new_instance['number']):'';
+		$instance['cat']    = (!empty($new_instance['cat']))?strip_tags($new_instance['cat']):'';
+		return $instance;
+	}
+}// Class wpb_widget ends here
+
+class last_posts_by_cat_widget extends WP_Widget {
+
+	function __construct() {
+		parent::__construct(
+			// Base ID of your widget
+			'last_posts_by_cat_widget',
+
+			// Widget name will appear in UI
+			__('Last Posts By Category Widget', 'hermooder'),
+
+			// Widget description
+			array('description' => __('Display Last Posts in Category', 'hermooder'), )
+		);
+	}
+
+	// Creating widget front-end
+	// This is where the action happens
+	public function widget($args, $instance) {
+		global $wp_query;
+
+		$title  = apply_filters('widget_title', $instance['title']);
+		$number = $instance['number'];
+		$cat    = get_category($instance['cat']);
+
+		$posts = get_posts(array(
+				'post_type'      => 'post',
+				'posts_per_page' => $number,
+				'category'       => $cat->term_id,
+			)
+		);
+
+		$content = '<ul class="widget-list">';
+		foreach ($posts as $post):setup_postdata($post);
+		$url   = get_the_permalink($post->ID);
+		$thumb = get_the_post_thumbnail($post->ID, 'product-thumb');
+		$name  = $post->post_title;
+		$content .= '<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+		endforeach;
+		$content .= '</ul>';
+
+		// before and after widget arguments are defined by themes
+		echo $args['before_widget'];
+
+		if (!empty($title)) {
+			echo $args['before_title'].$title.$args['after_title'];
+		}
+
+		echo $content;
+		// This is where you run the code and display the output
+		echo $args['after_widget'];
+	}
+
+	// Widget Backend
+	public function form($instance) {
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		} else {
+			$title = __('Last Posts', 'hermooder');
+		}
+		if (isset($instance['number'])) {
+			$number = $instance['number'];
+		} else {
+			$number = 5;
+		}
+		if (isset($instance['cat'])) {
+			$cat = $instance['cat'];
+		} else {
+			$cat = "";
+		}
+		// Widget admin form
+		?>
+		        <p>
+		            <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
+		        </p>
+		         <p>
+		            <label for="<?php echo $this->get_field_id('number');?>"><?php _e('Post Numbers :', 'hermooder');
+		?></label>
+		            <input class="widefat" id="<?php echo $this->get_field_id('number');?>" name="<?php echo $this->get_field_name('number');?>" type="text" value="<?php echo esc_attr($number);?>" />
+		        </p>
+		        <p>
+		        <label for="<?php echo $this->get_field_id('cat');?>"><?php _e('Post Category :', 'hermooder');
+		?></label>
+		<?php wp_dropdown_categories(array(
+				'name'     => $this->get_field_name('cat'),
+				'id'       => $this->get_field_id('cat'),
+				'class'    => 'widefat',
+				'taxonomy' => 'category',
+				'echo'     => '1',
+				'selected' => esc_attr($cat),
+			));?>
+		</p>
+		<?php
+	}
+
+	// Updating widget replacing old instances with new
+	public function update($new_instance, $old_instance) {
+		$instance           = array();
+		$instance['title']  = (!empty($new_instance['title']))?strip_tags($new_instance['title']):'';
+		$instance['number'] = (!empty($new_instance['number']))?strip_tags($new_instance['number']):'';
+		$instance['cat']    = (!empty($new_instance['cat']))?strip_tags($new_instance['cat']):'';
+		return $instance;
+	}
+}// Class wpb_widget ends here
+
+// Register and load the widget
+function hermooder_widget() {
+	register_widget('last_products_widget');
+	register_widget('last_projects_widget');
+	register_widget('last_posts_by_cat_widget');
+	register_widget('contact_info_widget');
+}
+add_action('widgets_init', 'hermooder_widget');
 
 ?>

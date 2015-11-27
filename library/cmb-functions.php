@@ -2,7 +2,7 @@
 /**
  * Include and setup custom metaboxes and fields. (make sure you copy this file to outside the hermooder directory)
  *
- * Be sure to replace all instances of 'hermooder_' with your project's prefix.
+ * Be sure to replace all instances of 'hermooder_' with your pharmacy's prefix.
  * http://nacin.com/2010/05/11/in-wordpress-prefix-everything/
  *
  * @category YourThemeOrPlugin
@@ -183,3 +183,159 @@ function hermooder_register_page_banner_metabox() {
 	
 }
 
+/******************************************************************/
+/*--------------------Product Features-------------------------------*/
+/******************************************************************/
+ add_action( 'cmb2_init', 'hermooder_register_product_features_metabox' );
+function hermooder_register_product_features_metabox() {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_hermooder_group_';
+	
+	$cmb_group = new_cmb2_box( array(
+		'id'           => $prefix . 'product_features',
+		'title'        => __( 'Product Features', 'hermooder' ),
+		'object_types' => array( 'product', ),
+	) );
+
+	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
+	$group_field_id = $cmb_group->add_field( array(
+		'id'          => $prefix.'feature',
+		'type'        => 'group',
+		'description' => __( 'Add Product features', 'hermooder' ),
+		'options'     => array(
+			'group_title'   => __( 'feature {#}', 'hermooder' ), // {#} gets replaced by row number
+			'add_button'    => __( 'Add Another feature', 'hermooder' ),
+			'remove_button' => __( 'Remove feature', 'hermooder' ),
+			'sortable'      => true, // beta
+		),
+	) );
+
+		
+ 	
+ 	$cmb_group->add_group_field($group_field_id , array(
+		'name'    => __( 'Feature Name', 'hermooder' ),
+		'desc'    => __( 'write the feature name ', 'hermooder' ),
+		'id'      => 'feature_name',
+		'type'    => 'text',
+		
+			
+	) );
+	
+	$cmb_group->add_group_field($group_field_id , array(
+		'name'    => __( 'Feature Description ', 'hermooder' ),
+		'desc'    => __( 'write the feature Description if needed', 'hermooder' ),
+		'id'      => 'feature_desc',
+		'type'    => 'textarea',
+		
+			
+	) );
+
+	$cmb_group->add_group_field($group_field_id , array(
+		'name'         => __( 'Images', 'hermooder' ),
+		'desc'         => __( 'Upload or add multiple images/attachments.', 'hermooder' ),
+		'id'           => $prefix . 'image_list',
+		'type'         => 'file_list',
+		'preview_size' => array( 54	, 54 ), // Default: array( 50, 50 )
+	) );
+	
+	
+}
+/******************************************************************/
+/*--------------------Product Features-------------------------------*/
+/******************************************************************/
+ add_action( 'cmb2_init', 'hermooder_register_product_features_metabox' );
+function hermooder_register_product_features_metabox() {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_hermooder_group_';
+	
+	$cmb_group = new_cmb2_box( array(
+		'id'           => $prefix . 'product_features',
+		'title'        => __( 'Product Features', 'hermooder' ),
+		'object_types' => array( 'product', ),
+	) );
+
+	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
+	$group_field_id = $cmb_group->add_field( array(
+		'id'          => $prefix.'feature',
+		'type'        => 'group',
+		'description' => __( 'Add Product features', 'hermooder' ),
+		'options'     => array(
+			'group_title'   => __( 'feature {#}', 'hermooder' ), // {#} gets replaced by row number
+			'add_button'    => __( 'Add Another feature', 'hermooder' ),
+			'remove_button' => __( 'Remove feature', 'hermooder' ),
+			'sortable'      => true, // beta
+		),
+	) );
+
+		
+ 	
+ 	$cmb_group->add_group_field($group_field_id , array(
+		'name'    => __( 'Feature Name', 'hermooder' ),
+		'desc'    => __( 'write the feature name ', 'hermooder' ),
+		'id'      => 'feature_name',
+		'type'    => 'text',
+		
+			
+	) );
+	
+	$cmb_group->add_group_field($group_field_id , array(
+		'name'    => __( 'Feature Description ', 'hermooder' ),
+		'desc'    => __( 'write the feature Description if needed', 'hermooder' ),
+		'id'      => 'feature_desc',
+		'type'    => 'textarea',
+		
+			
+	) );
+
+	$cmb_group->add_group_field($group_field_id , array(
+		'name'         => __( 'Images', 'hermooder' ),
+		'desc'         => __( 'Upload or add multiple images/attachments.', 'hermooder' ),
+		'id'           => $prefix . 'image_list',
+		'type'         => 'file_list',
+		'preview_size' => array( 54	, 54 ), // Default: array( 50, 50 )
+	) );
+	
+	
+}
+/******************************************************************/
+/*--------------------Pharmacy-------------------------------*/
+/******************************************************************/
+add_action( 'cmb2_init', 'hermooder_register_pharmacy_images_metabox' );
+/**
+ * Hook in and add a demo metabox. Can only happen on the 'cmb2_init' hook.
+ */
+function hermooder_register_pharmacy_images_metabox() {
+
+	// Start with an underscore to hide fields from custom fields list
+	$prefix = '_hermooder_';
+
+	/**
+	 * Sample metabox to demonstrate each field type included
+	 */
+	$cmb_demo = new_cmb2_box( array(
+		'id'            => $prefix . 'pharmacy_images',
+		'title'         => __( 'pharmacy Images', 'hermooder' ),
+		'object_types'  => array( 'pharmacy' ), // Post type
+		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
+		// 'context'    => 'normal',
+		// 'priority'   => 'high',
+		// 'show_names' => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // true to keep the metabox closed by default
+	) );
+
+
+	
+	$cmb_demo->add_field( array(
+		'name'         => __( 'Images', 'hermooder' ),
+		'desc'         => __( 'Upload or add multiple images/attachments.', 'hermooder' ),
+		'id'           => $prefix . 'image_list',
+		'type'         => 'file_list',
+		'preview_size' => array( 130, 130 ), // Default: array( 50, 50 )
+	) );
+
+	
+
+}

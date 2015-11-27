@@ -453,7 +453,339 @@ class contact_info_widget extends WP_Widget {
     }
 } // Class wpb_widget ends here
 
+/* DON'T DELETE THIS CLOSING TAG */ 
+/*---------------Widgets----------------------*/
+
+// Creating the widget 
+class last_products_widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+        // Base ID of your widget
+        'last_products_widget', 
+
+        // Widget name will appear in UI
+        __('Last Products Widget', 'hermooder'), 
+
+        // Widget description
+        array( 'description' => __( 'Display Last Products', 'hermooder' ), ) 
+        );
+    }
+
+    // Creating widget front-end
+    // This is where the action happens
+    public function widget( $args, $instance ) {
+        global $wp_query;
+
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $number = $instance['number'];
+        $term = get_term($instance['cat'],'product_cat');
+
+        //var_dump($instance);
+        $products = get_posts(array(
+            'post_type' => 'product',
+            'posts_per_page' => $number,
+            'product_cat'         => $term->slug,
+            )
+        );
+       
+        $content = '<ul class="widget-list">';
+        foreach($products as $product) : setup_postdata( $product );
+          $url = get_the_permalink($product->ID);
+          $thumb = get_the_post_thumbnail($product->ID,'product-thumb');
+          $name = $product->post_title;
+          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+        endforeach;
+        $content .= '</ul>';
+
+      
+       
+
+        
+        // before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+        
+        if ( ! empty( $title ) )
+          echo $args['before_title'] . $title . $args['after_title'];
+          echo $content;
+        // This is where you run the code and display the output
+          echo $args['after_widget'];
+    }
+        
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        }else {
+            $title = __( 'Last Products', 'hermooder' );
+        }
+        if ( isset( $instance[ 'number' ] ) ) {
+            $number = $instance[ 'number' ];
+        }else {
+            $number = 5;
+        }
+        if ( isset( $instance[ 'cat' ] ) ) {
+            $cat = $instance[ 'cat' ];
+        }else {
+            $cat ="";
+        }
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+         <p>
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'product Numbers :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Product Category :','hermooder' ); ?></label> 
+           <?php wp_dropdown_categories(array(
+                  'name'               => $this->get_field_name( 'cat' ),
+                  'id'                 => $this->get_field_id( 'cat' ),
+                  'class'              => 'widefat',
+                  'taxonomy'           => 'product_cat',
+                  'echo'               => '1',
+                  'selected'          =>esc_attr( $cat ),
+            )); ?>
+
+
+        </p>
+        
+        <?php 
+    }
+      
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
+        $instance['cat'] = ( ! empty( $new_instance['cat'] ) ) ? strip_tags( $new_instance['cat'] ) : '';
+        //var_dump($instance);
+        return $instance;
+    }
+} // Class wpb_widget ends here
+
+class last_projects_widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+        // Base ID of your widget
+        'last_projects_widget', 
+
+        // Widget name will appear in UI
+        __('Last Projects Widget', 'hermooder'), 
+
+        // Widget description
+        array( 'description' => __( 'Display Last Projects', 'hermooder' ), ) 
+        );
+    }
+
+    // Creating widget front-end
+    // This is where the action happens
+    public function widget( $args, $instance ) {
+        global $wp_query;
+
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $number = $instance['number'];
+        $term = get_term($instance['cat'],'project_cat');
+
+        $projects = get_posts(array(
+            'post_type' => 'project',
+            'posts_per_page' => $number,
+            'project_cat' => $term->slug,
+            )
+        );
+        //var_dump($notifies);
+        $content = '<ul class="widget-list">';
+        foreach($projects as $project) : setup_postdata( $project );
+          $url = get_the_permalink($project->ID);
+          $thumb = get_the_post_thumbnail($project->ID,'product-thumb');
+          $name = $project->post_title;
+          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+        endforeach;
+        $content .= '</ul>';
+
+      
+       
+
+        
+        // before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+        
+        if ( ! empty( $title ) )
+          echo $args['before_title'] . $title . $args['after_title'];
+          echo $content;
+        // This is where you run the code and display the output
+          echo $args['after_widget'];
+    }
+        
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        }else {
+            $title = __( 'Last Projects', 'hermooder' );
+        }
+        if ( isset( $instance[ 'number' ] ) ) {
+            $number = $instance[ 'number' ];
+        }else {
+            $number = 5;
+        }
+        if ( isset( $instance[ 'cat' ] ) ) {
+            $cat = $instance[ 'cat' ];
+        }else {
+            $cat = "";
+        }
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+         <p>
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Project Numbers :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
+        </p>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Project Category :','hermooder' ); ?></label> 
+           <?php wp_dropdown_categories(array(
+                  'name'               => $this->get_field_name( 'cat' ),
+                  'id'                 => $this->get_field_id( 'cat' ),
+                  'class'              => 'widefat',
+                  'taxonomy'           => 'project_cat',
+                  'echo'               => '1',
+                  'selected'          =>esc_attr( $cat ),
+            )); ?>
+        </p>
+        <?php 
+    }
+      
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
+        $instance['cat'] = ( ! empty( $new_instance['cat'] ) ) ? strip_tags( $new_instance['cat'] ) : '';
+        return $instance;
+    }
+} // Class wpb_widget ends here
+
+
+class last_posts_by_cat_widget extends WP_Widget {
+
+    function __construct() {
+        parent::__construct(
+        // Base ID of your widget
+        'last_posts_by_cat_widget', 
+
+        // Widget name will appear in UI
+        __('Last Posts By Category Widget', 'hermooder'), 
+
+        // Widget description
+        array( 'description' => __( 'Display Last Posts in Category', 'hermooder' ), ) 
+        );
+    }
+
+    // Creating widget front-end
+    // This is where the action happens
+    public function widget( $args, $instance ) {
+        global $wp_query;
+
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $number = $instance['number'];
+        $cat = get_category($instance['cat']);
+
+      
+        $posts = get_posts(array(
+            'post_type' => 'post',
+            'posts_per_page' => $number,
+            'category'         => $cat->term_id,
+            )
+        );
+        
+       
+        $content = '<ul class="widget-list">';
+        foreach($posts as $post) : setup_postdata( $post );
+          $url = get_the_permalink($post->ID);
+          $thumb = get_the_post_thumbnail($post->ID,'product-thumb');
+          $name = $post->post_title;
+          $content .='<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
+        endforeach;
+        $content .= '</ul>';
+
+      
+       
+
+        
+        // before and after widget arguments are defined by themes
+        echo $args['before_widget'];
+        
+        if ( ! empty( $title ) )
+          echo $args['before_title'] . $title . $args['after_title'];
+          echo $content;
+        // This is where you run the code and display the output
+          echo $args['after_widget'];
+    }
+        
+    // Widget Backend 
+    public function form( $instance ) {
+        if ( isset( $instance[ 'title' ] ) ) {
+            $title = $instance[ 'title' ];
+        }else {
+            $title = __( 'Last Posts', 'hermooder' );
+        }
+        if ( isset( $instance[ 'number' ] ) ) {
+            $number = $instance[ 'number' ];
+        }else {
+            $number = 5;
+        }
+        if ( isset( $instance[ 'cat' ] ) ) {
+            $cat = $instance[ 'cat' ];
+        }else {
+            $cat = "";
+        }
+        // Widget admin form
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+         <p>
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Post Numbers :','hermooder' ); ?></label> 
+            <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
+        </p>
+        <p>
+        <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Post Category :','hermooder' ); ?></label> 
+        <?php wp_dropdown_categories(array(
+                  'name'               => $this->get_field_name( 'cat' ),
+                  'id'                 => $this->get_field_id( 'cat' ),
+                  'class'              => 'widefat',
+                  'taxonomy'           => 'category',
+                  'echo'               => '1',
+                  'selected'           => esc_attr($cat ),
+            )); ?>
+        </p>
+        <?php 
+    }
+      
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['number'] = ( ! empty( $new_instance['number'] ) ) ? strip_tags( $new_instance['number'] ) : '';
+        $instance['cat'] = ( ! empty( $new_instance['cat'] ) ) ? strip_tags( $new_instance['cat'] ) : '';
+        return $instance;
+    }
+} // Class wpb_widget ends here
+
+
+// Register and load the widget
 function hermooder_widget() {
+  register_widget( 'last_products_widget' );
+  register_widget( 'last_projects_widget' );
+  register_widget( 'last_posts_by_cat_widget' );
   register_widget( 'contact_info_widget' );
 }
 add_action( 'widgets_init', 'hermooder_widget' );
