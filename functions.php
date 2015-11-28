@@ -991,51 +991,48 @@ function hermooder_request_pharmacies() {
 
 global $wp,$wp_query; 
 
-$query_vars = new stdClass();
-   
-   if ( !wp_verify_nonce( $_REQUEST['nonce'], "Hermooder_search_pharmacy_nonce")) {
-      exit("you dont have access");
-   }   
-
-   $requested_uri = $_REQUEST["requested_uri"];
-   $_SERVER['REQUEST_URI'] = $requested_uri;
-   $_SERVER['PHP_SELF'] = '/wordpress/index.php';
-  
-    
-    $wp->parse_request();
-    $query_vars = $wp->query_vars;
-
-         
-    $wp_query->parse_query($query_vars);
-
-    $query_vars['is_single'] = $wp_query->is_single;
-    $query_vars['is_page'] = $wp_query->is_page;
-    $query_vars['is_archive'] = $wp_query->is_archive;
-    $query_vars['is_date'] = $wp_query->is_date;
-    $query_vars['is_year'] = $wp_query->is_year;
-    $query_vars['is_month'] = $wp_query->is_month;
-    $query_vars['is_day'] = $wp_query->is_day;
-    $query_vars['is_author'] = $wp_query->is_author;
-    $query_vars['is_category'] = $wp_query->is_category;
-    $query_vars['is_tag'] = $wp_query->is_tag;
-    $query_vars['is_tax'] = $wp_query->is_tax;
-    $query_vars['is_feed'] = $wp_query->is_feed;
-    $query_vars['is_home'] = $wp_query->is_home;
-    $query_vars['is_404'] = $wp_query->is_404;
-    $query_vars['is_paged'] = $wp_query->is_paged;
-    $query_vars['is_admin'] = $wp_query->is_admin;
-    $query_vars['is_attachment'] = $wp_query->is_attachment;
-    $query_vars['is_singular'] = $wp_query->is_singular;
-    $query_vars['is_posts_page'] = $wp_query->is_posts_page;
-    $query_vars['is_post_type_archive'] = $wp_query->is_post_type_archive;
-    $query_vars['is_comment_feed '] = $wp_query->is_comment_feed;
-    $query_vars['is_comment_popup'] = $wp_query->is_comment_popup;
-    $query_vars['max_num_pages'] = $wp_query->max_num_pages;
-    $query_vars['found_posts'] = $wp_query->found_posts;
-    $query_vars['post_count'] = $wp_query->post_count;
-  
-
-    $query_vars = json_encode($query_vars);
+require("phpsqlsearch_dbinfo.php");
+// Get parameters from URL
+$center_lat = $_SERVER["lat"];
+$center_lng = $_SERVER["lng"];
+$radius = $_SERVER["radius"];
+// Start XML file, create parent node
+$dom = new DOMDocument("1.0");
+$node = $dom->createElement("markers");
+$parnode = $dom->appendChild($node);
+// Opens a connection to a mySQL server
+$connection=mysql_connect (localhost, $username, $password);
+if (!$connection) {
+  die("Not connected : " . mysql_error());
+}
+// Set the active mySQL database
+$db_selected = mysql_select_db($database, $connection);
+if (!$db_selected) {
+  die ("Can\'t use db : " . mysql_error());
+}
+// Search the rows in the markers table
+$query = sprintf("SELECT address, name, lat, lng, ( 3959 * acos( cos( radians('%s') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('%s') ) + sin( radians('%s') ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < '%s' ORDER BY distance LIMIT 0 , 20",
+  mysql_real_escape_string($center_lat),
+  mysql_real_escape_string($center_lng),
+  mysql_real_escape_string($center_lat),
+  mysql_real_escape_string($radius));
+$result = mysql_query($query);
+if (!$result) {
+  die("Invalid query: " . mysql_error());
+}
+header("Content-type: text/xml");
+// Iterate through the rows, adding XML nodes for each
+while ($row = @mysql_fetch_assoc($result)){
+  $node = $dom->createElement("marker");
+  $newnode = $parnode->appendChild($node);
+  $newnode->setAttribute("name", $row['name']);
+  $newnode->setAttribute("address", $row['address']);
+  $newnode->setAttribute("lat", $row['lat']);
+  $newnode->setAttribute("lng", $row['lng']);
+  $newnode->setAttribute("distance", $row['distance']);
+}
+echo $dom->saveXML();
+?>
     
 
 
@@ -1058,16 +1055,5 @@ function hermooder_request_pharmacies_approval() {
    die();
 }
 
-function hermoodr_make_pharmacy_json_file($ID,$post) {
-  var_dump($post);
-  $fp = fopen('results.json', 'w');
-  fwrite($fp, json_encode($response));
-  fclose($fp);
-}
-// add_action('trashed_post ','hermoodr_make_pharmacy_json_file',10,2);
-// add_action('untrashed_post ','hermoodr_make_pharmacy_json_file',10,2);
-// add_action('deleted_post ','hermoodr_make_pharmacy_json_file',10,2);
-// add_action('post_updated ','hermoodr_make_pharmacy_json_file',10,2);
-// add_action('publish_post ','hermoodr_make_pharmacy_json_file',10,2);
 
 ?>
