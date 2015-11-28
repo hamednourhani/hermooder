@@ -90,6 +90,10 @@
 	        			               'depth' => 3,                                   // limit the depth of the nav
 	    					         'fallback_cb' => ''                             // fallback function (if there is one)
 							)); ?>
+
+							<div class="menu-search-area">
+								<?php echo hermooder_menu_search_form(); ?>
+							</div>
 											
 		
 					</nav>

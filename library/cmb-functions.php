@@ -148,8 +148,8 @@ function hermooder_register_pharmacy_images_metabox() {
 	 * Sample metabox to demonstrate each field type included
 	 */
 	$cmb_demo = new_cmb2_box( array(
-		'id'            => $prefix . 'pharmacy_images',
-		'title'         => __( 'pharmacy Images', 'hermooder' ),
+		'id'            => $prefix . 'pharmacy_information',
+		'title'         => __( 'pharmacy Information', 'hermooder' ),
 		'object_types'  => array( 'pharmacy' ), // Post type
 		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
@@ -225,7 +225,7 @@ function hermooder_register_page_banner_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'page_banner',
 		'title'         => __( 'Page Banner', 'hermooder' ),
-		'object_types'  => array( 'post','page','product','pharmacy'), // Post type
+		'object_types'  => array( 'post','page','product'), // Post type
 		// 'show_on_cb' => 'hermooder_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',

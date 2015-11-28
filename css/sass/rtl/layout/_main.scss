@@ -9,6 +9,14 @@
  		@include span-columns(8,12);
  		margin-right: auto;
  	}
+ 	article.hentry{
+		ul.pharmacy-information-list{
+			i:before{
+				padding-right : none;
+				padding-left : 7px;
+			}
+		}
+ 	}
  	 	
 }
 .grid-excerpt{

@@ -243,7 +243,7 @@ function hermooder_pagination(){
 
 function hermooder_SearchFilter($query) {
     if ($query->is_search) {
-      $query->set('post_type', array('page','post'));
+      $query->set('post_type', array('page','post','product'));
     }
     return $query;
     }
@@ -277,7 +277,7 @@ function hermooder_search_form( $form ) {
 
   if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder' ) . '</label><br />
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder' ) . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
@@ -285,7 +285,7 @@ function hermooder_search_form( $form ) {
       </form>';
   } else {
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder') . '</label><br />
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','hermooder') . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       </div>
@@ -294,8 +294,31 @@ function hermooder_search_form( $form ) {
 
   return $form;
 }
+function hermooder_menu_search_form() {
+  global $post,$wp_query,$wpdb;
+   
 
-add_filter( 'get_search_form', 'hermooder_search_form' );
+  if(ICL_LANGUAGE_CODE == 'en' || ICL_LANGUAGE_CODE == 'it'){
+      $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+      <div>
+        <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
+        <span name="submit" id="submit" ><i class="fa fa-search"></i></span>
+        <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
+      </div>
+      </form>';
+  } else {
+      $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+      <div>
+        <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
+        <span name="submit" id="submit" ><i class="fa fa-search"></i></span>
+      </div>
+      </form>';
+  }
+
+  return $form;
+}
+
+
 
 function hermooder_excerpt_length( $length ) {
   return 20;
@@ -866,4 +889,95 @@ add_action( 'widgets_init', 'hermooder_widget' );
 // chdir(get_file_dir());
 // include './otherfile.php';
 
+
+//------------ product order form ----------------
+function html_form_code() {
+
+   $posts = get_posts(array(
+          'post_type' => 'product',
+          'posts_per_page' => -1,
+          )
+      );
+     
+      $product_select = '<select multiple="multiple" class="select-products" name="cf-products[]" >';
+      foreach($posts as $post) : setup_postdata( $post );
+        $name = $post->post_title;
+        $product_select .='<option value="'.$name.'">'.$name.'</option>';
+      endforeach;
+     $product_select .= '</select>';
+
+
+  echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
+  echo '<p>';
+  echo __('Your Name (required)','hermooder'). '<br/>';
+  echo '<input type="text" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
+  echo '</p>';
+  echo '<p>';
+  echo __('Your Email (required)','hermooder'). '<br/>';
+  echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
+  echo '</p>';
+   echo __('Your Phone (required)','hermooder'). '<br/>';
+  echo '<input type="text" name="cf-phone" value="' . ( isset( $_POST["cf-phone"] ) ? esc_attr( $_POST["cf-phone"] ) : '' ) . '" size="40" />';
+  echo '</p>';
+  echo '<p>';
+  echo  __('Products List (required)','hermooder'). '<br/>';
+  echo  $product_select;
+  echo '</p>';
+  echo '<p>';
+  echo  __('More Information (required)','hermooder'). '<br/>';
+  echo '<textarea rows="10" cols="35" name="cf-message">' . ( isset( $_POST["cf-message"] ) ? esc_attr( $_POST["cf-message"] ) : '' ) . '</textarea>';
+  echo '</p>';
+  echo '<p><input type="submit" name="cf-submitted" value="'.__('Order Products','hermooder').'"></p>';
+  echo '</form>';
+}
+
+function deliver_mail() {
+
+  // if the submit button is clicked, send the email
+  if ( isset( $_POST['cf-submitted'] ) ) {
+    $ordered_products ="";
+    $counter = 1;
+    // sanitize form values
+    $name    = sanitize_text_field( $_POST["cf-name"] );
+    $email   = sanitize_email( $_POST["cf-email"] );
+    $phone   = sanitize_text_field( $_POST["cf-phone"] );
+    $products = $_POST["cf-products"];
+    
+    foreach ($_POST['cf-products'] as $product){
+       $ordered_products .= '<span>'.$counter.' - '.$product.'</span><br />';
+       $counter++;
+    }
+    
+    $message = "";
+    $message .= '<p>'.__('Name : ','hermooder').$name.'</p>';
+    $message .= '<p>'.__('Phone Number : ','hermooder').$phone.'</p>';
+    $message .= '<p>'.__('Email : ','hermooder').$email.'</p>';
+    $message .= '<p>'.__('Products : ','hermooder').'<br />'.$ordered_products.'</p>';
+    $message .= esc_textarea( $_POST["cf-message"] );
+
+    // get the blog administrator's email address
+    $to = get_option( 'admin_email' );
+
+    $headers = "From: $name <$email>" . "\r\n";
+
+    // If email has been process for sending, display a success message
+    if ( wp_mail( $to, __('Order Products','hermooder'), $message, $headers ) ) {
+      echo '<div>';
+      echo '<p>'.__('Thanks for Ordering Products, We will contact you as soon as posible.','hermooder'). '</p>';
+      echo '</div>';
+    } else {
+      echo __('An unexpected error occurred','hermooder');
+    }
+  }
+}
+
+function cf_shortcode() {
+  ob_start();
+  deliver_mail();
+  html_form_code();
+
+  return ob_get_clean();
+}
+
+add_shortcode( 'product_order_form', 'cf_shortcode' );
 ?>

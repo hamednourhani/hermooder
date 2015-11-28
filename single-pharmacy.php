@@ -17,16 +17,19 @@
 							
 								
 							<article class="hentry">
-								<?php if( get_post_meta(get_the_ID(),'_hermooder_title',1) !== 'no'){ ?>
 									<header class="article-title">
 										<a href="<?php the_permalink(); ?>">
 											<h3><?php the_title(); ?></h3>
 										</a>
 									</header>
-								<?php } ?>
 								<main class="article-body">
+									<ul class="pharmacy-information-list">
+										<li class="pharmacy-address"><i class="fa fa-map-marker"></i><?php echo __(' Address : ','hermooder').get_post_meta(get_the_ID(), '_hermooder_address', 1); ?></li>
+										<li class="pharmacy-phone"><i class="fa fa-phone"></i><?php echo __(' Phone : ','hermooder').get_post_meta(get_the_ID(), '_hermooder_phone', 1); ?></li>
+										<li class="pharmacy-email"><i class="fa fa-envelope"></i><?php echo __(' Email : ','hermooder').get_post_meta(get_the_ID(), '_hermooder_email', 1); ?></li>
+									</ul>
+
 									<?php the_content(); ?>
-									<?php get_template_part('library/post','meta'); ?>
 									
 									<!-- comments template -->
 									

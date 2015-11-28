@@ -15,7 +15,8 @@ body,html{
 body {
 	
 	// @extend .back-gradiant-ltr;
-	@include background(image-url("pattern_6.png") top left);
+	//@include background(image-url("pattern_6.png") top left);
+	background-color: $grey2;
 	font-family : $open-sans,$serif;
 	direction : ltr;
 	font-size : 100%;

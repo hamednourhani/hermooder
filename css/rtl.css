@@ -5,10 +5,6 @@
   src: url('fonts/Weblogma_Yekan.eot?1445920942');
   src: url('fonts/Weblogma_Yekan.eot?&1445920942#iefix') format('embedded-opentype'), url('fonts/Weblogma_Yekan.ttf?1445920942') format('truetype'), url('fonts/Weblogma_Yekan.woff?1445920942') format('woff');
   font-weight: "Weblogma_Yekan.svg"; }
-@font-face {
-  font-family: "BKoodakBold";
-  src: url('fonts/BKoodakBold.eot?1445920942');
-  src: url('fonts/BKoodakBold.eot?&1445920942#iefix') format('embedded-opentype'), url('fonts/BKoodakBold.ttf?1445920942') format('truetype'), url('fonts/BKoodakBold.woff?1445920942') format('woff'); }
 /******************************************************************
 Site Name:
 Author:
@@ -232,7 +228,7 @@ p {
 
 /* line 2, sass/rtl/base/_base.scss */
 body {
-  font-family: "Weblogma_Yekan", "BKoodakBold";
+  font-family: "Weblogma_Yekan";
   direction: rtl;
   font-size: 100%;
   line-height: 180%; }
@@ -410,44 +406,65 @@ body {
 /* line 29, sass/rtl/layout/_header.scss */
 .site-header div.hero span.site-desc {
   font-size: 140%; }
-/* line 33, sass/rtl/layout/_header.scss */
-.site-header ul.main-nav {
+/* line 34, sass/rtl/layout/_header.scss */
+.site-header nav.main-menu .menu-search-area {
+  left: 30px;
+  right: auto; }
+  /* line 37, sass/rtl/layout/_header.scss */
+  .site-header nav.main-menu .menu-search-area span#submit {
+    left: 10px;
+    right: auto;
+    top: 4px; }
+  /* line 42, sass/rtl/layout/_header.scss */
+  .site-header nav.main-menu .menu-search-area input#s {
+    padding-right: 5px;
+    padding-left: 20px; }
+/* line 47, sass/rtl/layout/_header.scss */
+.site-header nav.main-menu ul.main-nav {
   text-align: right; }
 
-/* line 38, sass/rtl/layout/_header.scss */
+/* line 54, sass/rtl/layout/_header.scss */
 ul.main-nav {
   text-align: right; }
   @media (min-width: 45em) {
-    /* line 40, sass/rtl/layout/_header.scss */
+    /* line 56, sass/rtl/layout/_header.scss */
     ul.main-nav > li {
       margin-right: auto;
       margin-left: 10px; } }
-  /* line 46, sass/rtl/layout/_header.scss */
+  /* line 61, sass/rtl/layout/_header.scss */
+  ul.main-nav > li.fa {
+    font: inherit;
+    font-family: "Weblogma_Yekan"; }
+    /* line 65, sass/rtl/layout/_header.scss */
+    ul.main-nav > li.fa:before {
+      font: normal normal normal 14px/1 FontAwesome !important;
+      color: #FFFFFF; }
+  /* line 71, sass/rtl/layout/_header.scss */
   ul.main-nav a {
     font-size: 110%; }
   @media (min-width: 45em) {
-    /* line 50, sass/rtl/layout/_header.scss */
+    /* line 75, sass/rtl/layout/_header.scss */
     ul.main-nav > li.menu-item-has-children > a:after {
-      left: -8px;
+      left: 30%;
       right: auto; } }
   @media (min-width: 45em) {
-    /* line 58, sass/rtl/layout/_header.scss */
+    /* line 84, sass/rtl/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
       left: auto;
       right: -30%; } }
   @media (min-width: 45em) {
-    /* line 65, sass/rtl/layout/_header.scss */
+    /* line 91, sass/rtl/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li.menu-item-has-children > a:after, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after {
       content: "\f0d9";
       left: 12px;
       right: auto; } }
   @media (min-width: 45em) {
-    /* line 77, sass/rtl/layout/_header.scss */
+    /* line 103, sass/rtl/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li ul {
       right: 100%;
       left: auto; } }
   @media (min-width: 45em) {
-    /* line 85, sass/rtl/layout/_header.scss */
+    /* line 111, sass/rtl/layout/_header.scss */
     ul.main-nav ul.sub-menu li:hover ul {
       right: 100%;
       left: auto; } }
@@ -466,25 +483,29 @@ ul.main-nav {
       float: right;
       margin-left: 1.53846%;
       margin-right: auto; } }
+  /* line 14, sass/rtl/layout/_main.scss */
+  .primary article.hentry ul.pharmacy-information-list i:before {
+    padding-right: none;
+    padding-left: 7px; }
 
-/* line 14, sass/rtl/layout/_main.scss */
+/* line 22, sass/rtl/layout/_main.scss */
 .grid-excerpt {
   font-size: 100%; }
 
-/* line 19, sass/rtl/layout/_main.scss */
+/* line 27, sass/rtl/layout/_main.scss */
 .secondary {
   width: 100%;
   float: right;
   margin-left: 1.53846%;
   display: inline; }
   @media (min-width: 45em) {
-    /* line 19, sass/rtl/layout/_main.scss */
+    /* line 27, sass/rtl/layout/_main.scss */
     .secondary {
       width: 32.30769%;
       float: left;
       margin-left: 0;
       margin-right: auto; } }
-  /* line 26, sass/rtl/layout/_main.scss */
+  /* line 34, sass/rtl/layout/_main.scss */
   .secondary aside.widget {
     font-size: 110%; }
 

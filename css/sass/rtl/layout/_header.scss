@@ -30,9 +30,25 @@
 			font-size : 140%;
 		}
 	}
-	ul.main-nav{
-		text-align: right;
+	nav.main-menu{
+		.menu-search-area{
+			left : 30px;
+			right : auto;
+			span#submit{
+				left : 10px;
+				right : auto;
+				top : 4px;
+			}
+			input#s{
+				padding-right : 5px;
+				padding-left : 20px;
+			}
+		}
+		ul.main-nav{
+			text-align: right;
+		}
 	}
+	
 
 }
 ul.main-nav{
@@ -42,6 +58,15 @@ ul.main-nav{
 			margin-right : auto;
 			margin-left : 10px;
 		}
+		&.fa{
+			font : inherit;
+			font-family: $web_yekan;
+			
+			&:before{
+				font : normal normal normal 14px/1 FontAwesome !important;
+				color : $white;
+			}
+		}
 	}
 	a{
 		font-size: 110%;
@@ -49,8 +74,9 @@ ul.main-nav{
 	
 	&>li.menu-item-has-children>a:after{
 		@include at-breakpoint($medium){
-	    	left: -8px;
-	    	right: auto;
+	    	left: 30%;
+		    right: auto;
+		    
 	    }
     	
 	}
