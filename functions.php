@@ -980,4 +980,94 @@ function cf_shortcode() {
 }
 
 add_shortcode( 'product_order_form', 'cf_shortcode' );
+
+
+/*------------------- Pharmacy search function.----------------------------------------- */
+
+add_action("wp_ajax_hermooder_request_pharmacies", "hermooder_request_pharmacies");
+add_action("wp_ajax_nopriv_hermooder_request_pharmacies", "hermooder_request_pharmacies_approval");
+
+function hermooder_request_pharmacies() {
+
+global $wp,$wp_query; 
+
+$query_vars = new stdClass();
+   
+   if ( !wp_verify_nonce( $_REQUEST['nonce'], "Hermooder_search_pharmacy_nonce")) {
+      exit("you dont have access");
+   }   
+
+   $requested_uri = $_REQUEST["requested_uri"];
+   $_SERVER['REQUEST_URI'] = $requested_uri;
+   $_SERVER['PHP_SELF'] = '/wordpress/index.php';
+  
+    
+    $wp->parse_request();
+    $query_vars = $wp->query_vars;
+
+         
+    $wp_query->parse_query($query_vars);
+
+    $query_vars['is_single'] = $wp_query->is_single;
+    $query_vars['is_page'] = $wp_query->is_page;
+    $query_vars['is_archive'] = $wp_query->is_archive;
+    $query_vars['is_date'] = $wp_query->is_date;
+    $query_vars['is_year'] = $wp_query->is_year;
+    $query_vars['is_month'] = $wp_query->is_month;
+    $query_vars['is_day'] = $wp_query->is_day;
+    $query_vars['is_author'] = $wp_query->is_author;
+    $query_vars['is_category'] = $wp_query->is_category;
+    $query_vars['is_tag'] = $wp_query->is_tag;
+    $query_vars['is_tax'] = $wp_query->is_tax;
+    $query_vars['is_feed'] = $wp_query->is_feed;
+    $query_vars['is_home'] = $wp_query->is_home;
+    $query_vars['is_404'] = $wp_query->is_404;
+    $query_vars['is_paged'] = $wp_query->is_paged;
+    $query_vars['is_admin'] = $wp_query->is_admin;
+    $query_vars['is_attachment'] = $wp_query->is_attachment;
+    $query_vars['is_singular'] = $wp_query->is_singular;
+    $query_vars['is_posts_page'] = $wp_query->is_posts_page;
+    $query_vars['is_post_type_archive'] = $wp_query->is_post_type_archive;
+    $query_vars['is_comment_feed '] = $wp_query->is_comment_feed;
+    $query_vars['is_comment_popup'] = $wp_query->is_comment_popup;
+    $query_vars['max_num_pages'] = $wp_query->max_num_pages;
+    $query_vars['found_posts'] = $wp_query->found_posts;
+    $query_vars['post_count'] = $wp_query->post_count;
+  
+
+    $query_vars = json_encode($query_vars);
+    
+
+
+  
+
+   if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+      echo $query_vars;
+      
+   }
+   else {
+      header("Location: ".$_SERVER["HTTP_REFERER"]);
+   }
+
+   die();
+
+}
+
+function hermooder_request_pharmacies_approval() {
+   echo "You must log in to view";
+   die();
+}
+
+function hermoodr_make_pharmacy_json_file($ID,$post) {
+  var_dump($post);
+  $fp = fopen('results.json', 'w');
+  fwrite($fp, json_encode($response));
+  fclose($fp);
+}
+// add_action('trashed_post ','hermoodr_make_pharmacy_json_file',10,2);
+// add_action('untrashed_post ','hermoodr_make_pharmacy_json_file',10,2);
+// add_action('deleted_post ','hermoodr_make_pharmacy_json_file',10,2);
+// add_action('post_updated ','hermoodr_make_pharmacy_json_file',10,2);
+// add_action('publish_post ','hermoodr_make_pharmacy_json_file',10,2);
+
 ?>

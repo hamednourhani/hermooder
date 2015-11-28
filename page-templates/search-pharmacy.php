@@ -5,7 +5,7 @@
  * 
  */
  get_header(); ?>
-	
+	<?php $ajax_pharmacy_nonce = wp_create_nonce("Hermooder_search_pharmacy_nonce"); ?>
 	<main class="site-main">
 		<div class="banner-wrapper">
 			
@@ -26,5 +26,5 @@
 			<?php }
 		} ?>
 	</main>
-
+	
 <?php get_footer(); ?>
