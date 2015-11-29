@@ -112,6 +112,10 @@
 		&.green-widget{
 			background-color: $green;
 			border : 0px;
+			&.with-border{
+				border-top : 4px solid $blue2;
+				text-align : center;
+			}
 		}
 
 		&.orang-widget{
@@ -136,6 +140,19 @@
 			.widgettitle{
 				border-color : $blue1;
 
+			}
+		}
+		a.widget-big-button{
+			@include single-transition(all, 0.4s, ease-in-out);
+			
+			padding : 10px 20px;
+			margin : 5px auto;
+			display: inline-block;
+			text-align: center;
+			background-color: $blue2;
+			@include  border-radius(5px);
+			&:hover{
+				background-color: $blue3;
 			}
 		}
 		

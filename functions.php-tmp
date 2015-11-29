@@ -84,15 +84,16 @@ function hermooder_woocommerce_support() {
 
 // Thumbnail sizes
 add_image_size('banner', 1000, 250, array('center', 'center'));
+add_image_size('product-thumb', 30, 30, array('center', 'center'));
+add_image_size('post-thumb', 150, 150, array('center', 'center'));
 
 add_filter('image_size_names_choose', 'hermooder_custom_image_sizes');
 
 function hermooder_custom_image_sizes($sizes) {
 	return array_merge($sizes, array(
-			'banner'        => __('1200px by 500px'),
-			'product-thumb' => __('30px by 30px'),
-			'detail-thumb'  => __('53px by 53px'),
-			'project-thumb' => __('130px by 130px'),
+			'banner'        => __('1000px by 250px'),
+			'product-thumb' => __('50px by 50px'),
+			'post-thumb'    => __('150px by 150px'),
 		));
 }
 
@@ -238,7 +239,7 @@ function hermooder_pagination() {
 
 function hermooder_SearchFilter($query) {
 	if ($query->is_search) {
-		$query->set('post_type', array('page', 'post', 'product'));
+		$query->set('post_type', array('post', 'product'));
 	}
 	return $query;
 }
@@ -577,112 +578,6 @@ class last_products_widget extends WP_Widget {
 	}
 }// Class wpb_widget ends here
 
-class last_projects_widget extends WP_Widget {
-
-	function __construct() {
-		parent::__construct(
-			// Base ID of your widget
-			'last_projects_widget',
-
-			// Widget name will appear in UI
-			__('Last Projects Widget', 'hermooder'),
-
-			// Widget description
-			array('description' => __('Display Last Projects', 'hermooder'), )
-		);
-	}
-
-	// Creating widget front-end
-	// This is where the action happens
-	public function widget($args, $instance) {
-		global $wp_query;
-
-		$title  = apply_filters('widget_title', $instance['title']);
-		$number = $instance['number'];
-		$term   = get_term($instance['cat'], 'project_cat');
-
-		$projects = get_posts(array(
-				'post_type'      => 'project',
-				'posts_per_page' => $number,
-				'project_cat'    => $term->slug,
-			)
-		);
-		//var_dump($notifies);
-		$content = '<ul class="widget-list">';
-		foreach ($projects as $project):setup_postdata($project);
-		$url   = get_the_permalink($project->ID);
-		$thumb = get_the_post_thumbnail($project->ID, 'product-thumb');
-		$name  = $project->post_title;
-		$content .= '<li><a href="'.$url.'">'.$thumb.'<span>'.$name.'</span></a><li>';
-		endforeach;
-		$content .= '</ul>';
-
-		// before and after widget arguments are defined by themes
-		echo $args['before_widget'];
-
-		if (!empty($title)) {
-			echo $args['before_title'].$title.$args['after_title'];
-		}
-
-		echo $content;
-		// This is where you run the code and display the output
-		echo $args['after_widget'];
-	}
-
-	// Widget Backend
-	public function form($instance) {
-		if (isset($instance['title'])) {
-			$title = $instance['title'];
-		} else {
-			$title = __('Last Projects', 'hermooder');
-		}
-		if (isset($instance['number'])) {
-			$number = $instance['number'];
-		} else {
-			$number = 5;
-		}
-		if (isset($instance['cat'])) {
-			$cat = $instance['cat'];
-		} else {
-			$cat = "";
-		}
-		// Widget admin form
-		?>
-		        <p>
-		            <label for="<?php echo $this->get_field_id('title');?>"><?php _e('Title:');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('title');?>" name="<?php echo $this->get_field_name('title');?>" type="text" value="<?php echo esc_attr($title);?>" />
-		        </p>
-		         <p>
-		            <label for="<?php echo $this->get_field_id('number');?>"><?php _e('Project Numbers :', 'hermooder');
-		?></label>
-		            <input class="widefat" id="<?php echo $this->get_field_id('number');?>" name="<?php echo $this->get_field_name('number');?>" type="text" value="<?php echo esc_attr($number);?>" />
-		        </p>
-		        <p>
-		            <label for="<?php echo $this->get_field_id('cat');?>"><?php _e('Project Category :', 'hermooder');
-		?></label>
-		<?php wp_dropdown_categories(array(
-				'name'     => $this->get_field_name('cat'),
-				'id'       => $this->get_field_id('cat'),
-				'class'    => 'widefat',
-				'taxonomy' => 'project_cat',
-				'echo'     => '1',
-				'selected' => esc_attr($cat),
-			));?>
-		</p>
-		<?php
-	}
-
-	// Updating widget replacing old instances with new
-	public function update($new_instance, $old_instance) {
-		$instance           = array();
-		$instance['title']  = (!empty($new_instance['title']))?strip_tags($new_instance['title']):'';
-		$instance['number'] = (!empty($new_instance['number']))?strip_tags($new_instance['number']):'';
-		$instance['cat']    = (!empty($new_instance['cat']))?strip_tags($new_instance['cat']):'';
-		return $instance;
-	}
-}// Class wpb_widget ends here
-
 class last_posts_by_cat_widget extends WP_Widget {
 
 	function __construct() {
@@ -792,7 +687,6 @@ class last_posts_by_cat_widget extends WP_Widget {
 // Register and load the widget
 function hermooder_widget() {
 	register_widget('last_products_widget');
-	register_widget('last_projects_widget');
 	register_widget('last_posts_by_cat_widget');
 	register_widget('contact_info_widget');
 }
@@ -869,8 +763,9 @@ add_action('widgets_init', 'hermooder_widget');
 function html_form_code() {
 
 	$posts = get_posts(array(
-			'post_type'      => 'product',
-			'posts_per_page' => -1,
+			'post_type'        => 'product',
+			'posts_per_page'   => -1,
+			'suppress_filters' => false,
 		)
 	);
 
@@ -884,7 +779,7 @@ function html_form_code() {
 	echo '<form action="'.esc_url($_SERVER['REQUEST_URI']).'" method="post" class="order-products">';
 	echo '<p>';
 	echo __('Your Name (required)', 'hermooder').'<br/>';
-	echo '<input type="text" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="'.(isset($_POST["cf-name"])?esc_attr($_POST["cf-name"]):'').'" size="40" />';
+	echo '<input type="text" name="cf-name"  value="'.(isset($_POST["cf-name"])?esc_attr($_POST["cf-name"]):'').'" size="40" />';
 	echo '</p>';
 	echo '<p>';
 	echo __('Your Email (required)', 'hermooder').'<br/>';
@@ -905,6 +800,10 @@ function html_form_code() {
 	echo '</form>';
 }
 
+function set_html_content_type() {
+	return 'text/html';
+}
+
 function deliver_mail() {
 
 	// if the submit button is clicked, send the email
@@ -922,26 +821,31 @@ function deliver_mail() {
 			$counter++;
 		}
 
-		$message = "";
-		$message .= '<p>'.__('Name : ', 'hermooder').$name.'</p>';
-		$message .= '<p>'.__('Phone Number : ', 'hermooder').$phone.'</p>';
-		$message .= '<p>'.__('Email : ', 'hermooder').$email.'</p>';
-		$message .= '<p>'.__('Products : ', 'hermooder').'<br />'.$ordered_products.'</p>';
-		$message .= esc_textarea($_POST["cf-message"]);
+		$message = "<div style='direction:rtl;text-align:right;'>";
+
+		$message .= "<p>".__('Name : ', 'hermooder').$name."</p>"."\r\n";
+		$message .= "<p>".__('Phone Number : ', 'hermooder').$phone."</p><br />"."\r\n";
+		$message .= "<p>".__('Email : ', 'hermooder').$email."</p><br />"."\r\n";
+		$message .= "<p>".__('Products : ', 'hermooder')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
+		$message .= "<p>".esc_textarea($_POST["cf-message"])."\r\n"."</p>"."</div>";
 
 		// get the blog administrator's email address
 		$to = get_option('admin_email');
 
-		$headers = "From: $name <$email>" ."\r\n";
+		$headers = array('From: '.$name.'<'.$email.'>');
+		add_filter('wp_mail_content_type', 'set_html_content_type');
 
 		// If email has been process for sending, display a success message
 		if (wp_mail($to, __('Order Products', 'hermooder'), $message, $headers)) {
 			echo '<div>';
-			echo '<p>'.__('Thanks for Ordering Products, We will contact you as soon as posible.', 'hermooder').'</p>';
+			echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.', 'hermooder').'</p>';
 			echo '</div>';
 		} else {
-			echo __('An unexpected error occurred', 'hermooder');
+			echo '<p class="failed-message">'.__('An unexpected error occurred', 'hermooder').'</p>';
 		}
+
+		remove_filter('wp_mail_content_type', 'set_html_content_type');
+
 	}
 }
 
@@ -966,67 +870,63 @@ function hermooder_request_pharmacies() {
 
 	require ("phpsqlsearch_dbinfo.php");
 	// Get parameters from URL
-	$center_lat = $_SERVER["lat"];
-	$center_lng = $_SERVER["lng"];
-	$radius     = $_SERVER["radius"];
+	$center_lat = sanitize_text_field($_SERVER["lat"]);
+	$center_lng = sanitize_text_field($_SERVER["lng"]);
+	$radius     = sanitize_text_field($_SERVER["radius"]);
 	// Start XML file, create parent node
 	$dom     = new DOMDocument("1.0");
 	$node    = $dom->createElement("markers");
 	$parnode = $dom->appendChild($node);
-	// Opens a connection to a mySQL server
-	$connection = mysql_connect(localhost, $username, $password);
-	if (!$connection) {
-		die("Not connected : ".mysql_error());
-	}
-	// Set the active mySQL database
-	$db_selected = mysql_select_db($database, $connection);
-	if (!$db_selected) {
-		die("Can\'t use db : ".mysql_error());
-	}
+
+	$posts = get_posts(array(
+			'post_type'      => 'pharmacy',
+			'posts_per_page' => -1,
+		)
+	);
+
 	// Search the rows in the markers table
-	$query = sprintf("SELECT address, name, lat, lng, ( 3959 * acos( cos( radians('%s') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('%s') ) + sin( radians('%s') ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < '%s' ORDER BY distance LIMIT 0 , 20",
-		mysql_real_escape_string($center_lat),
-		mysql_real_escape_string($center_lng),
-		mysql_real_escape_string($center_lat),
-		mysql_real_escape_string($radius));
-	$result = mysql_query($query);
-	if (!$result) {
-		die("Invalid query: ".mysql_error());
-	}
+	// $query = sprintf("SELECT address, name, lat, lng, ( 3959 * acos( cos( radians('%s') ) * cos( radians( lat ) ) * cos( radians( lng ) - radians('%s') ) + sin( radians('%s') ) * sin( radians( lat ) ) ) ) AS distance FROM markers HAVING distance < '%s' ORDER BY distance LIMIT 0 , 20",
+	//   mysql_real_escape_string($center_lat),
+	//   mysql_real_escape_string($center_lng),
+	//   mysql_real_escape_string($center_lat),
+	//   mysql_real_escape_string($radius));
+
 	header("Content-type: text/xml");
 	// Iterate through the rows, adding XML nodes for each
-	while ($row = @mysql_fetch_assoc($result)) {
-		$node    = $dom->createElement("marker");
-		$newnode = $parnode->appendChild($node);
-		$newnode->setAttribute("name", $row['name']);
-		$newnode->setAttribute("address", $row['address']);
-		$newnode->setAttribute("lat", $row['lat']);
-		$newnode->setAttribute("lng", $row['lng']);
-		$newnode->setAttribute("distance", $row['distance']);
-	}
-	echo $dom->saveXML();
-	?>
+	foreach ($posts as $post) {
+		setup_postdata($post);
 
+		$address  = get_post_meta($post->ID, '_hermooder_address', 1);
+		$lat      = get_post_meta($post->ID, '_hermooder_Latitude', 1);
+		$lng      = get_post_meta($post->ID, '_hermooder_Longitude', 1);
+		$distance = (3959*acos(cos(radians($center_lat))*cos(radians($lat))*cos(radians($lng)-radians($center_lng))+sin(radians($center_lat))*sin(radians($lat))));
 
-
-
-
-	   if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-	      echo $query_vars;
-
-	   }
-	   else {
-	      header("Location: ".$_SERVER["HTTP_REFERER"]);
-	   }
-
-	   die();
+		if ($distance < $radius) {
+			$node    = $dom->createElement("marker");
+			$newnode = $parnode->appendChild($node);
+			$newnode->setAttribute("name", $post->post_title);
+			$newnode->setAttribute("address", $address);
+			$newnode->setAttribute("lat", $lat);
+			$newnode->setAttribute("lng", $lng);
+			$newnode->setAttribute("distance", $distance);
+		}
 
 	}
 
-	function hermooder_request_pharmacies_approval() {
-	   echo "You must log in to view";
-	   die();
+	if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+		echo $dom->saveXML();
+
+	} else {
+		header("Location: ".$_SERVER["HTTP_REFERER"]);
 	}
 
+	die();
 
-	?>
+}
+
+function hermooder_request_pharmacies_approval() {
+	echo "You must log in to view";
+	die();
+}
+
+?>

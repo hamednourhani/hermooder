@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hermooder 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
-"POT-Creation-Date: 2015-11-29 14:32:59+00:00\n"
+"POT-Creation-Date: 2015-11-29 21:20:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -246,6 +246,10 @@ msgstr ""
 msgid "Phone Number : "
 msgstr ""
 
+#: functions.php:856
+msgid "Products : "
+msgstr ""
+
 #: functions.php:869
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr ""
@@ -262,7 +266,7 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: library/banner-maker.php:29
+#: library/banner-maker.php:21
 msgid "Search Results for: %s"
 msgstr ""
 

@@ -2,26 +2,18 @@
 
 
 
-<?php if (is_category() || is_tag() || is_tax()) {
-	// $display = false;
-	// // Get only image url
-	// $params = array(
-	//   'term_id' => null,
-	//   'size' => 'banner'
-	// );
-	// $archive_banner = category_image_src( $params , $display );
+<?php if (is_category() || is_tag() || is_tax()) {?>
 
-	if ($archive_banner) {
-		echo '<div class="banner-inner"><img class="page-banner" src="'.$archive_banner.'"/></div>';
-	} else {?>
-					<div class="banner-wrapper">
-						<div class="single-cat-title">
-							<section class="layout">
-								<h1><?php single_cat_title('', true);?></h1>
-							</section>
-						</div>
+
+
+				<div class="banner-wrapper">
+					<div class="single-cat-title">
+						<section class="layout">
+							<h1><?php single_cat_title('', true);?></h1>
+						</section>
 					</div>
-		<?php }?>
+				</div>
+
 	<?php } elseif (is_search()) {?>
 			<div class="banner-wrapper">
 				<div class="single-cat-title">
@@ -31,7 +23,7 @@
 				</div>
 			</div>
 	<?php } elseif (is_singular()) {
-	$banner_mod = get_post_meta(get_the_ID(), '_hermooder_banner_mod');
+	$banner_mod = get_post_meta(get_the_ID(), '_hermooder_banner_mod', 1);
 
 	switch ($banner_mod[0]) {
 		case 'slider':

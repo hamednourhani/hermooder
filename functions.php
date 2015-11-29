@@ -851,15 +851,15 @@ function deliver_mail() {
     
     $message = "<div style='direction:rtl;text-align:right;'>";
     $message .= "<p>".__('Name : ','hermooder').$name."</p>"."\r\n";
-    $message .= "<p>".__('Phone Number : ','hermooder').$phone."</p>"."\r\n";
-    $message .= "<p>".__('Email : ','hermooder').$email."</p>"."\r\n";
-    $message .= "<p>".('Products : ','hermooder')."\r\n".$ordered_products."</p>"."\r\n";
+    $message .= "<p>".__('Phone Number : ','hermooder').$phone."</p><br />"."\r\n";
+    $message .= "<p>".__('Email : ','hermooder').$email."</p><br />"."\r\n";
+    $message .= "<p>".__('Products : ','hermooder')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
     $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
 
     // get the blog administrator's email address
     $to = get_option( 'admin_email' );
 
-    $headers = array('From: $name <$email>');
+    $headers = array('From: '.$name.'<'.$email.'>');
     add_filter( 'wp_mail_content_type', 'set_html_content_type' );
 
 

@@ -2,8 +2,8 @@
 /* fonts */
 @font-face {
   font-family: "open-sans";
-  src: url('fonts/OpenSans-Regular.eot?1445920942');
-  src: url('fonts/OpenSans-Regular.eot?&1445920942#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular.ttf?1445920942') format('truetype'), url('fonts/OpenSans-Regular.woff?1445920942') format('woff');
+  src: url('fonts/OpenSans-Regular.eot?1446133650');
+  src: url('fonts/OpenSans-Regular.eot?&1446133650#iefix') format('embedded-opentype'), url('fonts/OpenSans-Regular.ttf?1446133651') format('truetype'), url('fonts/OpenSans-Regular.woff?1446133651') format('woff');
   font-weight: "OpenSans-Regular.svg"; }
 /* normalize style */
 /* normalize-scss 3.0.2+normalize.3.0.2 | MIT/GPLv2 License | bit.ly/normalize-scss */
@@ -12,7 +12,7 @@
  * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
  * body `font-size` is set using `em` units.
  */
-/* line 106, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+/* line 106, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.5em; }
@@ -618,7 +618,7 @@ p {
   font-feature-settings: "liga", "dlig"; }
 
 /* ------------susy-------- */
-/* line 14, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susyone/_grid.scss */
+/* line 14, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/susy-2.2.2/sass/susy/language/susyone/_grid.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -815,7 +815,7 @@ body {
   margin-top: -1px;
   overflow: hidden;
   position: relative;
-  background: url('../images/side-back.png?1446105459');
+  background: url('../images/side-back.png?1446133654');
   background-position: top left;
   background-repeat: no-repeat;
   background-attachment: fixed; }
@@ -830,7 +830,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative; }
-  /* line 38, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .layout:after {
     content: "";
     display: table;
@@ -1248,7 +1248,7 @@ img.wp-smiley,
 @media (min-width: 45em) {
   /* line 19, sass/layout/_header.scss */
   .site-header .header-inner {
-    background: url('../images/header-back.png?1446270472') 95% 100% no-repeat; } }
+    background: url('../images/header-back.png?1446236080') 95% 100% no-repeat; } }
 /* line 24, sass/layout/_header.scss */
 .site-header div.hero {
   text-align: center; }
@@ -1651,42 +1651,64 @@ ul.main-nav {
     .secondary aside.widget.green-widget {
       background-color: #8db63f;
       border: 0px; }
-    /* line 117, sass/layout/_main.scss */
+      /* line 115, sass/layout/_main.scss */
+      .secondary aside.widget.green-widget.with-border {
+        border-top: 4px solid #00a7d4;
+        text-align: center; }
+    /* line 121, sass/layout/_main.scss */
     .secondary aside.widget.orang-widget {
       background-color: #e47a26;
       border: 0px; }
-    /* line 121, sass/layout/_main.scss */
+    /* line 125, sass/layout/_main.scss */
     .secondary aside.widget.blue-widget {
       background-color: #00a7d4;
       border: 0px; }
-    /* line 125, sass/layout/_main.scss */
+    /* line 129, sass/layout/_main.scss */
     .secondary aside.widget.light-blue-widget {
       background-color: #c0dbe9;
       border: 0px; }
-    /* line 133, sass/layout/_main.scss */
+    /* line 137, sass/layout/_main.scss */
     .secondary aside.widget.green-widget p, .secondary aside.widget.green-widget h4, .secondary aside.widget.green-widget h3, .secondary aside.widget.green-widget span, .secondary aside.widget.green-widget a, .secondary aside.widget.orang-widget p, .secondary aside.widget.orang-widget h4, .secondary aside.widget.orang-widget h3, .secondary aside.widget.orang-widget span, .secondary aside.widget.orang-widget a, .secondary aside.widget.blue-widget p, .secondary aside.widget.blue-widget h4, .secondary aside.widget.blue-widget h3, .secondary aside.widget.blue-widget span, .secondary aside.widget.blue-widget a, .secondary aside.widget.light-blue-widget p, .secondary aside.widget.light-blue-widget h4, .secondary aside.widget.light-blue-widget h3, .secondary aside.widget.light-blue-widget span, .secondary aside.widget.light-blue-widget a {
       color: #F8F8F8; }
-    /* line 136, sass/layout/_main.scss */
+    /* line 140, sass/layout/_main.scss */
     .secondary aside.widget.green-widget .widgettitle, .secondary aside.widget.orang-widget .widgettitle, .secondary aside.widget.blue-widget .widgettitle, .secondary aside.widget.light-blue-widget .widgettitle {
       border-color: #c0dbe9; }
-    /* line 143, sass/layout/_main.scss */
+    /* line 145, sass/layout/_main.scss */
+    .secondary aside.widget a.widget-big-button {
+      -moz-transition: all 0.4s ease-in-out 0s;
+      -o-transition: all 0.4s ease-in-out 0s;
+      -webkit-transition: all 0.4s ease-in-out;
+      -webkit-transition-delay: 0s;
+      transition: all 0.4s ease-in-out 0s;
+      padding: 10px 20px;
+      margin: 5px auto;
+      display: inline-block;
+      text-align: center;
+      background-color: #00a7d4;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px; }
+      /* line 154, sass/layout/_main.scss */
+      .secondary aside.widget a.widget-big-button:hover {
+        background-color: #0065b1; }
+    /* line 160, sass/layout/_main.scss */
     .secondary aside.widget input, .secondary aside.widget textarea {
       width: 100%;
       max-width: 100%;
       margin-bottom: 10px;
       padding: 5px; }
-    /* line 149, sass/layout/_main.scss */
+    /* line 166, sass/layout/_main.scss */
     .secondary aside.widget input[type="submit"],
     .secondary aside.widget input[type="button"] {
       width: auto;
       padding: 7px 15px; }
-    /* line 154, sass/layout/_main.scss */
+    /* line 171, sass/layout/_main.scss */
     .secondary aside.widget p {
       margin: auto; }
-    /* line 158, sass/layout/_main.scss */
+    /* line 175, sass/layout/_main.scss */
     .secondary aside.widget.widget_last_products_widget ul {
       padding: 0px; }
-    /* line 161, sass/layout/_main.scss */
+    /* line 178, sass/layout/_main.scss */
     .secondary aside.widget.widget_last_products_widget li {
       -moz-transition: all 0.3s ease-in-out 0s;
       -o-transition: all 0.3s ease-in-out 0s;
@@ -1694,16 +1716,16 @@ ul.main-nav {
       -webkit-transition-delay: 0s;
       transition: all 0.3s ease-in-out 0s;
       font-size: 90%; }
-      /* line 164, sass/layout/_main.scss */
+      /* line 181, sass/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li:hover {
         background-color: #FFFFFF; }
-      /* line 167, sass/layout/_main.scss */
+      /* line 184, sass/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li a {
         border-bottom: 1px dashed #8db63f;
         width: 100%;
         padding: 5px;
         display: inline-block; }
-      /* line 173, sass/layout/_main.scss */
+      /* line 190, sass/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li img {
         margin-right: 10px;
         vertical-align: middle; }
@@ -1779,7 +1801,7 @@ div.footer-widget-area {
       display: inline-block; }
       /* line 68, sass/layout/_footer.scss */
       .credit-holder .socials li .social-icon {
-        background: url('../images/social-icons.png?1446117499');
+        background: url('../images/social-icons.png?1446133654');
         display: block;
         width: 30px;
         height: 30px; }
