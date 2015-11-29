@@ -2,8 +2,8 @@
 /* fonts */
 @font-face {
   font-family: "Weblogma_Yekan";
-  src: url('fonts/Weblogma_Yekan.eot?1446133651');
-  src: url('fonts/Weblogma_Yekan.eot?&1446133651#iefix') format('embedded-opentype'), url('fonts/Weblogma_Yekan.ttf?1446133651') format('truetype'), url('fonts/Weblogma_Yekan.woff?1446133651') format('woff');
+  src: url('fonts/Weblogma_Yekan.eot?1445920942');
+  src: url('fonts/Weblogma_Yekan.eot?&1445920942#iefix') format('embedded-opentype'), url('fonts/Weblogma_Yekan.ttf?1445920942') format('truetype'), url('fonts/Weblogma_Yekan.woff?1445920942') format('woff');
   font-weight: "Weblogma_Yekan.svg"; }
 /******************************************************************
 Site Name:
@@ -73,7 +73,7 @@ p {
   font-feature-settings: "liga", "dlig"; }
 
 /* ------------susy-------- */
-/* line 14, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/susy-2.2.2/sass/susy/language/susyone/_grid.scss */
+/* line 14, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susyone/_grid.scss */
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -239,7 +239,7 @@ body {
 
 /* line 16, sass/rtl/base/_base.scss */
 .body-wrapper {
-  background: url('../images/side-back-rtl.png?1446156803');
+  background: url('../images/side-back-rtl.png?1446270473');
   background-position: top right;
   background-repeat: no-repeat;
   background-attachment: fixed; }
@@ -254,7 +254,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative; }
-  /* line 38, ../../../../../../../Ruby21-x64/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
+  /* line 38, ../../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   .layout:after {
     content: "";
     display: table;
@@ -484,30 +484,60 @@ ul.main-nav {
       margin-left: 1.53846%;
       margin-right: auto; } }
   /* line 14, sass/rtl/layout/_main.scss */
+  .primary article.hentry .article-body .featured-image.single-image {
+    width: 100%;
+    float: right;
+    margin-left: 1.53846%;
+    display: inline; }
+    @media (min-width: 45em) {
+      /* line 14, sass/rtl/layout/_main.scss */
+      .primary article.hentry .article-body .featured-image.single-image {
+        width: 32.30769%;
+        float: right;
+        margin-left: 1.53846%;
+        margin-right: auto; } }
+  /* line 21, sass/rtl/layout/_main.scss */
+  .primary article.hentry .article-body .excerpt {
+    width: 100%;
+    float: right;
+    margin-left: 1.53846%;
+    display: inline; }
+    @media (min-width: 45em) {
+      /* line 21, sass/rtl/layout/_main.scss */
+      .primary article.hentry .article-body .excerpt {
+        width: 66.15385%;
+        float: left;
+        margin-left: 0;
+        margin-right: auto; } }
+  /* line 30, sass/rtl/layout/_main.scss */
   .primary article.hentry ul.pharmacy-information-list i:before {
     padding-right: none;
     padding-left: 7px; }
 
-/* line 22, sass/rtl/layout/_main.scss */
+/* line 38, sass/rtl/layout/_main.scss */
 .grid-excerpt {
   font-size: 100%; }
 
-/* line 27, sass/rtl/layout/_main.scss */
+/* line 43, sass/rtl/layout/_main.scss */
 .secondary {
   width: 100%;
   float: right;
   margin-left: 1.53846%;
   display: inline; }
   @media (min-width: 45em) {
-    /* line 27, sass/rtl/layout/_main.scss */
+    /* line 43, sass/rtl/layout/_main.scss */
     .secondary {
       width: 32.30769%;
       float: left;
       margin-left: 0;
       margin-right: auto; } }
-  /* line 34, sass/rtl/layout/_main.scss */
+  /* line 50, sass/rtl/layout/_main.scss */
   .secondary aside.widget {
     font-size: 110%; }
+    /* line 53, sass/rtl/layout/_main.scss */
+    .secondary aside.widget.widget_last_products_widget li img {
+      margin-right: auto;
+      margin-left: 10px; }
 
 /* line 5, sass/rtl/layout/_footer.scss */
 div.footer-widget-area .footer-col1,

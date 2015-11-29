@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2015-11-29 10:37+0330\n"
-"PO-Revision-Date: 2015-11-29 10:48+0330\n"
+"POT-Creation-Date: 2015-11-29 10:52+0330\n"
+"PO-Revision-Date: 2015-11-29 10:52+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -636,9 +636,13 @@ msgstr "هنوز مطلب مرتبطی منتشر نشده است!"
 msgid "Read "
 msgstr "مشاهده"
 
-#: library/post-meta.php:11 library/post-meta.php:32 library/post-meta.php:48
+#: library/post-meta.php:11 library/post-meta.php:32
 msgid "Tags :"
 msgstr "برچسب ها : "
+
+#: library/post-meta.php:33
+msgid "Categories :"
+msgstr "دسته بندی ها : "
 
 #: single-pharmacy.php:27
 msgid " Address : "

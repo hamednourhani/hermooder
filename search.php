@@ -30,12 +30,16 @@
 				
 								
 								<main class="article-body">
-									<div class="featured-image single-image">
-										<a href="<?php the_permalink(); ?>">
-											<?php the_post_thumbnail(); ?>
-										</a>
-									</div>
-									<?php the_excerpt(); ?>
+									<section class="layout">
+										<div class="featured-image single-image">
+											<a href="<?php the_permalink(); ?>">
+												<?php the_post_thumbnail('post-thumb'); ?>
+											</a>
+										</div>
+										<div class="excerpt">
+											<?php the_excerpt(); ?>
+										</div>
+									</section>
 									
 								</main>
 							</article>

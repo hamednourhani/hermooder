@@ -36,6 +36,20 @@
  			margin-bottom : 20px;
  			padding-bottom: 15px;
  		}
+ 		.article-body{
+ 			.featured-image.single-image{
+ 				@include span-columns(12,12);
+			 	@include at-breakpoint($medium){
+			 		@include span-columns(4,12);
+			 	}
+ 			}
+ 			.excerpt{
+				@include span-columns(12,12);
+			 	@include at-breakpoint($medium){
+			 		@include span-columns(8 omega,12);
+			 	}
+ 			}
+ 		}
 		ul {
 			list-style-type: disc;
 		}
@@ -53,6 +67,9 @@
 				color : $blue3;
 				padding-right : 7px;
 			}
+		}
+		ul.post-meta-list{
+			list-style: none;
 		}
  	}
  	
@@ -136,6 +153,12 @@
 		}
 		p{
 			margin : auto;
+		}
+		&.widget_last_products_widget{
+			li img{
+				margin-right : 10px;
+				vertical-align: center;
+			}
 		}
 	}
 	

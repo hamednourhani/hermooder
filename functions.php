@@ -84,7 +84,7 @@ function hermooder_woocommerce_support() {
 
 // Thumbnail sizes
 add_image_size( 'banner', 1000, 250, array( 'center', 'center' ) );
-add_image_size( 'product-thumb', 50, 50, array( 'center', 'center' ) );
+add_image_size( 'product-thumb', 30, 30, array( 'center', 'center' ) );
 add_image_size( 'post-thumb', 150, 150, array( 'center', 'center' ) );
 
 add_filter( 'image_size_names_choose', 'hermooder_custom_image_sizes' );
@@ -703,7 +703,6 @@ class last_posts_by_cat_widget extends WP_Widget {
 // Register and load the widget
 function hermooder_widget() {
   register_widget( 'last_products_widget' );
-  register_widget( 'last_projects_widget' );
   register_widget( 'last_posts_by_cat_widget' );
   register_widget( 'contact_info_widget' );
 }
