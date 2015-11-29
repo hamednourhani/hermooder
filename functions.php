@@ -243,7 +243,7 @@ function hermooder_pagination(){
 
 function hermooder_SearchFilter($query) {
     if ($query->is_search) {
-      $query->set('post_type', array('page','post','product'));
+      $query->set('post_type', array('post','product'));
     }
     return $query;
     }
@@ -791,6 +791,7 @@ function html_form_code() {
    $posts = get_posts(array(
           'post_type' => 'product',
           'posts_per_page' => -1,
+          'suppress_filters' => false,
           )
       );
      
@@ -805,7 +806,7 @@ function html_form_code() {
   echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
   echo '<p>';
   echo __('Your Name (required)','hermooder'). '<br/>';
-  echo '<input type="text" name="cf-name" pattern="[a-zA-Z0-9 ]+" value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
+  echo '<input type="text" name="cf-name"  value="' . ( isset( $_POST["cf-name"] ) ? esc_attr( $_POST["cf-name"] ) : '' ) . '" size="40" />';
   echo '</p>';
   echo '<p>';
   echo __('Your Email (required)','hermooder'). '<br/>';
@@ -826,6 +827,11 @@ function html_form_code() {
   echo '</form>';
 }
 
+
+function set_html_content_type() {
+  return 'text/html';
+}
+
 function deliver_mail() {
 
   // if the submit button is clicked, send the email
@@ -843,26 +849,31 @@ function deliver_mail() {
        $counter++;
     }
     
-    $message = "";
-    $message .= '<p>'.__('Name : ','hermooder').$name.'</p>';
-    $message .= '<p>'.__('Phone Number : ','hermooder').$phone.'</p>';
-    $message .= '<p>'.__('Email : ','hermooder').$email.'</p>';
-    $message .= '<p>'.__('Products : ','hermooder').'<br />'.$ordered_products.'</p>';
-    $message .= esc_textarea( $_POST["cf-message"] );
+    $message = "<div style='direction:rtl;text-align:right;'>";
+    $message .= "<p>".__('Name : ','hermooder').$name."</p>"."\r\n";
+    $message .= "<p>".__('Phone Number : ','hermooder').$phone."</p>"."\r\n";
+    $message .= "<p>".__('Email : ','hermooder').$email."</p>"."\r\n";
+    $message .= "<p>".('Products : ','hermooder')."\r\n".$ordered_products."</p>"."\r\n";
+    $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
 
     // get the blog administrator's email address
     $to = get_option( 'admin_email' );
 
-    $headers = "From: $name <$email>" . "\r\n";
+    $headers = array('From: $name <$email>');
+    add_filter( 'wp_mail_content_type', 'set_html_content_type' );
+
 
     // If email has been process for sending, display a success message
     if ( wp_mail( $to, __('Order Products','hermooder'), $message, $headers ) ) {
       echo '<div>';
-      echo '<p>'.__('Thanks for Ordering Products, We will contact you as soon as posible.','hermooder'). '</p>';
+      echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','hermooder'). '</p>';
       echo '</div>';
     } else {
-      echo __('An unexpected error occurred','hermooder');
+      echo '<p class="failed-message">'.__('An unexpected error occurred','hermooder').'</p>';
     }
+
+    remove_filter( 'wp_mail_content_type', 'set_html_content_type' );
+
   }
 }
 

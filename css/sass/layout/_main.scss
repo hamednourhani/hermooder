@@ -155,9 +155,25 @@
 			margin : auto;
 		}
 		&.widget_last_products_widget{
-			li img{
-				margin-right : 10px;
-				vertical-align: center;
+			ul{
+				padding : 0px;
+			}
+			li {
+				@include single-transition(all, 0.3s, ease-in-out);
+				font-size : 90%;
+				&:hover{
+					background-color: $white;
+				}
+				a{
+					border-bottom : 1px dashed $green;
+					width : 100%;
+					padding : 5px;
+					display: inline-block;
+				}
+				img{
+					margin-right : 10px;
+					vertical-align: middle;
+				}
 			}
 		}
 	}

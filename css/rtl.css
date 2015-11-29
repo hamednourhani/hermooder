@@ -144,7 +144,7 @@ p {
 
 /*------ colors -----------*/
 /*----------------transition-shadow----------------------*/
-/* line 75, sass/rtl/base/_variables.scss */
+/* line 77, sass/rtl/base/_variables.scss */
 .def-transition {
   -moz-transition: all 0.4s ease-in-out 0s;
   -o-transition: all 0.4s ease-in-out 0s;
@@ -153,14 +153,14 @@ p {
   transition: all 0.4s ease-in-out 0s; }
 
 /*----------------box-shadow----------------------*/
-/* line 80, sass/rtl/base/_variables.scss */
+/* line 82, sass/rtl/base/_variables.scss */
 .def-box-shadow {
   -moz-box-shadow: 0px 0px 7px #4E4E4E;
   -webkit-box-shadow: 0px 0px 7px #4E4E4E;
   box-shadow: 0px 0px 7px #4E4E4E; }
 
 /*----------------gradiant----------------------*/
-/* line 85, sass/rtl/base/_variables.scss */
+/* line 87, sass/rtl/base/_variables.scss */
 .back-gradiant-rtl {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dae1ea+0,ffffff+100 */
   background: #dae1ea;
@@ -182,7 +182,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dae1ea', endColorstr='#ffffff',GradientType=1 );
   /* IE6-8 */ }
 
-/* line 99, sass/rtl/base/_variables.scss */
+/* line 101, sass/rtl/base/_variables.scss */
 .back-gradiant-ltr {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,dae1ea+99 */
   background: #ffffff;
@@ -204,7 +204,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dae1ea',GradientType=1 );
   /* IE6-8 */ }
 
-/* line 113, sass/rtl/base/_variables.scss */
+/* line 115, sass/rtl/base/_variables.scss */
 .green-cube-gradiant {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8db63f+1,79aa2f+100 */
   background: #8db63f;
@@ -535,9 +535,12 @@ ul.main-nav {
   .secondary aside.widget {
     font-size: 110%; }
     /* line 53, sass/rtl/layout/_main.scss */
-    .secondary aside.widget.widget_last_products_widget li img {
-      margin-right: auto;
-      margin-left: 10px; }
+    .secondary aside.widget.widget_last_products_widget li {
+      font-size: 90%; }
+      /* line 55, sass/rtl/layout/_main.scss */
+      .secondary aside.widget.widget_last_products_widget li img {
+        margin-left: 10px;
+        margin-right: auto; }
 
 /* line 5, sass/rtl/layout/_footer.scss */
 div.footer-widget-area .footer-col1,

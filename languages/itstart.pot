@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hermooder 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
-"POT-Creation-Date: 2015-11-29 07:38:05+00:00\n"
+"POT-Creation-Date: 2015-11-29 14:32:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -146,7 +146,7 @@ msgstr ""
 msgid "Sms Panel : "
 msgstr ""
 
-#: functions.php:382 functions.php:849
+#: functions.php:382 functions.php:855
 msgid "Email : "
 msgstr ""
 
@@ -214,47 +214,43 @@ msgstr ""
 msgid "Post Category :"
 msgstr ""
 
-#: functions.php:807
+#: functions.php:808
 msgid "Your Name (required)"
 msgstr ""
 
-#: functions.php:811
+#: functions.php:812
 msgid "Your Email (required)"
 msgstr ""
 
-#: functions.php:814
+#: functions.php:815
 msgid "Your Phone (required)"
 msgstr ""
 
-#: functions.php:818
+#: functions.php:819
 msgid "Products List (required)"
 msgstr ""
 
-#: functions.php:822
+#: functions.php:823
 msgid "More Information (required)"
 msgstr ""
 
-#: functions.php:825 functions.php:859
+#: functions.php:826 functions.php:867
 msgid "Order Products"
 msgstr ""
 
-#: functions.php:847
+#: functions.php:853
 msgid "Name : "
 msgstr ""
 
-#: functions.php:848
+#: functions.php:854
 msgid "Phone Number : "
 msgstr ""
 
-#: functions.php:850
-msgid "Products : "
-msgstr ""
-
-#: functions.php:861
+#: functions.php:869
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr ""
 
-#: functions.php:864
+#: functions.php:872
 msgid "An unexpected error occurred"
 msgstr ""
 

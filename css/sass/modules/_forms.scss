@@ -26,3 +26,13 @@ form.order-products{
 		max-width : 100%;
 	}
 }
+.failed-message{
+	background-color: $grey1;
+	border-bottom : 3px solid $red;
+	padding : 10px;
+}
+.success-message{
+	background-color: $grey1;
+	border-bottom : 3px solid $green;
+	padding : 10px;
+}

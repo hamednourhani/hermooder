@@ -50,9 +50,12 @@
  	aside.widget{
  		font-size: 110%;
  		&.widget_last_products_widget{
-			li img{
-				margin-right : auto;
-				margin-left : 10px;
+			li {
+				font-size : 90%;
+				img{
+					margin-left : 10px;
+					margin-right : auto;
+				}
 			}
 		}
  	}

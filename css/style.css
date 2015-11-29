@@ -689,7 +689,7 @@ p {
 
 /*------ colors -----------*/
 /*----------------transition-shadow----------------------*/
-/* line 76, sass/base/_variables.scss */
+/* line 78, sass/base/_variables.scss */
 .def-transition, ul.main-nav, ul.main-nav > li a, .credit-holder .socials li .social-icon {
   -moz-transition: all 0.4s ease-in-out 0s;
   -o-transition: all 0.4s ease-in-out 0s;
@@ -698,14 +698,14 @@ p {
   transition: all 0.4s ease-in-out 0s; }
 
 /*----------------box-shadow----------------------*/
-/* line 81, sass/base/_variables.scss */
+/* line 83, sass/base/_variables.scss */
 .def-box-shadow, .site-header span.menu-toggler i:before, ul.main-nav, .primary .banner-wrapper, .primary article.hentry, .secondary aside.widget, .site-footer {
   -moz-box-shadow: 0px 0px 7px #4E4E4E;
   -webkit-box-shadow: 0px 0px 7px #4E4E4E;
   box-shadow: 0px 0px 7px #4E4E4E; }
 
 /*----------------gradiant----------------------*/
-/* line 86, sass/base/_variables.scss */
+/* line 88, sass/base/_variables.scss */
 .back-gradiant-rtl {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dae1ea+0,ffffff+100 */
   background: #dae1ea;
@@ -727,7 +727,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dae1ea', endColorstr='#ffffff',GradientType=1 );
   /* IE6-8 */ }
 
-/* line 100, sass/base/_variables.scss */
+/* line 102, sass/base/_variables.scss */
 .back-gradiant-ltr {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,dae1ea+99 */
   background: #ffffff;
@@ -749,7 +749,7 @@ p {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dae1ea',GradientType=1 );
   /* IE6-8 */ }
 
-/* line 114, sass/base/_variables.scss */
+/* line 116, sass/base/_variables.scss */
 .green-cube-gradiant, ul.main-nav {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8db63f+1,79aa2f+100 */
   background: #8db63f;
@@ -1684,9 +1684,29 @@ ul.main-nav {
     .secondary aside.widget p {
       margin: auto; }
     /* line 158, sass/layout/_main.scss */
-    .secondary aside.widget.widget_last_products_widget li img {
-      margin-right: 10px;
-      vertical-align: center; }
+    .secondary aside.widget.widget_last_products_widget ul {
+      padding: 0px; }
+    /* line 161, sass/layout/_main.scss */
+    .secondary aside.widget.widget_last_products_widget li {
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -o-transition: all 0.3s ease-in-out 0s;
+      -webkit-transition: all 0.3s ease-in-out;
+      -webkit-transition-delay: 0s;
+      transition: all 0.3s ease-in-out 0s;
+      font-size: 90%; }
+      /* line 164, sass/layout/_main.scss */
+      .secondary aside.widget.widget_last_products_widget li:hover {
+        background-color: #FFFFFF; }
+      /* line 167, sass/layout/_main.scss */
+      .secondary aside.widget.widget_last_products_widget li a {
+        border-bottom: 1px dashed #8db63f;
+        width: 100%;
+        padding: 5px;
+        display: inline-block; }
+      /* line 173, sass/layout/_main.scss */
+      .secondary aside.widget.widget_last_products_widget li img {
+        margin-right: 10px;
+        vertical-align: middle; }
 
 /* line 1, sass/layout/_footer.scss */
 .site-footer {
@@ -1851,6 +1871,18 @@ form.order-products select.select-products {
   width: 50%;
   min-width: 300px;
   max-width: 100%; }
+
+/* line 29, sass/modules/_forms.scss */
+.failed-message {
+  background-color: #F2F2F2;
+  border-bottom: 3px solid #FF3300;
+  padding: 10px; }
+
+/* line 34, sass/modules/_forms.scss */
+.success-message {
+  background-color: #F2F2F2;
+  border-bottom: 3px solid #8db63f;
+  padding: 10px; }
 
 /* table style */
 /* other style */
