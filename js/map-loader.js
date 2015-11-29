@@ -63,6 +63,22 @@ function searchLocationsNear(center) {
    var xml = parseXml(data);
    var markerNodes = xml.documentElement.getElementsByTagName("marker");
    var bounds = new google.maps.LatLngBounds();
+   
+   //---------- comparator -------------------
+   // var children = [];
+   // for (var i = 0; i < markerNodes.length; i++) {
+   //    chidlren.push(markerNodes[i]);
+   //  }
+   //  function compare(a,b) {
+   //    if (parseFloat(a.getAttribute("distance")) < parseFloat(b.getAttribute("distance"))
+   //       return -1;
+   //    if (parseFloat(a.getAttribute("distance")) > parseFloat(b.getAttribute("distance"))
+   //      return 1;
+   //    return 0;
+   //  }
+   // children.sort(compare);
+   // markerNodes = children;
+
    for (var i = 0; i < markerNodes.length; i++) {
      var name = markerNodes[i].getAttribute("name");
      var address = markerNodes[i].getAttribute("address");
