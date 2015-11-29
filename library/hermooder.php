@@ -173,6 +173,9 @@ function hermooder_scripts_and_styles() {
 		wp_register_script( 'cssfx', get_stylesheet_directory_uri() . '/js/lib/cssfx.js', array(), '', false );
 		wp_register_script( 'hermooder-js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery','scrolltofixed'), '', true );
 		
+		wp_register_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCSatHC6AP22DyNRlWCyT8EZnEPo175cl4"', array(), '', true );
+		wp_register_script( 'map-loader', get_stylesheet_directory_uri() . '/js/map-loader.js', array('google-map'), '', true );
+		
 		
 		// enqueue styles and scripts
 		//wp_enqueue_script( 'please-wait' );
@@ -206,7 +209,10 @@ function hermooder_scripts_and_styles() {
 			wp_enqueue_script( 'selectivizr' );
 			wp_enqueue_script( 'cssfx' );
 		}
-
+		if(is_page_template('page-templates/search-pharmacy.php')){
+			wp_enqueue_script( 'google-map' );
+			wp_enqueue_script( 'map-loader' );
+		}
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'scrolltofixed' );
 

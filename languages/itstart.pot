@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hermooder 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
-"POT-Creation-Date: 2015-11-28 18:29:33+00:00\n"
+"POT-Creation-Date: 2015-11-29 07:06:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,20 +53,16 @@ msgstr ""
 msgid "Hermooder © 2015. All Right Reserved"
 msgstr ""
 
-#: functions.php:93
-msgid "1200px by 500px"
-msgstr ""
-
 #: functions.php:94
-msgid "30px by 30px"
+msgid "1000px by 250px"
 msgstr ""
 
 #: functions.php:95
-msgid "53px by 53px"
+msgid "50px by 50px"
 msgstr ""
 
 #: functions.php:96
-msgid "130px by 130px"
+msgid "150px by 150px"
 msgstr ""
 
 #: functions.php:138
@@ -150,15 +146,15 @@ msgstr ""
 msgid "Sms Panel : "
 msgstr ""
 
-#: functions.php:382 functions.php:954
+#: functions.php:382 functions.php:850
 msgid "Email : "
 msgstr ""
 
-#: functions.php:400 functions.php:760
+#: functions.php:400 functions.php:656
 msgid "Last Posts"
 msgstr ""
 
-#: functions.php:436 functions.php:558 functions.php:667 functions.php:775
+#: functions.php:436 functions.php:558 functions.php:671
 msgid "Title:"
 msgstr ""
 
@@ -202,83 +198,63 @@ msgstr ""
 msgid "Product Category :"
 msgstr ""
 
-#: functions.php:601
-msgid "Last Projects Widget"
-msgstr ""
-
-#: functions.php:604
-msgid "Display Last Projects"
-msgstr ""
-
-#: functions.php:652
-msgid "Last Projects"
-msgstr ""
-
-#: functions.php:671
-msgid "Project Numbers :"
-msgstr ""
-
-#: functions.php:675
-msgid "Project Category :"
-msgstr ""
-
-#: functions.php:707
+#: functions.php:603
 msgid "Last Posts By Category Widget"
 msgstr ""
 
-#: functions.php:710
+#: functions.php:606
 msgid "Display Last Posts in Category"
 msgstr ""
 
-#: functions.php:779
+#: functions.php:675
 msgid "Post Numbers :"
 msgstr ""
 
-#: functions.php:783
+#: functions.php:679
 msgid "Post Category :"
 msgstr ""
 
-#: functions.php:912
+#: functions.php:808
 msgid "Your Name (required)"
 msgstr ""
 
-#: functions.php:916
+#: functions.php:812
 msgid "Your Email (required)"
 msgstr ""
 
-#: functions.php:919
+#: functions.php:815
 msgid "Your Phone (required)"
 msgstr ""
 
-#: functions.php:923
+#: functions.php:819
 msgid "Products List (required)"
 msgstr ""
 
-#: functions.php:927
+#: functions.php:823
 msgid "More Information (required)"
 msgstr ""
 
-#: functions.php:930 functions.php:964
+#: functions.php:826 functions.php:860
 msgid "Order Products"
 msgstr ""
 
-#: functions.php:952
+#: functions.php:848
 msgid "Name : "
 msgstr ""
 
-#: functions.php:953
+#: functions.php:849
 msgid "Phone Number : "
 msgstr ""
 
-#: functions.php:955
+#: functions.php:851
 msgid "Products : "
 msgstr ""
 
-#: functions.php:966
+#: functions.php:862
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr ""
 
-#: functions.php:969
+#: functions.php:865
 msgid "An unexpected error occurred"
 msgstr ""
 
@@ -1051,15 +1027,15 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: library/hermooder.php:272
+#: library/hermooder.php:278
 msgid "The Main Menu"
 msgstr ""
 
-#: library/hermooder.php:303
+#: library/hermooder.php:309
 msgid "No Related Posts Yet!"
 msgstr ""
 
-#: library/hermooder.php:348
+#: library/hermooder.php:354
 msgid "Read "
 msgstr ""
 
