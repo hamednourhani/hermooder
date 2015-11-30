@@ -81,7 +81,30 @@
 .grid-excerpt{
 	font-size : 90%;
 }
-
+.without-sidebar .primary{
+	@include span-columns(12,12);
+ 	@include at-breakpoint($medium){
+ 		@include span-columns(12,12);
+ 	}
+}
+/*------------store locator----------------------*/
+.wpsl-direction-wrap{
+	.wpsl-directions{
+		background-color: $blue2;
+		display: inline-block;
+		padding : 5px 10px;
+		color : $white;
+	}
+}
+.wpsl-direction-before{
+	a#wpsl-direction-start{
+		background-color: $green;
+		display: inline-block;
+		padding : 5px 10px;
+		color : $white;
+	}
+}
+/*------------store locator----------------------*/
 
 .secondary{
 	@include span-columns(12,12);

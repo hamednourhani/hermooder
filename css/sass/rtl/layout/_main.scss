@@ -38,8 +38,51 @@
 .grid-excerpt{
 	font-size : 100%;
 }
+.without-sidebar .primary{
+	@include span-columns(12,12);
+ 	@include at-breakpoint($medium){
+ 		@include span-columns(12,12);
+ 		margin-right: auto;
+ 	}
+}
 
-
+/*------------store locator----------------------*/
+#wpsl-search-btn, #wpsl-search-wrap div {
+    margin-right: 10px;
+    float: right;
+}
+#wpsl-search-wrap div label {
+    float: right;
+    margin-left: 10px;
+    margin-right : auto;
+    line-height: 32px;
+}
+#wpsl-result-list {
+    width: 33%;
+    margin-left: .5%;
+    margin-right: auto;
+    float: right;
+    text-align: right;
+}
+#wpsl-gmap {
+    float: left;
+    width: 66.5%;
+}
+.wpsl-direction-index {
+    float: right;
+    width: 8%;
+    margin: 0 0 0 5%;
+}
+.wpsl-direction-txt {
+    float: right;
+    width: 62%;
+}
+.wpsl-direction-distance {
+    float: left;
+    width: 20%;
+    margin: 0 5% 0 0;
+}
+/*------------store locator----------------------*/
 .secondary{
 	@include span-columns(12,12);
  	@include at-breakpoint($medium){
@@ -62,4 +105,5 @@
 	
 	
 }
+
 

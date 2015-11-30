@@ -23,7 +23,7 @@
 			</div>
 		</div>
 <?php } elseif(is_singular()) {
-		$banner_mod = get_post_meta(get_the_ID(),'_hermooder_banner_mod',1);
+		$banner_mod = get_post_meta(get_the_ID(),'_hermooder_banner_mod');
 		
 		switch ($banner_mod[0]) {
 			case 'slider':
