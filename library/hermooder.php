@@ -276,6 +276,7 @@ function hermooder_theme_support() {
 	register_nav_menus(
 		array(
 			'main-menu' => __( 'The Main Menu', 'hermooder' ),   // main nav in header
+			'side-menu' => __( 'The Side Menu', 'hermooder' ),   // main nav in header
 		)
 	);
 

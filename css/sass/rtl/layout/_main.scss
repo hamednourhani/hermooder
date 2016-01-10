@@ -6,7 +6,7 @@
 .primary{
  	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(8,12);
+ 		@include span-columns(9,12);
  		margin-right: auto;
  	}
  	article.hentry{
@@ -86,10 +86,51 @@
 .secondary{
 	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(4 omega,12);
+ 		@include span-columns(3 omega,12);
  		margin-right: auto;
 
  	}
+	nav.side-menu{
+		h4.widgettitle{
+			i.fa{
+				padding-left : 5px;
+				padding-right : 1px;
+			}
+		}
+		li{
+
+			img{
+				float : right;
+				margin-left : 8px;
+				margin-right : auto;
+			}
+			&.menu-item-object-product_cat>a:after{
+				@extend .fa;
+				@include at-breakpoint($medium){
+					padding-left: 1px;
+					padding-right: 5px;
+					// width walker added
+					position: absolute;
+					content: "\f0da";
+					right: 4px;
+					left : auto;
+					top: 18px;
+
+				}
+			}
+		}
+		ul.sub-menu{
+			@include at-breakpoint($medium) {
+				position: absolute;
+				right: auto;
+				left: 100%;
+				display : none;
+			}
+
+
+
+		}
+	}
  	aside.widget{
  		font-size: 110%;
  		&.widget_last_products_widget{

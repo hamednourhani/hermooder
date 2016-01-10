@@ -53,6 +53,7 @@
 }
 ul.main-nav{
 	text-align : right;
+	margin : 0px auto;
 	&>li{
 		@include at-breakpoint($medium){
 			margin-right : auto;

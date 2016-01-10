@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2015-11-29 10:52+0330\n"
-"PO-Revision-Date: 2015-11-29 10:52+0330\n"
+"POT-Creation-Date: 2016-01-10 14:31+0330\n"
+"PO-Revision-Date: 2016-01-10 14:32+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -157,7 +157,7 @@ msgstr "تلفکس : "
 msgid "Sms Panel : "
 msgstr "سامانه پیامکی : "
 
-#: functions.php:382 functions.php:850
+#: functions.php:382 functions.php:855
 msgid "Email : "
 msgstr "پست الکترونیک : "
 
@@ -245,27 +245,27 @@ msgstr "لیست محصولات"
 msgid "More Information (required)"
 msgstr "توضیحات بیشتر"
 
-#: functions.php:826 functions.php:860
+#: functions.php:826 functions.php:867
 msgid "Order Products"
 msgstr "سفارش محصولات"
 
-#: functions.php:848
+#: functions.php:853
 msgid "Name : "
 msgstr "نام : "
 
-#: functions.php:849
+#: functions.php:854
 msgid "Phone Number : "
 msgstr "شماره تماس : "
 
-#: functions.php:851
+#: functions.php:856
 msgid "Products : "
 msgstr "محصولات : "
 
-#: functions.php:862
+#: functions.php:869
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr "با تشکر برای سفارش محصولات ، در اولین فرصت با شما تماس گرفته خواهد شد."
 
-#: functions.php:865
+#: functions.php:872
 msgid "An unexpected error occurred"
 msgstr ""
 "اشکالی در هنگام ارسال درخواست رخ داد لطفا با پشتیبانی سایت تماس حاصل فرمایید"
@@ -278,7 +278,7 @@ msgstr "تجربه لذت سبکبالی"
 msgid "Main Menu"
 msgstr "فهرست اصلی"
 
-#: library/banner-maker.php:29
+#: library/banner-maker.php:21
 #, php-format
 msgid "Search Results for: %s"
 msgstr "نتایج جستجو برای : %s"
@@ -628,11 +628,15 @@ msgstr "صفحه  %s"
 msgid "The Main Menu"
 msgstr "فهرست اصلی"
 
-#: library/hermooder.php:309
+#: library/hermooder.php:279
+msgid "The Side Menu"
+msgstr "منوی ستون کناری"
+
+#: library/hermooder.php:310
 msgid "No Related Posts Yet!"
 msgstr "هنوز مطلب مرتبطی منتشر نشده است!"
 
-#: library/hermooder.php:354
+#: library/hermooder.php:355
 msgid "Read "
 msgstr "مشاهده"
 
@@ -643,6 +647,14 @@ msgstr "برچسب ها : "
 #: library/post-meta.php:33
 msgid "Categories :"
 msgstr "دسته بندی ها : "
+
+#: sidebar.php:6
+msgid "Products"
+msgstr "محصولات"
+
+#: sidebar.php:11
+msgid "Side Menu"
+msgstr "منوی ستون کناری"
 
 #: single-pharmacy.php:27
 msgid " Address : "

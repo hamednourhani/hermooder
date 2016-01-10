@@ -1,48 +1,27 @@
 <?php if ( is_active_sidebar( 'sidebar' )) : ?>
 		
 					<div class="sidebar-widget">
+						<nav class="side-menu">
+							<h4 class="widgettitle"><i class="fa fa-cart-plus">   </i>
+								<?php echo __('Products','hermooder');?></h4>
+							<?php $walker = new Menu_With_Image();?>
+							<?php wp_nav_menu(array(
+								'container' => false,                           // remove nav container
+								'container_class' => 'menu cf',                 // class of container (should you choose to use it)
+								'menu' => __( 'Side Menu', 'hermooder' ),  // nav name
+								'menu_class' => 'nav side-nav cf',
+								'walker' => $walker,             // adding custom nav class
+								'theme_location' => 'side-menu',                 // where it's located in the theme
+								'before' => '',                                 // before the menu
+								'after' => '',                                  // after the menu
+								'link_before' => '',                            // before each link
+								'link_after' => '',                             // after each link
+								'depth' => 3,                                   // limit the depth of the nav
+								'fallback_cb' => ''                             // fallback function (if there is one)
+							)); ?>
+						</nav>
 						<?php dynamic_sidebar( 'sidebar' ); ?> 	
-						<!-- <aside class="widget product-widget">
-							<header class="widgettitle">
-								<h4>لینک های مهم</h4>
-							</header>
-							<main class="widgetbody">
-								<ul class="products-list">
-									<li><i class="fa fa-instagram"></i><span>اینستاگرام</span></li>
-									<li><i class="fa fa-linkedin-square"></i><span>لینکداین</span></li>
-									<li><i class="fa fa-book"></i><span>دانلود کاتالوگ</span></li>
-								</ul>
-							</main>
-						</aside>
-						<aside class="widget product-widget">
-							<header class="widgettitle">
-								<h4> آخرین پروژه ها</h4>
-							</header>
-							<main class="widgetbody">
-								<ul class="products-list">
-									<li><img src="images/thumb/managment/thumb1.png" alt=""><span>شرکت مسکن گستر</span></li>
-									<li><img src="images/thumb/managment/thumb2.png" alt=""><span>سازمان مدیریت اکتشاف</span></li>
-									<li><img src="images/thumb/managment/thumb3.png" alt=""><span>سازمان انتقال خون</span></li>
-									<li><img src="images/thumb/managment/thumb4.png" alt=""><span>شرکت سها</span></li>
-									<li><img src="images/thumb/managment/thumb5.png" alt=""><span>سازمان بیمه مرکزی</span></li>
-								</ul>
-							</main>
-						</aside>
-						<aside class="widget product-widget">
-							<header class="widgettitle">
-								<h4>دسته بندی محصولات</h4>
-							</header>
-							<main class="widgetbody">
-								<ul class="products-list">
-									<li><img src="images/thumb/conf/thumb1.png" alt=""><span>میزهای کنفرانس</span></li>
-									<li><img src="images/thumb/counter/thumb1.png" alt=""><span>کانتر</span></li>
-									<li><img src="images/thumb/empolyee/thumb1.png" alt=""><span>میزهای کارمندی</span></li>
-									<li><img src="images/thumb/managment/thumb1.png" alt=""><span>میزهای مدیریتی</span></li>
-									<li><img src="images/thumb/wall/thumb1.png" alt=""><span>پوشش های دیواری</span></li>
-								</ul>
-								
-							</main>
-						</aside> -->
+
 					</div>
 				
 				

@@ -7,7 +7,7 @@
 .primary{
  	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(8,12);
+ 		@include span-columns(9,12);
  	}
  	padding:{
 		top :20px;
@@ -16,6 +16,8 @@
 	.banner-wrapper{
 		@extend .def-box-shadow;
 		background-color: $glassyWhite;
+		overflow: hidden;
+		text-align: center;
 		padding:5px;
 		max-height : 473px;
 		margin-bottom : 20px;
@@ -109,13 +111,92 @@
 .secondary{
 	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(4 omega,12);
+ 		@include span-columns(3 omega,12);
  	}
 	display : block;
 	
 	padding:{
 		top :20px;
 		bottom : 20px;
+	}
+	nav.side-menu{
+		h4.widgettitle{
+			margin : auto;
+			color : $green;
+			border-bottom : 1px solid darken($grey2,5%);
+			padding : 15px  20px;
+			i.fa{
+				font-size : 140%;
+				padding-right : 5px;
+			}
+		}
+		ul.side-nav{
+			padding : 0px;
+			margin : 0px;
+		}
+		margin : 0px;
+		padding : 0px;
+		@extend .def-box-shadow;
+		width : 100%;
+		margin-bottom : 20px;
+		font-size: 90%;
+		background-color: $grey1;
+		opacity : 0.9;
+		color : $black2;
+		border-top : 4px solid $blue2;
+		z-index : 9999;
+		li{
+			position : relative;
+			width : 100%;
+			a{
+				display : inline-block;
+				width : 100%;
+				padding : 10px 20px;
+				border-bottom : 1px dashed darken($grey2,5%);
+				&:hover{
+					background-color: darken($grey1,5%);
+				}
+			}
+			&:hover > ul.sub-menu{
+				display: block;
+			}
+			img{
+				float : left;
+				margin-right : 8px;
+			}
+			&.menu-item-object-product_cat>a:after{
+				@extend .fa;
+				@include at-breakpoint($medium){
+					vertical-align : middle;
+					padding-left: 5px;
+					// width walker added
+					position: absolute;
+					content: "\f0d9";
+					left: 4px;
+					top: 18px;
+
+				}
+			}
+		}
+		ul.sub-menu{
+			padding : 0px;
+			display: block;
+			@include at-breakpoint($medium) {
+				position: absolute;
+				top: -20px;
+				right: 100%;
+				display : none;
+				background-color: $grey1;
+				color : $black2;
+				border-top : 4px solid $blue2;
+				min-width : 240px;
+				max-width : 100%;
+				@include box-shadow(0px 0px 7px $grey3);
+			}
+
+
+
+		}
 	}
 	aside.widget{
 		@extend .def-box-shadow;
