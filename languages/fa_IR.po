@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2016-01-10 14:31+0330\n"
-"PO-Revision-Date: 2016-01-10 14:32+0330\n"
+"POT-Creation-Date: 2016-01-10 14:51+0330\n"
+"PO-Revision-Date: 2016-01-10 14:52+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -157,7 +157,7 @@ msgstr "تلفکس : "
 msgid "Sms Panel : "
 msgstr "سامانه پیامکی : "
 
-#: functions.php:382 functions.php:855
+#: functions.php:382 functions.php:860
 msgid "Email : "
 msgstr "پست الکترونیک : "
 
@@ -242,30 +242,38 @@ msgid "Products List (required)"
 msgstr "لیست محصولات"
 
 #: functions.php:823
+msgid "Quantity (required)"
+msgstr "مقدار سفارش (الزامی)"
+
+#: functions.php:827
 msgid "More Information (required)"
 msgstr "توضیحات بیشتر"
 
-#: functions.php:826 functions.php:867
+#: functions.php:830 functions.php:873
 msgid "Order Products"
 msgstr "سفارش محصولات"
 
-#: functions.php:853
+#: functions.php:858
 msgid "Name : "
 msgstr "نام : "
 
-#: functions.php:854
+#: functions.php:859
 msgid "Phone Number : "
 msgstr "شماره تماس : "
 
-#: functions.php:856
+#: functions.php:861
 msgid "Products : "
 msgstr "محصولات : "
 
-#: functions.php:869
+#: functions.php:862
+msgid "Quantity : "
+msgstr "مقدار سفارش : "
+
+#: functions.php:875
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr "با تشکر برای سفارش محصولات ، در اولین فرصت با شما تماس گرفته خواهد شد."
 
-#: functions.php:872
+#: functions.php:878
 msgid "An unexpected error occurred"
 msgstr ""
 "اشکالی در هنگام ارسال درخواست رخ داد لطفا با پشتیبانی سایت تماس حاصل فرمایید"
@@ -648,11 +656,11 @@ msgstr "برچسب ها : "
 msgid "Categories :"
 msgstr "دسته بندی ها : "
 
-#: sidebar.php:6
+#: sidebar.php:7
 msgid "Products"
 msgstr "محصولات"
 
-#: sidebar.php:11
+#: sidebar.php:12
 msgid "Side Menu"
 msgstr "منوی ستون کناری"
 

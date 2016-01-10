@@ -1895,6 +1895,7 @@ div.footer-widget-area {
   /* line 55, sass/layout/_footer.scss */
   .credit-holder .socials {
     float: none;
+    margin: 0px;
     text-align: center;
     display: block;
     padding: 5px; }
@@ -1903,47 +1904,47 @@ div.footer-widget-area {
       .credit-holder .socials {
         float: left;
         display: inline-block; } }
-    /* line 65, sass/layout/_footer.scss */
+    /* line 66, sass/layout/_footer.scss */
     .credit-holder .socials li {
       display: inline-block; }
-      /* line 68, sass/layout/_footer.scss */
+      /* line 69, sass/layout/_footer.scss */
       .credit-holder .socials li .social-icon {
         background: url('../images/social-icons.png?1446117499');
         display: block;
         width: 30px;
         height: 30px; }
-        /* line 74, sass/layout/_footer.scss */
+        /* line 75, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.facebook {
           background-position: -0px 30px; }
-          /* line 76, sass/layout/_footer.scss */
+          /* line 77, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.facebook:hover {
             background-position: -0px 0px; }
-        /* line 80, sass/layout/_footer.scss */
+        /* line 81, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.instagram {
           background-position: -32px 30px; }
-          /* line 82, sass/layout/_footer.scss */
+          /* line 83, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.instagram:hover {
             background-position: -32px 0px; }
-        /* line 86, sass/layout/_footer.scss */
+        /* line 87, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.linkedin {
           background-position: -64px 30px; }
-          /* line 88, sass/layout/_footer.scss */
+          /* line 89, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.linkedin:hover {
             background-position: -64px 0px; }
-        /* line 92, sass/layout/_footer.scss */
+        /* line 93, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.gplus {
           background-position: -96px 30px; }
-          /* line 94, sass/layout/_footer.scss */
+          /* line 95, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.gplus:hover {
             background-position: -96px 0px; }
-  /* line 102, sass/layout/_footer.scss */
+  /* line 103, sass/layout/_footer.scss */
   .credit-holder span.credit {
     display: inline-block;
     padding: 5px;
     color: #FFFFFF;
     font-size: 80%;
     color: #c0dbe9; }
-  /* line 109, sass/layout/_footer.scss */
+  /* line 110, sass/layout/_footer.scss */
   .credit-holder span.site-holder {
     display: block;
     text-align: center;
@@ -1952,7 +1953,7 @@ div.footer-widget-area {
     float: none;
     color: #c0dbe9; }
     @media (min-width: 45em) {
-      /* line 109, sass/layout/_footer.scss */
+      /* line 110, sass/layout/_footer.scss */
       .credit-holder span.site-holder {
         float: right;
         display: inline-block; } }
