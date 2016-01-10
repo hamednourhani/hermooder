@@ -1685,33 +1685,34 @@ ul.main-nav {
       /* line 128, sass/layout/_main.scss */
       .secondary nav.side-menu h4.widgettitle i.fa, .secondary nav.side-menu h4.widgettitle .comment-area .comment-metadata i.edit-link:before, .comment-area .comment-metadata .secondary nav.side-menu h4.widgettitle i.edit-link:before, .secondary nav.side-menu h4.widgettitle .comment-area i.reply:before, .comment-area .secondary nav.side-menu h4.widgettitle i.reply:before {
         font-size: 140%;
-        padding-right: 5px; }
-    /* line 133, sass/layout/_main.scss */
+        padding-right: 5px;
+        vertical-align: middle; }
+    /* line 134, sass/layout/_main.scss */
     .secondary nav.side-menu ul.side-nav {
       padding: 0px;
       margin: 0px; }
-    /* line 148, sass/layout/_main.scss */
+    /* line 149, sass/layout/_main.scss */
     .secondary nav.side-menu li {
       position: relative;
       width: 100%; }
-      /* line 151, sass/layout/_main.scss */
+      /* line 152, sass/layout/_main.scss */
       .secondary nav.side-menu li a {
         display: inline-block;
         width: 100%;
         padding: 10px 20px;
         border-bottom: 1px dashed #d9dbdb; }
-        /* line 156, sass/layout/_main.scss */
+        /* line 157, sass/layout/_main.scss */
         .secondary nav.side-menu li a:hover {
           background-color: #e5e5e5; }
-      /* line 160, sass/layout/_main.scss */
+      /* line 161, sass/layout/_main.scss */
       .secondary nav.side-menu li:hover > ul.sub-menu {
         display: block; }
-      /* line 163, sass/layout/_main.scss */
+      /* line 164, sass/layout/_main.scss */
       .secondary nav.side-menu li img {
         float: left;
         margin-right: 8px; }
       @media (min-width: 45em) {
-        /* line 167, sass/layout/_main.scss */
+        /* line 168, sass/layout/_main.scss */
         .secondary nav.side-menu li.menu-item-object-product_cat > a:after {
           vertical-align: middle;
           padding-left: 5px;
@@ -1719,12 +1720,12 @@ ul.main-nav {
           content: "\f0d9";
           left: 4px;
           top: 18px; } }
-    /* line 181, sass/layout/_main.scss */
+    /* line 182, sass/layout/_main.scss */
     .secondary nav.side-menu ul.sub-menu {
       padding: 0px;
       display: block; }
       @media (min-width: 45em) {
-        /* line 181, sass/layout/_main.scss */
+        /* line 182, sass/layout/_main.scss */
         .secondary nav.side-menu ul.sub-menu {
           position: absolute;
           top: -20px;
@@ -1738,7 +1739,7 @@ ul.main-nav {
           -moz-box-shadow: 0px 0px 7px #4E4E4E;
           -webkit-box-shadow: 0px 0px 7px #4E4E4E;
           box-shadow: 0px 0px 7px #4E4E4E; } }
-  /* line 201, sass/layout/_main.scss */
+  /* line 202, sass/layout/_main.scss */
   .secondary aside.widget {
     padding: 10px 20px;
     margin-bottom: 20px;
@@ -1747,39 +1748,39 @@ ul.main-nav {
     opacity: 0.9;
     color: #282828;
     border-top: 4px solid #00a7d4; }
-    /* line 210, sass/layout/_main.scss */
+    /* line 211, sass/layout/_main.scss */
     .secondary aside.widget .widgettitle {
       margin: 10px auto;
       color: #8db63f;
       padding-bottom: 10px;
       border-bottom: 1px solid #d9dbdb; }
-    /* line 216, sass/layout/_main.scss */
+    /* line 217, sass/layout/_main.scss */
     .secondary aside.widget.green-widget {
       background-color: #8db63f;
       border: 0px; }
-      /* line 219, sass/layout/_main.scss */
+      /* line 220, sass/layout/_main.scss */
       .secondary aside.widget.green-widget.with-border {
         border-top: 4px solid #00a7d4;
         text-align: center; }
-    /* line 225, sass/layout/_main.scss */
+    /* line 226, sass/layout/_main.scss */
     .secondary aside.widget.orang-widget {
       background-color: #e47a26;
       border: 0px; }
-    /* line 229, sass/layout/_main.scss */
+    /* line 230, sass/layout/_main.scss */
     .secondary aside.widget.blue-widget {
       background-color: #00a7d4;
       border: 0px; }
-    /* line 233, sass/layout/_main.scss */
+    /* line 234, sass/layout/_main.scss */
     .secondary aside.widget.light-blue-widget {
       background-color: #c0dbe9;
       border: 0px; }
-    /* line 241, sass/layout/_main.scss */
+    /* line 242, sass/layout/_main.scss */
     .secondary aside.widget.green-widget p, .secondary aside.widget.green-widget h4, .secondary aside.widget.green-widget h3, .secondary aside.widget.green-widget span, .secondary aside.widget.green-widget a, .secondary aside.widget.orang-widget p, .secondary aside.widget.orang-widget h4, .secondary aside.widget.orang-widget h3, .secondary aside.widget.orang-widget span, .secondary aside.widget.orang-widget a, .secondary aside.widget.blue-widget p, .secondary aside.widget.blue-widget h4, .secondary aside.widget.blue-widget h3, .secondary aside.widget.blue-widget span, .secondary aside.widget.blue-widget a, .secondary aside.widget.light-blue-widget p, .secondary aside.widget.light-blue-widget h4, .secondary aside.widget.light-blue-widget h3, .secondary aside.widget.light-blue-widget span, .secondary aside.widget.light-blue-widget a {
       color: #F8F8F8; }
-    /* line 244, sass/layout/_main.scss */
+    /* line 245, sass/layout/_main.scss */
     .secondary aside.widget.green-widget .widgettitle, .secondary aside.widget.orang-widget .widgettitle, .secondary aside.widget.blue-widget .widgettitle, .secondary aside.widget.light-blue-widget .widgettitle {
       border-color: #c0dbe9; }
-    /* line 249, sass/layout/_main.scss */
+    /* line 250, sass/layout/_main.scss */
     .secondary aside.widget a.widget-big-button {
       -moz-transition: all 0.4s ease-in-out 0s;
       -o-transition: all 0.4s ease-in-out 0s;
@@ -1794,27 +1795,27 @@ ul.main-nav {
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       border-radius: 5px; }
-      /* line 258, sass/layout/_main.scss */
+      /* line 259, sass/layout/_main.scss */
       .secondary aside.widget a.widget-big-button:hover {
         background-color: #0065b1; }
-    /* line 264, sass/layout/_main.scss */
+    /* line 265, sass/layout/_main.scss */
     .secondary aside.widget input, .secondary aside.widget textarea {
       width: 100%;
       max-width: 100%;
       margin-bottom: 10px;
       padding: 5px; }
-    /* line 270, sass/layout/_main.scss */
+    /* line 271, sass/layout/_main.scss */
     .secondary aside.widget input[type="submit"],
     .secondary aside.widget input[type="button"] {
       width: auto;
       padding: 7px 15px; }
-    /* line 275, sass/layout/_main.scss */
+    /* line 276, sass/layout/_main.scss */
     .secondary aside.widget p {
       margin: auto; }
-    /* line 279, sass/layout/_main.scss */
+    /* line 280, sass/layout/_main.scss */
     .secondary aside.widget.widget_last_products_widget ul {
       padding: 0px; }
-    /* line 282, sass/layout/_main.scss */
+    /* line 283, sass/layout/_main.scss */
     .secondary aside.widget.widget_last_products_widget li {
       -moz-transition: all 0.3s ease-in-out 0s;
       -o-transition: all 0.3s ease-in-out 0s;
@@ -1822,16 +1823,16 @@ ul.main-nav {
       -webkit-transition-delay: 0s;
       transition: all 0.3s ease-in-out 0s;
       font-size: 90%; }
-      /* line 285, sass/layout/_main.scss */
+      /* line 286, sass/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li:hover {
         background-color: #FFFFFF; }
-      /* line 288, sass/layout/_main.scss */
+      /* line 289, sass/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li a {
         border-bottom: 1px dashed #8db63f;
         width: 100%;
         padding: 5px;
         display: inline-block; }
-      /* line 294, sass/layout/_main.scss */
+      /* line 295, sass/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li img {
         margin-right: 10px;
         vertical-align: middle; }

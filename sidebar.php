@@ -2,7 +2,8 @@
 		
 					<div class="sidebar-widget">
 						<nav class="side-menu">
-							<h4 class="widgettitle"><i class="fa fa-cart-plus">   </i>
+							<h4 class="widgettitle"><i class="fa fa-shopping-cart">  </i>
+
 								<?php echo __('Products','hermooder');?></h4>
 							<?php $walker = new Menu_With_Image();?>
 							<?php wp_nav_menu(array(
