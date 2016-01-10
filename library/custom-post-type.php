@@ -115,9 +115,9 @@ function pharmacy_post_type() {
 
 
 	// adding the function to the Wordpress init
-	add_action( 'init', 'product_post_type');
-	add_action( 'init', 'pharmacy_post_type');
-	
+	add_action( 'init', 'product_post_type',1);
+//	add_action( 'init', 'pharmacy_post_type');
+
 	
 	
 
