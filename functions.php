@@ -812,8 +812,17 @@ function html_form_code() {
   echo __('Your Email (required)','hermooder'). '<br/>';
   echo '<input type="email" name="cf-email" value="' . ( isset( $_POST["cf-email"] ) ? esc_attr( $_POST["cf-email"] ) : '' ) . '" size="40" />';
   echo '</p>';
+  echo '<p>';
    echo __('Your Phone (required)','hermooder'). '<br/>';
   echo '<input type="text" name="cf-phone" value="' . ( isset( $_POST["cf-phone"] ) ? esc_attr( $_POST["cf-phone"] ) : '' ) . '" size="40" />';
+  echo '</p>';
+  echo '</p>';
+   echo __('Your Mobile Number (Optional)','hermooder'). '<br/>';
+  echo '<input type="text" name="cf-mobile-phone" value="' . ( isset( $_POST["cf-mobile-phone"] ) ? esc_attr( $_POST["cf-mobile-phone"] ) : '' ) . '" size="40" />';
+  echo '</p>';
+  echo '</p>';
+   echo __('Your Fax Number (Optional)','hermooder'). '<br/>';
+  echo '<input type="text" name="cf-fax" value="' . ( isset( $_POST["cf-fax"] ) ? esc_attr( $_POST["cf-fax"] ) : '' ) . '" size="40" />';
   echo '</p>';
   echo '<p>';
   echo  __('Products List (required)','hermooder'). '<br/>';
@@ -846,6 +855,8 @@ function deliver_mail() {
     $name    = sanitize_text_field( $_POST["cf-name"] );
     $email   = sanitize_email( $_POST["cf-email"] );
     $phone   = sanitize_text_field( $_POST["cf-phone"] );
+     $mobile_phone   = sanitize_text_field( $_POST["cf-mobile-phone"] );
+      $fax   = sanitize_text_field( $_POST["cf-fax"] );
     $qty   = sanitize_text_field( $_POST["qty"] );
     $products = $_POST["cf-products"];
     
@@ -858,6 +869,8 @@ function deliver_mail() {
     $message .= "<p>".__('Name : ','hermooder').$name."</p>"."\r\n";
     $message .= "<p>".__('Phone Number : ','hermooder').$phone."</p><br />"."\r\n";
     $message .= "<p>".__('Email : ','hermooder').$email."</p><br />"."\r\n";
+    $message .= "<p>".__('Mobile : ','hermooder').$mobile_phone."</p><br />"."\r\n";
+    $message .= "<p>".__('Fax : ','hermooder').$fax."</p><br />"."\r\n";
     $message .= "<p>".__('Products : ','hermooder')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
     $message .= "<p>".__('Quantity : ','hermooder').$qty."</p><br />"."\r\n";
     $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";

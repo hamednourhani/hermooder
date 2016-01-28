@@ -311,6 +311,11 @@ body {
   right: 0;
   left: auto; }
 
+/*---------WP user Frontedn Pro ---------------*/
+/* line 85, sass/rtl/base/_base.scss */
+ul.wpuf-form li .wpuf-label {
+  float: right; }
+
 /* mixins */
 @-webkit-keyframes move-up {
   0% {
@@ -480,7 +485,7 @@ ul.main-nav {
   @media (min-width: 45em) {
     /* line 6, sass/rtl/layout/_main.scss */
     .primary {
-      width: 74.61538%;
+      width: 83.07692%;
       float: right;
       margin-left: 1.53846%;
       margin-right: auto; } }
@@ -586,21 +591,24 @@ ul.main-nav {
   @media (min-width: 45em) {
     /* line 86, sass/rtl/layout/_main.scss */
     .secondary {
-      width: 23.84615%;
+      width: 15.38462%;
       float: left;
       margin-left: 0;
       margin-right: auto; } }
-  /* line 95, sass/rtl/layout/_main.scss */
-  .secondary nav.side-menu h4.widgettitle i.fa {
-    padding-left: 5px;
-    padding-right: 1px; }
-  /* line 102, sass/rtl/layout/_main.scss */
+  /* line 94, sass/rtl/layout/_main.scss */
+  .secondary nav.side-menu h4.widgettitle {
+    font-size: 18px; }
+    /* line 96, sass/rtl/layout/_main.scss */
+    .secondary nav.side-menu h4.widgettitle i.fa {
+      padding-left: 5px;
+      padding-right: 1px; }
+  /* line 103, sass/rtl/layout/_main.scss */
   .secondary nav.side-menu li img {
     float: right;
     margin-left: 8px;
     margin-right: auto; }
   @media (min-width: 45em) {
-    /* line 107, sass/rtl/layout/_main.scss */
+    /* line 108, sass/rtl/layout/_main.scss */
     .secondary nav.side-menu li.menu-item-object-product_cat > a:after {
       padding-left: 1px;
       padding-right: 5px;
@@ -610,19 +618,19 @@ ul.main-nav {
       left: auto;
       top: 18px; } }
   @media (min-width: 45em) {
-    /* line 122, sass/rtl/layout/_main.scss */
+    /* line 123, sass/rtl/layout/_main.scss */
     .secondary nav.side-menu ul.sub-menu {
       position: absolute;
       right: auto;
       left: 100%;
       display: none; } }
-  /* line 134, sass/rtl/layout/_main.scss */
+  /* line 135, sass/rtl/layout/_main.scss */
   .secondary aside.widget {
     font-size: 110%; }
-    /* line 137, sass/rtl/layout/_main.scss */
+    /* line 138, sass/rtl/layout/_main.scss */
     .secondary aside.widget.widget_last_products_widget li {
-      font-size: 90%; }
-      /* line 139, sass/rtl/layout/_main.scss */
+      font-size: 130%; }
+      /* line 140, sass/rtl/layout/_main.scss */
       .secondary aside.widget.widget_last_products_widget li img {
         margin-left: 10px;
         margin-right: auto; }

@@ -1161,6 +1161,11 @@ img.wp-smiley,
 .wp-caption.alignleft + ol {
   list-style-position: inside; }
 
+/*-------------js Composer---------------------*/
+/* line 370, sass/base/_base.scss */
+.vc_grid.vc_row .vc_grid-item {
+  z-index: 0 !important; }
+
 @-webkit-keyframes move-up {
   0% {
     opacity: 0;
@@ -1542,7 +1547,7 @@ ul.main-nav {
   @media (min-width: 45em) {
     /* line 7, sass/layout/_main.scss */
     .primary {
-      width: 74.61538%;
+      width: 83.07692%;
       float: left;
       margin-right: 1.53846%; } }
   /* line 16, sass/layout/_main.scss */
@@ -1661,7 +1666,7 @@ ul.main-nav {
   @media (min-width: 45em) {
     /* line 111, sass/layout/_main.scss */
     .secondary {
-      width: 23.84615%;
+      width: 15.38462%;
       float: right;
       margin-right: 0; } }
   /* line 122, sass/layout/_main.scss */

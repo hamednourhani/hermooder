@@ -366,3 +366,7 @@ img.wp-smiley,
 .wp-caption.alignleft + ol {
 	list-style-position: inside;
 }
+/*-------------js Composer---------------------*/
+.vc_grid.vc_row .vc_grid-item {
+	z-index: 0 !important;
+}

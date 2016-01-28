@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2016-01-10 14:51+0330\n"
-"PO-Revision-Date: 2016-01-10 14:52+0330\n"
+"POT-Creation-Date: 2016-01-28 12:42+0330\n"
+"PO-Revision-Date: 2016-01-28 12:45+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -157,7 +157,7 @@ msgstr "تلفکس : "
 msgid "Sms Panel : "
 msgstr "سامانه پیامکی : "
 
-#: functions.php:382 functions.php:860
+#: functions.php:382 functions.php:871
 msgid "Email : "
 msgstr "پست الکترونیک : "
 
@@ -233,47 +233,63 @@ msgstr "نام شما (الزامی)"
 msgid "Your Email (required)"
 msgstr "ایمیل (الزامی)"
 
-#: functions.php:815
+#: functions.php:816
 msgid "Your Phone (required)"
 msgstr "شماره تماس (الزامی)"
 
-#: functions.php:819
+#: functions.php:820
+msgid "Your Mobile Number (Optional)"
+msgstr "شماره تلفن همراه (اختیاری)"
+
+#: functions.php:824
+msgid "Your Fax Number (Optional)"
+msgstr "شماره فکس (اختیاری)"
+
+#: functions.php:828
 msgid "Products List (required)"
 msgstr "لیست محصولات"
 
-#: functions.php:823
+#: functions.php:832
 msgid "Quantity (required)"
-msgstr "مقدار سفارش (الزامی)"
+msgstr "تعداد محصولات جهت سفارش (الزامی)"
 
-#: functions.php:827
+#: functions.php:836
 msgid "More Information (required)"
 msgstr "توضیحات بیشتر"
 
-#: functions.php:830 functions.php:873
+#: functions.php:839 functions.php:886
 msgid "Order Products"
 msgstr "سفارش محصولات"
 
-#: functions.php:858
+#: functions.php:869
 msgid "Name : "
 msgstr "نام : "
 
-#: functions.php:859
+#: functions.php:870
 msgid "Phone Number : "
 msgstr "شماره تماس : "
 
-#: functions.php:861
+#: functions.php:872
+msgid "Mobile : "
+msgstr "تلفن همراه : "
+
+#: functions.php:873
+msgid "Fax : "
+msgstr "فکس : "
+
+#: functions.php:874
 msgid "Products : "
 msgstr "محصولات : "
 
-#: functions.php:862
+#: functions.php:875
 msgid "Quantity : "
 msgstr "مقدار سفارش : "
 
-#: functions.php:875
+#: functions.php:888
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr "با تشکر برای سفارش محصولات ، در اولین فرصت با شما تماس گرفته خواهد شد."
 
-#: functions.php:878
+#: functions.php:891
 msgid "An unexpected error occurred"
 msgstr ""
 "اشکالی در هنگام ارسال درخواست رخ داد لطفا با پشتیبانی سایت تماس حاصل فرمایید"
