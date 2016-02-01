@@ -2020,6 +2020,25 @@ form.order-products select.select-products {
   padding: 10px; }
 
 /* table style */
+/* line 2, sass/modules/_tables.scss */
+table.products_list_table {
+  width: 100%; }
+  /* line 4, sass/modules/_tables.scss */
+  table.products_list_table tbody, table.products_list_table tr {
+    width: 100%; }
+  /* line 8, sass/modules/_tables.scss */
+  table.products_list_table tr td, table.products_list_table tr th {
+    padding: 10px;
+    text-align: left; }
+  /* line 12, sass/modules/_tables.scss */
+  table.products_list_table tr th {
+    background-color: #00a7d4;
+    color: #FFFFFF;
+    border-bottom: 3px solid #8db63f; }
+  /* line 17, sass/modules/_tables.scss */
+  table.products_list_table tr:nth-of-type(2n) {
+    background-color: #f6f6f6; }
+
 /* other style */
 /* line 3, sass/modules/_comments.scss */
 .comment-area img.avatar {

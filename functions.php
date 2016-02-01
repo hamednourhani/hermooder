@@ -795,12 +795,21 @@ function html_form_code() {
           )
       );
      
-      $product_select = '<select multiple="multiple" class="select-products" name="cf-products[]" >';
-      foreach($posts as $post) : setup_postdata( $post );
+//      $product_select = '<select multiple="multiple" class="select-products" name="cf-products[]" >';
+//      foreach($posts as $post) : setup_postdata( $post );
+//        $name = $post->post_title;
+//        $product_select .='<option value="'.$name.'">'.$name.'</option>';
+//      endforeach;
+//     $product_select .= '</select>';
+
+    $product_table = '<table class="products_list_table"><tbody>';
+    $product_table .= '<tr><th>'.__("Product Name","hermooder").'</th><th>'.__("Order Quantity","hermooder").'</th></tr>';
+    foreach($posts as $post) : setup_postdata( $post );
         $name = $post->post_title;
-        $product_select .='<option value="'.$name.'">'.$name.'</option>';
+        $id = $post->ID;
+        $product_table .='<tr><td>'.$name.'</td><td><input type="text" name="product_'.$id.'" value="' . ( isset( $_POST["product_".$id] ) ? esc_attr( $_POST["product_".$id] ) : '' ) . '"/></td></tr>';
       endforeach;
-     $product_select .= '</select>';
+     $product_table .= '</tbody></table>';
 
 
   echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post" class="order-products">';
@@ -825,12 +834,8 @@ function html_form_code() {
   echo '<input type="text" name="cf-fax" value="' . ( isset( $_POST["cf-fax"] ) ? esc_attr( $_POST["cf-fax"] ) : '' ) . '" size="40" />';
   echo '</p>';
   echo '<p>';
-  echo  __('Products List (required)','hermooder'). '<br/>';
-  echo  $product_select;
-  echo '</p>';
-  echo '<p>';
-  echo  __('Quantity (required)','hermooder'). '<br/>';
-    echo '<input type="text" name="qty" value="' . ( isset( $_POST["qty"] ) ? esc_attr( $_POST["qty"] ) : '' ) . '" size="40" />';
+  echo  '<em>'.__('To Order Products Enter the order quantity for each product.','hermooder'). '</em><br/>';
+  echo  $product_table;
   echo '</p>';
   echo '<p>';
   echo  __('More Information (required)','hermooder'). '<br/>';
@@ -848,22 +853,25 @@ function set_html_content_type() {
 function deliver_mail() {
 
   // if the submit button is clicked, send the email
-  if ( isset( $_POST['cf-submitted'] ) ) {
-    $ordered_products ="";
-    $counter = 1;
+  if ( isset( $_POST['cf-submitted']) && isset( $_POST["cf-email"] ) && isset( $_POST["cf-name"] ) ) {
+
+
     // sanitize form values
     $name    = sanitize_text_field( $_POST["cf-name"] );
     $email   = sanitize_email( $_POST["cf-email"] );
     $phone   = sanitize_text_field( $_POST["cf-phone"] );
      $mobile_phone   = sanitize_text_field( $_POST["cf-mobile-phone"] );
       $fax   = sanitize_text_field( $_POST["cf-fax"] );
-    $qty   = sanitize_text_field( $_POST["qty"] );
-    $products = $_POST["cf-products"];
+
+
     
-    foreach ($products as $product){
-       $ordered_products .= '<span>'.$counter.' - '.$product.'</span><br />';
-       $counter++;
-    }
+    $products = get_posts(array(
+          'post_type' => 'product',
+          'posts_per_page' => -1,
+          'suppress_filters' => false,
+          )
+      );
+
     
     $message = "<div style='direction:rtl;text-align:right;'>";
     $message .= "<p>".__('Name : ','hermooder').$name."</p>"."\r\n";
@@ -871,19 +879,32 @@ function deliver_mail() {
     $message .= "<p>".__('Email : ','hermooder').$email."</p><br />"."\r\n";
     $message .= "<p>".__('Mobile : ','hermooder').$mobile_phone."</p><br />"."\r\n";
     $message .= "<p>".__('Fax : ','hermooder').$fax."</p><br />"."\r\n";
-    $message .= "<p>".__('Products : ','hermooder')."</p><br /><p>"."\r\n".$ordered_products."</p><br />"."\r\n";
-    $message .= "<p>".__('Quantity : ','hermooder').$qty."</p><br />"."\r\n";
-    $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p>"."</div>";
+    $message .= "<p>".__('Products List : ','hermooder')."</p><br />"."\r\n";
+    foreach($products as $product){
+     $product_id = $product->ID;
+      if(isset( $_POST['product_'.$product_id] ) && !empty($_POST['product_'.$product_id])){
+       $message .= "<p>".__("Product Name : ","hermooder").$product->post_title."  ";
+       $message .= __(" - Quantity : ","hermooder").sanitize_text_field( $_POST["product_".$product_id] )."</p><br />";
+       }
+    }
+
+    $message .= "<p>".esc_textarea( $_POST["cf-message"] )."\r\n"."</p></div>";
+
 
     // get the blog administrator's email address
     $to = get_option( 'admin_email' );
 
     $headers = array('From: '.$name.'<'.$email.'>');
+    $subject =  __('Order Products','hermooder');
     add_filter( 'wp_mail_content_type', 'set_html_content_type' );
 
+    //var_dump("to :".$to);
+//    var_dump("headers : ".$headers);
+//    var_dump("subject : ".$subject);
+//    var_dump("message : ".$message);
 
     // If email has been process for sending, display a success message
-    if ( wp_mail( $to, __('Order Products','hermooder'), $message, $headers ) ) {
+    if ( wp_mail( $to, $subject, $message, $headers ) ) {
       echo '<div>';
       echo '<p class="success-message">'.__('Thanks for Ordering Products, We will contact you as soon as posible.','hermooder'). '</p>';
       echo '</div>';

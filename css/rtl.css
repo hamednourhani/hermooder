@@ -703,7 +703,10 @@ input#s {
   padding-top: 0;
   padding-bottom: 0; }
 
-/* table style */
+/* line 4, sass/rtl/modules/_tables.scss */
+table.products_list_table tr td, table.products_list_table tr th {
+  text-align: right; }
+
 /* other style */
 /* line 4, sass/rtl/modules/_comments.scss */
 .comment-area .comment-metadata {

@@ -1,1 +1,21 @@
 /* table style */
+table.products_list_table{
+  width : 100%;
+  tbody,tr{
+    width : 100%;
+  }
+  tr {
+   td,th{
+     padding : 10px;
+     text-align : left;
+   }
+    th{
+      background-color: $blue2;
+      color : $white;
+      border-bottom : 3px solid $green;
+    }
+    &:nth-of-type(2n) {
+      background-color: lighten($grey2,6%);
+    }
+  }
+}

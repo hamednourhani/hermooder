@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2016-01-28 12:42+0330\n"
-"PO-Revision-Date: 2016-01-28 12:45+0330\n"
+"POT-Creation-Date: 2016-02-01 13:48+0330\n"
+"PO-Revision-Date: 2016-02-01 13:50+0330\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -157,7 +157,7 @@ msgstr "تلفکس : "
 msgid "Sms Panel : "
 msgstr "سامانه پیامکی : "
 
-#: functions.php:382 functions.php:871
+#: functions.php:382 functions.php:879
 msgid "Email : "
 msgstr "پست الکترونیک : "
 
@@ -225,71 +225,79 @@ msgstr "تعداد مطالب : "
 msgid "Post Category :"
 msgstr "دسته بندی مطالب"
 
-#: functions.php:808
+#: functions.php:806
+msgid "Product Name"
+msgstr "نام محصول"
+
+#: functions.php:806
+msgid "Order Quantity"
+msgstr "تعداد سفارش"
+
+#: functions.php:817
 msgid "Your Name (required)"
 msgstr "نام شما (الزامی)"
 
-#: functions.php:812
+#: functions.php:821
 msgid "Your Email (required)"
 msgstr "ایمیل (الزامی)"
 
-#: functions.php:816
+#: functions.php:825
 msgid "Your Phone (required)"
 msgstr "شماره تماس (الزامی)"
 
-#: functions.php:820
+#: functions.php:829
 msgid "Your Mobile Number (Optional)"
 msgstr "شماره تلفن همراه (اختیاری)"
 
-#: functions.php:824
+#: functions.php:833
 msgid "Your Fax Number (Optional)"
 msgstr "شماره فکس (اختیاری)"
 
-#: functions.php:828
-msgid "Products List (required)"
-msgstr "لیست محصولات"
+#: functions.php:837
+msgid "To Order Products Enter the order quantity for each product."
+msgstr "جهت سفارش محصولات تعداد سفارش را برای محصول مورد نظر خود وارد نمایید."
 
-#: functions.php:832
-msgid "Quantity (required)"
-msgstr "تعداد محصولات جهت سفارش (الزامی)"
-
-#: functions.php:836
+#: functions.php:841
 msgid "More Information (required)"
 msgstr "توضیحات بیشتر"
 
-#: functions.php:839 functions.php:886
+#: functions.php:844 functions.php:898
 msgid "Order Products"
 msgstr "سفارش محصولات"
 
-#: functions.php:869
+#: functions.php:877
 msgid "Name : "
 msgstr "نام : "
 
-#: functions.php:870
+#: functions.php:878
 msgid "Phone Number : "
 msgstr "شماره تماس : "
 
-#: functions.php:872
+#: functions.php:880
 msgid "Mobile : "
 msgstr "تلفن همراه : "
 
-#: functions.php:873
+#: functions.php:881
 msgid "Fax : "
 msgstr "فکس : "
 
-#: functions.php:874
-msgid "Products : "
-msgstr "محصولات : "
+#: functions.php:882
+msgid "Products List : "
+msgstr "لیست محصولات : "
 
-#: functions.php:875
-msgid "Quantity : "
-msgstr "مقدار سفارش : "
+#: functions.php:886
+msgid "Product Name : "
+msgstr "نام محصول : "
 
-#: functions.php:888
+#: functions.php:887
+msgid " - Quantity : "
+msgstr " - تعداد : "
+
+#: functions.php:909
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr "با تشکر برای سفارش محصولات ، در اولین فرصت با شما تماس گرفته خواهد شد."
 
-#: functions.php:891
+#: functions.php:912
 msgid "An unexpected error occurred"
 msgstr ""
 "اشکالی در هنگام ارسال درخواست رخ داد لطفا با پشتیبانی سایت تماس حاصل فرمایید"
@@ -691,6 +699,18 @@ msgstr "تلفن : "
 #: single-pharmacy.php:29
 msgid " Email : "
 msgstr "ایمیل : "
+
+#~ msgid "Products List (required)"
+#~ msgstr "لیست محصولات"
+
+#~ msgid "Quantity (required)"
+#~ msgstr "تعداد محصولات جهت سفارش (الزامی)"
+
+#~ msgid "Products : "
+#~ msgstr "محصولات : "
+
+#~ msgid "Quantity : "
+#~ msgstr "مقدار سفارش : "
 
 #~ msgid "Footer 4th Col"
 #~ msgstr "ستون چهارم پانوشت"
