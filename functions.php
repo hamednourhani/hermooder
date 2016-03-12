@@ -375,7 +375,7 @@ class contact_info_widget extends WP_Widget {
         
                 
         $content = '<main class="widgetbody">';
-        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','hermooder').$address.'</p>';
+//        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','hermooder').$address.'</p>';
         $content .='<p><i class="fa fa-fire"></i>'.__('Zip : ','hermooder').$zip.'</p>';
         $content .='<p><i class="fa fa-fax"></i>'.__('TelFax : ','hermooder').$telfax.'</p>';
         $content .='<p><i class="fa fa-tablet"></i></i>'.__('Sms Panel : ','hermooder').$smspanel.'</p>';

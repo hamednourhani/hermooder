@@ -1415,7 +1415,7 @@ ul.main-nav {
     position: absolute;
     left: 5%;
     top: 15px;
-    font-size: 130%; }
+    font-size: 110%; }
   /* line 199, sass/layout/_header.scss */
   ul.main-nav > li.item-map > a:before {
     content: "\f041";
@@ -1423,7 +1423,7 @@ ul.main-nav {
     position: absolute;
     left: 5%;
     top: 15px;
-    font-size: 130%; }
+    font-size: 110%; }
   /* line 208, sass/layout/_header.scss */
   ul.main-nav > li.item-map > a, ul.main-nav > li.item-home > a {
     padding-left: 28px; }
@@ -1901,23 +1901,26 @@ div.footer-widget-area {
     div.footer-widget-area aside.widget p, div.footer-widget-area aside.widget h4, div.footer-widget-area aside.widget h3, div.footer-widget-area aside.widget span, div.footer-widget-area aside.widget a {
       color: #F8F8F8; }
     /* line 32, sass/layout/_footer.scss */
+    div.footer-widget-area aside.widget p {
+      margin: 10px 5px; }
+    /* line 36, sass/layout/_footer.scss */
     div.footer-widget-area aside.widget .widgettitle {
       margin: 10px auto;
       padding-bottom: 10px;
       border-bottom: 1px solid #c0dbe9; }
-  /* line 40, sass/layout/_footer.scss */
+  /* line 44, sass/layout/_footer.scss */
   div.footer-widget-area aside.widget_contact_info_widget i:before {
     margin-right: 10px;
     vertical-align: middle;
     font-size: 130%; }
 
-/* line 49, sass/layout/_footer.scss */
+/* line 53, sass/layout/_footer.scss */
 .credit-holder {
   padding: 5px;
   text-align: center;
   min-height: 50px;
   background-color: #0093bb; }
-  /* line 55, sass/layout/_footer.scss */
+  /* line 59, sass/layout/_footer.scss */
   .credit-holder .socials {
     float: none;
     margin: 0px;
@@ -1925,51 +1928,51 @@ div.footer-widget-area {
     display: block;
     padding: 5px; }
     @media (min-width: 45em) {
-      /* line 55, sass/layout/_footer.scss */
+      /* line 59, sass/layout/_footer.scss */
       .credit-holder .socials {
         float: left;
         display: inline-block; } }
-    /* line 66, sass/layout/_footer.scss */
+    /* line 70, sass/layout/_footer.scss */
     .credit-holder .socials li {
       display: inline-block; }
-      /* line 69, sass/layout/_footer.scss */
+      /* line 73, sass/layout/_footer.scss */
       .credit-holder .socials li .social-icon {
         background: url('../images/social-icons.png?1446117499');
         display: block;
         width: 30px;
         height: 30px; }
-        /* line 75, sass/layout/_footer.scss */
+        /* line 79, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.facebook {
           background-position: -0px 30px; }
-          /* line 77, sass/layout/_footer.scss */
+          /* line 81, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.facebook:hover {
             background-position: -0px 0px; }
-        /* line 81, sass/layout/_footer.scss */
+        /* line 85, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.instagram {
           background-position: -32px 30px; }
-          /* line 83, sass/layout/_footer.scss */
+          /* line 87, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.instagram:hover {
             background-position: -32px 0px; }
-        /* line 87, sass/layout/_footer.scss */
+        /* line 91, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.linkedin {
           background-position: -64px 30px; }
-          /* line 89, sass/layout/_footer.scss */
+          /* line 93, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.linkedin:hover {
             background-position: -64px 0px; }
-        /* line 93, sass/layout/_footer.scss */
+        /* line 97, sass/layout/_footer.scss */
         .credit-holder .socials li .social-icon.gplus {
           background-position: -96px 30px; }
-          /* line 95, sass/layout/_footer.scss */
+          /* line 99, sass/layout/_footer.scss */
           .credit-holder .socials li .social-icon.gplus:hover {
             background-position: -96px 0px; }
-  /* line 103, sass/layout/_footer.scss */
+  /* line 107, sass/layout/_footer.scss */
   .credit-holder span.credit {
     display: inline-block;
     padding: 5px;
     color: #FFFFFF;
     font-size: 80%;
     color: #c0dbe9; }
-  /* line 110, sass/layout/_footer.scss */
+  /* line 114, sass/layout/_footer.scss */
   .credit-holder span.site-holder {
     display: block;
     text-align: center;
@@ -1978,7 +1981,7 @@ div.footer-widget-area {
     float: none;
     color: #c0dbe9; }
     @media (min-width: 45em) {
-      /* line 110, sass/layout/_footer.scss */
+      /* line 114, sass/layout/_footer.scss */
       .credit-holder span.site-holder {
         float: right;
         display: inline-block; } }
