@@ -403,7 +403,7 @@ ul.wpuf-form li .wpuf-label {
     display: inline-block; } }
 /* line 18, sass/rtl/layout/_header.scss */
 .site-header .header-inner {
-  background-position: 5% 100%; }
+  background-position: 5% -50%; }
 /* line 23, sass/rtl/layout/_header.scss */
 .site-header div.hero .lang-container {
   right: 40px;
@@ -451,7 +451,7 @@ ul.main-nav {
   @media (min-width: 45em) {
     /* line 76, sass/rtl/layout/_header.scss */
     ul.main-nav > li.menu-item-has-children > a:after {
-      left: 30%;
+      left: 45%;
       right: auto; } }
   @media (min-width: 45em) {
     /* line 85, sass/rtl/layout/_header.scss */
@@ -486,8 +486,8 @@ ul.main-nav {
     /* line 6, sass/rtl/layout/_main.scss */
     .primary {
       width: 83.07692%;
-      float: right;
-      margin-left: 1.53846%;
+      float: left;
+      margin-left: 0;
       margin-right: auto; } }
   /* line 14, sass/rtl/layout/_main.scss */
   .primary article.hentry .article-body .featured-image.single-image {
@@ -592,8 +592,8 @@ ul.main-nav {
     /* line 86, sass/rtl/layout/_main.scss */
     .secondary {
       width: 15.38462%;
-      float: left;
-      margin-left: 0;
+      float: right;
+      margin-left: 1.53846%;
       margin-right: auto; } }
   /* line 94, sass/rtl/layout/_main.scss */
   .secondary nav.side-menu h4.widgettitle {
@@ -613,16 +613,16 @@ ul.main-nav {
       padding-left: 1px;
       padding-right: 5px;
       position: absolute;
-      content: "\f0da";
-      right: 4px;
-      left: auto;
+      content: "\f0d9";
+      right: auto;
+      left: 7px;
       top: 18px; } }
   @media (min-width: 45em) {
     /* line 123, sass/rtl/layout/_main.scss */
     .secondary nav.side-menu ul.sub-menu {
       position: absolute;
-      right: auto;
-      left: 100%;
+      left: auto;
+      right: 100%;
       display: none; } }
   /* line 135, sass/rtl/layout/_main.scss */
   .secondary aside.widget {

@@ -6,7 +6,7 @@
 .primary{
  	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(10,12);
+ 		@include span-columns(10 omega,12);
  		margin-right: auto;
  	}
  	article.hentry{
@@ -86,7 +86,7 @@
 .secondary{
 	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(2 omega,12);
+ 		@include span-columns(2 ,12);
  		margin-right: auto;
 
  	}
@@ -112,9 +112,9 @@
 					padding-right: 5px;
 					// width walker added
 					position: absolute;
-					content: "\f0da";
-					right: 4px;
-					left : auto;
+					content: "\f0d9";
+					right: auto;
+					left : 7px;
 					top: 18px;
 
 				}
@@ -123,8 +123,8 @@
 		ul.sub-menu{
 			@include at-breakpoint($medium) {
 				position: absolute;
-				right: auto;
-				left: 100%;
+				left: auto;
+				right: 100%;
 				display : none;
 			}
 

@@ -7,7 +7,7 @@
 .primary{
  	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(10,12);
+ 		@include span-columns(10 omega,12);
  	}
  	padding:{
 		top :20px;
@@ -111,7 +111,7 @@
 .secondary{
 	@include span-columns(12,12);
  	@include at-breakpoint($medium){
- 		@include span-columns(2 omega,12);
+ 		@include span-columns(2 ,12);
  	}
 	display : block;
 	
@@ -172,8 +172,8 @@
 					padding-left: 5px;
 					// width walker added
 					position: absolute;
-					content: "\f0d9";
-					left: 4px;
+					content: "\f0da";
+					right: 7px;
 					top: 18px;
 
 				}
@@ -185,7 +185,7 @@
 			@include at-breakpoint($medium) {
 				position: absolute;
 				top: -20px;
-				right: 100%;
+				left: 100%;
 				display : none;
 				background-color: $grey1;
 				color : $black2;

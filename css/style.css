@@ -837,7 +837,7 @@ body {
     clear: both; }
 
 /* line 57, sass/base/_base.scss */
-.fa, ul.main-nav > li.menu-item-has-children > a:after, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after, .secondary nav.side-menu li.menu-item-object-product_cat > a:after, .comment-area .comment-metadata .edit-link:before, .comment-area .reply:before {
+.fa, ul.main-nav > li.menu-item-has-children > a:after, ul.main-nav > li.item-home > a:before, ul.main-nav > li.item-map > a:before, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after, .secondary nav.side-menu li.menu-item-object-product_cat > a:after, .comment-area .comment-metadata .edit-link:before, .comment-area .reply:before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -1253,32 +1253,33 @@ img.wp-smiley,
 @media (min-width: 45em) {
   /* line 19, sass/layout/_header.scss */
   .site-header .header-inner {
-    background: url('../images/header-back.png?1446270472') 95% 100% no-repeat; } }
+    background: url('../images/header-back.png?1446270472') 95% -50% no-repeat; } }
 /* line 24, sass/layout/_header.scss */
 .site-header div.hero {
-  text-align: center; }
-  /* line 26, sass/layout/_header.scss */
+  text-align: center;
+  padding: 10px; }
+  /* line 27, sass/layout/_header.scss */
   .site-header div.hero a.site-url {
     display: inline-block;
     margin: auto; }
-    /* line 29, sass/layout/_header.scss */
+    /* line 30, sass/layout/_header.scss */
     .site-header div.hero a.site-url .site-logo {
       display: block;
       margin: 25px auto 5px;
       max-width: 240px; }
-    /* line 34, sass/layout/_header.scss */
+    /* line 35, sass/layout/_header.scss */
     .site-header div.hero a.site-url span.site-desc {
       margin-bottom: 10px;
       display: inline-block;
       color: #e47a26; }
-  /* line 40, sass/layout/_header.scss */
+  /* line 41, sass/layout/_header.scss */
   .site-header div.hero .lang-container {
     position: absolute;
     top: 0;
     left: 40px;
     display: inline-block;
     padding: 10px; }
-    /* line 46, sass/layout/_header.scss */
+    /* line 47, sass/layout/_header.scss */
     .site-header div.hero .lang-container #lang_sel_list ul a.lang_sel_other,
     .site-header div.hero .lang-container #lang_sel li ul a:link,
     .site-header div.hero .lang-container #lang_sel_list ul a.lang_sel_other:visited,
@@ -1287,31 +1288,31 @@ img.wp-smiley,
       background-color: transparent !important;
       background: transparent !important;
       border: 0px; }
-    /* line 55, sass/layout/_header.scss */
+    /* line 56, sass/layout/_header.scss */
     .site-header div.hero .lang-container #lang_sel_list ul {
       border-top: 0px; }
-/* line 60, sass/layout/_header.scss */
+/* line 61, sass/layout/_header.scss */
 .site-header nav.main-menu {
   width: 100%;
   display: none;
   position: relative; }
-  /* line 65, sass/layout/_header.scss */
+  /* line 66, sass/layout/_header.scss */
   .site-header nav.main-menu .menu-search-area {
     position: absolute;
-    top: 15px;
+    top: 12px;
     right: 30px;
     display: none; }
-    /* line 70, sass/layout/_header.scss */
+    /* line 71, sass/layout/_header.scss */
     .site-header nav.main-menu .menu-search-area label {
       display: none; }
-    /* line 73, sass/layout/_header.scss */
+    /* line 74, sass/layout/_header.scss */
     .site-header nav.main-menu .menu-search-area span#submit {
       color: #00a7d4;
       cursor: pointer;
       position: absolute;
       right: 10px;
       top: 0px; }
-    /* line 80, sass/layout/_header.scss */
+    /* line 81, sass/layout/_header.scss */
     .site-header nav.main-menu .menu-search-area input#s {
       -moz-transition: all 0.8s ease-in-out 0s;
       -o-transition: all 0.8s ease-in-out 0s;
@@ -1324,35 +1325,35 @@ img.wp-smiley,
       font-size: 90%;
       display: inline-block;
       padding-right: 20px; }
-      /* line 89, sass/layout/_header.scss */
+      /* line 90, sass/layout/_header.scss */
       .site-header nav.main-menu .menu-search-area input#s:focus {
         width: 160px; }
   @media (min-width: 45em) {
-    /* line 60, sass/layout/_header.scss */
+    /* line 61, sass/layout/_header.scss */
     .site-header nav.main-menu {
       display: block; }
-      /* line 98, sass/layout/_header.scss */
+      /* line 99, sass/layout/_header.scss */
       .site-header nav.main-menu .menu-search-area {
         display: inline-block; } }
-/* line 105, sass/layout/_header.scss */
+/* line 106, sass/layout/_header.scss */
 .site-header span.menu-toggler {
   display: inline-block;
   cursor: pointer; }
   @media (min-width: 45em) {
-    /* line 105, sass/layout/_header.scss */
+    /* line 106, sass/layout/_header.scss */
     .site-header span.menu-toggler {
       display: none; } }
-  /* line 111, sass/layout/_header.scss */
+  /* line 112, sass/layout/_header.scss */
   .site-header span.menu-toggler i:before {
     padding: 3px 6px;
     background-color: #00a7d4;
     color: #FFFFFF;
     font-size: 180%; }
-  /* line 119, sass/layout/_header.scss */
+  /* line 120, sass/layout/_header.scss */
   .site-header span.menu-toggler:hover i:before {
     opacity: 0.9; }
 
-/* line 126, sass/layout/_header.scss */
+/* line 127, sass/layout/_header.scss */
 ul.main-nav {
   border-bottom: 4px solid #00a7d4;
   -moz-border-radius-topleft: 20px;
@@ -1366,58 +1367,77 @@ ul.main-nav {
   padding-left: 40px;
   padding-right: 40px;
   margin: 0px auto; }
-  /* line 138, sass/layout/_header.scss */
+  /* line 139, sass/layout/_header.scss */
   ul.main-nav > li {
     display: block;
     position: relative; }
     @media (min-width: 45em) {
-      /* line 138, sass/layout/_header.scss */
+      /* line 139, sass/layout/_header.scss */
       ul.main-nav > li {
         display: inline-block;
         margin-right: 10px; } }
-    /* line 145, sass/layout/_header.scss */
+    /* line 146, sass/layout/_header.scss */
     ul.main-nav > li.fa, .comment-area .comment-metadata ul.main-nav > li.edit-link:before, .comment-area ul.main-nav > li.reply:before {
       font: inherit;
       font-family: "open-sans", "Georgia", Cambria, Times New Roman, Times, serif, "Georgia", Cambria, Times New Roman, Times, serif; }
-      /* line 149, sass/layout/_header.scss */
+      /* line 150, sass/layout/_header.scss */
       ul.main-nav > li.fa:before, .comment-area .comment-metadata ul.main-nav > li.edit-link:before, .comment-area ul.main-nav > li.reply:before {
         font: normal normal normal 14px/1 FontAwesome !important;
         color: #FFFFFF; }
-    /* line 154, sass/layout/_header.scss */
+    /* line 155, sass/layout/_header.scss */
     ul.main-nav > li a {
       color: #FFFFFF;
       padding: 5px;
       display: inline-block; }
       @media (min-width: 45em) {
-        /* line 154, sass/layout/_header.scss */
+        /* line 155, sass/layout/_header.scss */
         ul.main-nav > li a {
-          padding: 15px 10px; } }
-      /* line 163, sass/layout/_header.scss */
+          padding: 12px 10px; } }
+      /* line 164, sass/layout/_header.scss */
       ul.main-nav > li a:hover {
         background-color: #99c14d; }
-    /* line 169, sass/layout/_header.scss */
+    /* line 170, sass/layout/_header.scss */
     ul.main-nav > li.current_page_item > a {
       background-color: #99c14d; }
   @media (min-width: 45em) {
-    /* line 175, sass/layout/_header.scss */
+    /* line 176, sass/layout/_header.scss */
     ul.main-nav > li.menu-item-has-children > a:after {
       content: "\f0d7";
       vertical-align: middle;
       padding-left: 5px;
       position: absolute;
-      right: 30%;
+      right: 45%;
       top: 38px; } }
+  /* line 188, sass/layout/_header.scss */
+  ul.main-nav > li.item-home > a:before {
+    content: "\f015";
+    vertical-align: middle;
+    position: absolute;
+    left: 5%;
+    top: 17px;
+    font-size: 130%; }
+  /* line 199, sass/layout/_header.scss */
+  ul.main-nav > li.item-map > a:before {
+    content: "\f041";
+    vertical-align: middle;
+    position: absolute;
+    left: 5%;
+    top: 17px;
+    font-size: 130%; }
+  /* line 208, sass/layout/_header.scss */
+  ul.main-nav > li.item-map > a, ul.main-nav > li.item-home > a {
+    padding-left: 28px; }
   @media (min-width: 45em) {
-    /* line 187, sass/layout/_header.scss */
+    /* line 213, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu {
       border-top: 4px solid #00a7d4; } }
-  /* line 192, sass/layout/_header.scss */
+  /* line 218, sass/layout/_header.scss */
   ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
     z-index: 0;
     padding: 0;
     margin: 0; }
     @media (min-width: 45em) {
-      /* line 192, sass/layout/_header.scss */
+      /* line 218, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu, ul.main-nav li ul.sub-menu {
         -moz-box-shadow: 0px 0px 7px #4E4E4E;
         -webkit-box-shadow: 0px 0px 7px #4E4E4E;
@@ -1435,7 +1455,7 @@ ul.main-nav {
         transition: opacity .45s linear, visibility .2s linear .4s;
         visibility: hidden; } }
     @media (min-width: 45em) {
-      /* line 215, sass/layout/_header.scss */
+      /* line 241, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li, ul.main-nav li ul.sub-menu li {
         background-color: #F8F8F8;
         -webkit-animation: move-down .5s 1;
@@ -1443,24 +1463,24 @@ ul.main-nav {
         -o-animation: move-down .5s 1;
         animation: move-down .5s 1;
         position: relative; } }
-    /* line 224, sass/layout/_header.scss */
+    /* line 250, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu a, ul.main-nav li ul.sub-menu a {
       min-width: 220px;
       padding: 5px; }
       @media (min-width: 45em) {
-        /* line 224, sass/layout/_header.scss */
+        /* line 250, sass/layout/_header.scss */
         ul.main-nav > li > ul.sub-menu a, ul.main-nav li ul.sub-menu a {
-          padding: 10px 20px; } }
+          padding: 5px 15px; } }
       @media (min-width: 45em) {
-        /* line 224, sass/layout/_header.scss */
+        /* line 250, sass/layout/_header.scss */
         ul.main-nav > li > ul.sub-menu a, ul.main-nav li ul.sub-menu a {
           border: 0px;
           color: #282828; }
-          /* line 233, sass/layout/_header.scss */
+          /* line 259, sass/layout/_header.scss */
           ul.main-nav > li > ul.sub-menu a:hover, ul.main-nav li ul.sub-menu a:hover {
             color: #FFFFFF; } }
     @media (min-width: 45em) {
-      /* line 239, sass/layout/_header.scss */
+      /* line 265, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li.menu-item-has-children > a:after, ul.main-nav li ul.sub-menu li.menu-item-has-children > a:after {
         content: "\f0da";
         right: 12px;
@@ -1468,25 +1488,25 @@ ul.main-nav {
         top: 16px;
         vertical-align: middle; } }
   @media (min-width: 45em) {
-    /* line 253, sass/layout/_header.scss */
+    /* line 279, sass/layout/_header.scss */
     ul.main-nav > li:hover > ul.sub-menu {
       opacity: 1;
       visibility: visible;
       transition-delay: 0s;
       z-index: 9999; }
-      /* line 258, sass/layout/_header.scss */
+      /* line 284, sass/layout/_header.scss */
       ul.main-nav > li:hover > ul.sub-menu > li {
         -webkit-animation: move-up .5s 1;
         -moz-animation: move-up .5s 1;
         -o-animation: move-up .5s 1;
         animation: move-up .5s 1; } }
-  /* line 269, sass/layout/_header.scss */
+  /* line 295, sass/layout/_header.scss */
   ul.main-nav > li > ul.sub-menu li ul {
     padding: 0;
     margin: 0;
     display: block; }
     @media (min-width: 45em) {
-      /* line 269, sass/layout/_header.scss */
+      /* line 295, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li ul {
         text-align: center;
         z-index: 0;
@@ -1500,7 +1520,7 @@ ul.main-nav {
         transition: opacity .45s linear, visibility .2s linear .4s;
         visibility: hidden; } }
     @media (min-width: 45em) {
-      /* line 291, sass/layout/_header.scss */
+      /* line 317, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li ul li {
         background-color: #F8F8F8;
         -webkit-animation: move-down .5s 1;
@@ -1508,29 +1528,29 @@ ul.main-nav {
         -o-animation: move-down .5s 1;
         animation: move-down .5s 1;
         position: relative; } }
-    /* line 300, sass/layout/_header.scss */
+    /* line 326, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li ul a {
       min-width: 180px;
       padding: 5px; }
       @media (min-width: 45em) {
-        /* line 300, sass/layout/_header.scss */
+        /* line 326, sass/layout/_header.scss */
         ul.main-nav > li > ul.sub-menu li ul a {
           padding: 15px; } }
   @media (min-width: 45em) {
-    /* line 314, sass/layout/_header.scss */
+    /* line 340, sass/layout/_header.scss */
     ul.main-nav > li > ul.sub-menu li:hover > ul.sub-menu {
       opacity: 1;
       visibility: visible;
       transition-delay: 0s;
       z-index: 9999; }
-      /* line 320, sass/layout/_header.scss */
+      /* line 346, sass/layout/_header.scss */
       ul.main-nav > li > ul.sub-menu li:hover > ul.sub-menu > li {
         -webkit-animation: move-up .5s 1;
         -moz-animation: move-up .5s 1;
         -o-animation: move-up .5s 1;
         animation: move-up .5s 1; } }
   @media (min-width: 45em) {
-    /* line 331, sass/layout/_header.scss */
+    /* line 357, sass/layout/_header.scss */
     ul.main-nav ul.sub-menu li:hover ul {
       display: inline-block;
       left: 100%;
@@ -1548,8 +1568,8 @@ ul.main-nav {
     /* line 7, sass/layout/_main.scss */
     .primary {
       width: 83.07692%;
-      float: left;
-      margin-right: 1.53846%; } }
+      float: right;
+      margin-right: 0; } }
   /* line 16, sass/layout/_main.scss */
   .primary .banner-wrapper {
     background-color: rgba(255, 255, 255, 0.85);
@@ -1667,8 +1687,8 @@ ul.main-nav {
     /* line 111, sass/layout/_main.scss */
     .secondary {
       width: 15.38462%;
-      float: right;
-      margin-right: 0; } }
+      float: left;
+      margin-right: 1.53846%; } }
   /* line 122, sass/layout/_main.scss */
   .secondary nav.side-menu {
     margin: 0px;
@@ -1722,8 +1742,8 @@ ul.main-nav {
           vertical-align: middle;
           padding-left: 5px;
           position: absolute;
-          content: "\f0d9";
-          left: 4px;
+          content: "\f0da";
+          right: 7px;
           top: 18px; } }
     /* line 182, sass/layout/_main.scss */
     .secondary nav.side-menu ul.sub-menu {
@@ -1734,7 +1754,7 @@ ul.main-nav {
         .secondary nav.side-menu ul.sub-menu {
           position: absolute;
           top: -20px;
-          right: 100%;
+          left: 100%;
           display: none;
           background-color: #F2F2F2;
           color: #282828;

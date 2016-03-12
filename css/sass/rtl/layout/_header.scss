@@ -16,7 +16,7 @@
 
 .site-header{
 	.header-inner {
-		background-position: 5% 100%;
+		background-position: 5% -50%;
 	}
 	div.hero{
 		
@@ -75,7 +75,7 @@ ul.main-nav{
 	
 	&>li.menu-item-has-children>a:after{
 		@include at-breakpoint($medium){
-	    	left: 30%;
+	    	left: 45%;
 		    right: auto;
 		    
 	    }
