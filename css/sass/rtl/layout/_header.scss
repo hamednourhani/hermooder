@@ -81,6 +81,21 @@ ul.main-nav{
 	    }
     	
 	}
+	&>li.item-home>a:before{
+		right: 5%;
+		left: auto;
+
+
+	}
+	&>li.item-map>a:before{
+		right: 5%;
+		left: auto;
+	}
+	&>li.item-map>a,
+	&>li.item-home>a{
+		padding-left : 10px;
+		padding-right : 28px;
+	}
 	
 	&>li>ul.sub-menu,li ul.sub-menu{
 		@include at-breakpoint($medium){

@@ -1414,7 +1414,7 @@ ul.main-nav {
     vertical-align: middle;
     position: absolute;
     left: 5%;
-    top: 17px;
+    top: 15px;
     font-size: 130%; }
   /* line 199, sass/layout/_header.scss */
   ul.main-nav > li.item-map > a:before {
@@ -1422,7 +1422,7 @@ ul.main-nav {
     vertical-align: middle;
     position: absolute;
     left: 5%;
-    top: 17px;
+    top: 15px;
     font-size: 130%; }
   /* line 208, sass/layout/_header.scss */
   ul.main-nav > li.item-map > a, ul.main-nav > li.item-home > a {
