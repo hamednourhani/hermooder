@@ -1,5 +1,14 @@
 
 .comment-area{
+	.comment-author{
+		float : left ;
+		padding : 10px;
+		max-width : 120px;
+		text-align: center;
+	}
+	.comment-metadata{
+		padding : 10px;
+	}
 	img.avatar{
 		@include border-radius(50%);
 	}
@@ -23,6 +32,7 @@
 		}
 	}
 	.reply{
+		padding: 10px;
 		float : right;
 		&:before{
 			@extend .fa;
@@ -31,13 +41,15 @@
 			vertical-align: middle;
 			color : $green;
 		}
-		//margin-bottom :15px;
+		i{
+			display: none;
+		}
 	}
 	.comment{
 		display : block;
 		overflow : hidden;
 		.comment-body{
-			
+
 			overflow : hidden;
 		}
 	}
@@ -64,7 +76,7 @@
 		   margin-left : 60px;
 		}
 	}
-	.even>article{ 
+	.even>article{
 		background-color: $grey1;
 	}
 }
@@ -76,4 +88,7 @@
     	width: 40%;
 	}
 
+}
+.form-allowed-tags{
+	display : none;
 }

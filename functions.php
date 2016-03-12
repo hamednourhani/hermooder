@@ -1097,4 +1097,162 @@ class Menu_With_Image extends Walker_Nav_Menu {
 
 }
 
+/*-----------------user roles config functions -----------------------*/
+//function hermooder_profile_admin_css() {
+//    $screen_id = isset( get_current_screen()->id ) ? get_current_screen()->id : null;
+//
+//    if ( 'profile' === $screen_id || 'user-edit' === $screen_id ) {
+//        wp_enqueue_style( 'profile-admin-css', get_template_directory_uri().'/css/profile.css' );
+//    }
+//}
+//add_action( 'admin_enqueue_scripts', 'hermooder_profile_admin_css' );
+
+function hermooder_add_user_roles(){
+remove_role('scientific_board');
+remove_role('sciences_board');
+remove_role('sciene_board');
+remove_role('science_board');
+remove_role('s_board');
+
+
+
+$role = add_role( 'ltd', __('ltd','hermooder' ),
+array(
+
+
+      'read' => true, // true allows this capability
+      'edit_posts' => false, // Allows user to edit their own posts
+      'edit_pages' => false, // Allows user to edit pages
+      'edit_others_posts' => false, // Allows user to edit others posts not just their own
+      'create_posts' => false, // Allows user to create new posts
+      'manage_categories' => false, // Allows user to manage post categories
+      'publish_posts' => false, // Allows the user to publish, otherwise posts stays in draft mode
+      'edit_themes' => false, // false denies this capability. User can’t edit your theme
+      'install_plugins' => false, // User cant add new plugins
+      'update_plugin' => false, // User can’t update any plugins
+      'update_core' => false, // user cant perform core updates
+      'upload_files' => true,
+      'moderate_comments' => false,
+
+
+ ) );
+   
+}
+// let's get this party started
+add_action( 'after_setup_theme', 'hermooder_add_user_roles',11 );
+
+add_action('admin_init','hermooder_add_role_caps',999);
+    function hermooder_add_role_caps() {
+
+    // Add the roles you'd like to administer the custom post types
+    $roles = array('editor','administrator');
+    
+    // Loop through each role and assign capabilities
+    foreach($roles as $the_role) { 
+
+         $role = get_role($the_role);
+
+      
+               $role->add_cap( 'read' );
+               $role->add_cap( 'read_admin_post');
+               $role->add_cap( 'read_admin_posts' );
+               $role->add_cap( 'edit_admin_post' );
+               $role->add_cap( 'edit_admin_posts' );
+               $role->add_cap( 'edit_others_admin_posts' );
+               $role->add_cap( 'edit_published_admin_posts' );
+               $role->add_cap( 'publish_admin_posts' );
+               $role->add_cap( 'delete_others_admin_posts' );
+               $role->add_cap( 'delete_private_admin_posts' );
+               $role->add_cap( 'delete_published_admin_posts' );
+
+//               $role->add_cap( 'read' );
+               $role->add_cap( 'be_ltd' );
+//               $role->add_cap( 'read_ltd_course');
+//               $role->add_cap( 'read_science_courses' );
+//               $role->add_cap( 'edit_science_course' );
+//               $role->add_cap( 'edit_science_courses' );
+//               // $role->add_cap( 'edit_others_science_courses' );
+//               $role->add_cap( 'edit_published_science_courses' );
+//               $role->add_cap( 'publish_science_courses' );
+//               $role->add_cap( 'publish_science_course' );
+//               // $role->add_cap( 'delete_others_science_courses' );
+//               $role->add_cap( 'delete_private_science_courses' );
+//               $role->add_cap( 'delete_published_science_courses' );
+    
+    }
+     $role = get_role('ltd');
+
+        $role->add_cap( 'read' );
+       $role->add_cap( 'be_ltd' );
+//       $role->add_cap( 'read_science_course');
+//       $role->add_cap( 'read_science_courses' );
+//       $role->add_cap( 'edit_science_course' );
+//       $role->add_cap( 'edit_science_courses' );
+//       // $role->add_cap( 'edit_others_science_courses' );
+//       $role->add_cap( 'edit_published_science_courses' );
+//       $role->add_cap( 'publish_science_courses' );
+//       $role->add_cap( 'publish_science_course' );
+//       // $role->add_cap( 'delete_others_science_courses' );
+//       $role->add_cap( 'delete_private_science_courses' );
+//       $role->add_cap( 'delete_published_science_courses' );
+
+
+}
+
+//add_action( 'admin_init', 'hermooder_remove_menu_pages',999 );
+//function hermooder_remove_menu_pages() {
+//
+//    global $user_ID,$wp_roles;
+//
+//    $current_user = wp_get_current_user();
+//    $roles = $current_user->roles;
+//    $role = array_shift($roles);
+//
+//
+//
+//
+//    if ( $role == "administrator" || $role == 'editor') {
+//      //some code
+//    } else {
+//
+//
+//
+//      // remove_menu_page('upload.php'); // Media
+//      remove_menu_page('link-manager.php'); // Links
+//      remove_menu_page('edit-comments.php'); // Comments
+//      // remove_menu_page('edit.php?post_type=page'); // Pages
+//      remove_menu_page('plugins.php'); // Plugins
+//      remove_menu_page('themes.php'); // Appearance
+//      // remove_menu_page('users.php'); // Users
+//      remove_menu_page('tools.php'); // Tools
+//      remove_menu_page('options-general.php'); // Settings
+//      remove_menu_page('admin.php?page=wpcf7'); // contact form
+//      remove_menu_page('upload.php'); // Settings
+//      remove_menu_page( 'wpcf7' );
+//    }
+//}
+
+//add_action( 'after_setup_theme', 'hermooder_remove_core_updates' );
+//function hermooder_remove_core_updates()
+//{
+//    if ( current_user_can( 'update_core' ) ) {
+//        return;
+//    }
+//    add_action( 'init', create_function( '$a', "remove_action( 'init', 'wp_version_check' );" ), 2 );
+//    add_filter( 'pre_option_update_core', '__return_null' );
+//    add_filter( 'pre_site_transient_update_core', '__return_null' );
+//    remove_action( 'load-update-core.php', 'wp_update_plugins' );
+//    add_filter( 'pre_site_transient_update_plugins', '__return_null' );
+//}
+
+//add_shortcode( 'hermooder_ltd', 'hermooder_show_download' );
+//
+////user login shortcode
+//function hermooder_show_download(){
+//  $args = array('echo'=>false);
+//  if ( !user_can("be_ltd") && !is_admin() ) {
+//      return '<div class="login-container">'.wp_login_form( $args ).'</div>';
+//  }
+//}
+
 ?>

@@ -720,40 +720,42 @@ table.products_list_table tr td, table.products_list_table tr th {
   text-align: right; }
 
 /* other style */
-/* line 4, sass/rtl/modules/_comments.scss */
+/* line 3, sass/rtl/modules/_comments.scss */
+.comment-area .comment-author {
+  float: right; }
+/* line 7, sass/rtl/modules/_comments.scss */
 .comment-area .comment-metadata {
   float: left; }
-/* line 9, sass/rtl/modules/_comments.scss */
+/* line 11, sass/rtl/modules/_comments.scss */
 .comment-area .reply {
   float: left; }
+/* line 14, sass/rtl/modules/_comments.scss */
+.comment-area ol.children {
+  padding: 0px 20px 0px 0px; }
 @media (min-width: 45em) {
-  /* line 15, sass/rtl/modules/_comments.scss */
+  /* line 17, sass/rtl/modules/_comments.scss */
   .comment-area .depth-1 {
-    margin-right: 0;
-    margin-left: auto; } }
+    margin-left: auto;
+    margin-right: 0; } }
 @media (min-width: 45em) {
-  /* line 21, sass/rtl/modules/_comments.scss */
+  /* line 23, sass/rtl/modules/_comments.scss */
   .comment-area .depth-2 {
     margin-right: 20px;
     margin-left: auto; } }
 @media (min-width: 45em) {
-  /* line 27, sass/rtl/modules/_comments.scss */
+  /* line 29, sass/rtl/modules/_comments.scss */
   .comment-area .depth-3 {
     margin-right: 40px;
     margin-left: auto; } }
 @media (min-width: 45em) {
-  /* line 33, sass/rtl/modules/_comments.scss */
+  /* line 35, sass/rtl/modules/_comments.scss */
   .comment-area .depth-4 {
-    margin-left: auto;
-    margin-right: 60px; } }
-/* line 39, sass/rtl/modules/_comments.scss */
-.comment-area .even > article {
-  background-color: #F2F2F2; }
+    margin-right: 60px;
+    margin-left: auto; } }
 
-/* line 45, sass/rtl/modules/_comments.scss */
+/* line 43, sass/rtl/modules/_comments.scss */
 #commentform label {
-  float: right;
-  width: 33%; }
+  float: right; }
 
 /* setting style */
 /* utilities style */

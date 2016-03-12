@@ -1407,7 +1407,7 @@ ul.main-nav {
       padding-left: 5px;
       position: absolute;
       right: 45%;
-      top: 38px; } }
+      top: 36px; } }
   /* line 188, sass/layout/_header.scss */
   ul.main-nav > li.item-home > a:before {
     content: "\f015";
@@ -2061,72 +2061,89 @@ table.products_list_table {
 
 /* other style */
 /* line 3, sass/modules/_comments.scss */
+.comment-area .comment-author {
+  float: left;
+  padding: 10px;
+  max-width: 120px;
+  text-align: center; }
+/* line 9, sass/modules/_comments.scss */
+.comment-area .comment-metadata {
+  padding: 10px; }
+/* line 12, sass/modules/_comments.scss */
 .comment-area img.avatar {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%; }
-/* line 6, sass/modules/_comments.scss */
+/* line 15, sass/modules/_comments.scss */
 .comment-area .bypostauthor .fn {
   color: #8db63f;
   padding: 5px; }
-/* line 10, sass/modules/_comments.scss */
+/* line 19, sass/modules/_comments.scss */
 .comment-area .comment-metadata {
   font-size: smaller;
   float: right; }
-  /* line 14, sass/modules/_comments.scss */
+  /* line 23, sass/modules/_comments.scss */
   .comment-area .comment-metadata .edit-link {
     padding: 5px;
     color: #8db63f; }
-    /* line 17, sass/modules/_comments.scss */
+    /* line 26, sass/modules/_comments.scss */
     .comment-area .comment-metadata .edit-link:before {
       content: "\f040";
       padding: 5px;
       vertical-align: middle; }
-/* line 25, sass/modules/_comments.scss */
+/* line 34, sass/modules/_comments.scss */
 .comment-area .reply {
+  padding: 10px;
   float: right; }
-  /* line 27, sass/modules/_comments.scss */
+  /* line 37, sass/modules/_comments.scss */
   .comment-area .reply:before {
     content: "\f112";
     padding: 5px;
     vertical-align: middle;
     color: #8db63f; }
-/* line 36, sass/modules/_comments.scss */
+  /* line 44, sass/modules/_comments.scss */
+  .comment-area .reply i {
+    display: none; }
+/* line 48, sass/modules/_comments.scss */
 .comment-area .comment {
   display: block;
   overflow: hidden; }
-  /* line 39, sass/modules/_comments.scss */
+  /* line 51, sass/modules/_comments.scss */
   .comment-area .comment .comment-body {
     overflow: hidden; }
-/* line 44, sass/modules/_comments.scss */
+/* line 56, sass/modules/_comments.scss */
 .comment-area .comment-content {
   padding: 20px; }
 @media (min-width: 45em) {
-  /* line 47, sass/modules/_comments.scss */
+  /* line 59, sass/modules/_comments.scss */
   .comment-area .depth-1 {
     margin-left: 0; } }
 @media (min-width: 45em) {
-  /* line 52, sass/modules/_comments.scss */
+  /* line 64, sass/modules/_comments.scss */
   .comment-area .depth-2 {
     margin-left: 20px; } }
 @media (min-width: 45em) {
-  /* line 57, sass/modules/_comments.scss */
+  /* line 69, sass/modules/_comments.scss */
   .comment-area .depth-3 {
     margin-left: 40px; } }
 @media (min-width: 45em) {
-  /* line 62, sass/modules/_comments.scss */
+  /* line 74, sass/modules/_comments.scss */
   .comment-area .depth-4 {
     margin-left: 60px; } }
-/* line 67, sass/modules/_comments.scss */
+/* line 79, sass/modules/_comments.scss */
 .comment-area .even > article {
   background-color: #F2F2F2; }
 
-/* line 72, sass/modules/_comments.scss */
+/* line 84, sass/modules/_comments.scss */
 #commentform label {
   float: left;
   padding: 0 10px;
   display: inline-block;
   width: 40%; }
+
+/* line 92, sass/modules/_comments.scss */
+.form-allowed-tags {
+  display: none; }
 
 /* line 1, sass/modules/_pagination.scss */
 nav.pagination {
