@@ -1862,6 +1862,19 @@ ul.main-nav {
         margin-right: 10px;
         vertical-align: middle; }
 
+/* line 305, sass/layout/_main.scss */
+.products-h4 h4 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: 200; }
+
+/* line 310, sass/layout/_main.scss */
+aside.widget_wpstatistics_widget {
+  font-size: 90% !important; }
+  /* line 312, sass/layout/_main.scss */
+  aside.widget_wpstatistics_widget ul {
+    padding: 0px; }
+
 /* line 1, sass/layout/_footer.scss */
 .site-footer {
   background-color: #00a7d4;
