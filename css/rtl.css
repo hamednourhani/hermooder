@@ -230,7 +230,7 @@ p {
 body {
   font-family: "Weblogma_Yekan";
   direction: rtl;
-  font-size: 100%;
+  font-size: 95%;
   line-height: 180%; }
   /* line 8, sass/rtl/base/_base.scss */
   body form {
@@ -403,7 +403,7 @@ ul.wpuf-form li .wpuf-label {
     display: inline-block; } }
 /* line 18, sass/rtl/layout/_header.scss */
 .site-header .header-inner {
-  background-position: 5% -50%; }
+  background-position: 5% 0%; }
 /* line 23, sass/rtl/layout/_header.scss */
 .site-header div.hero .lang-container {
   right: 40px;
@@ -671,7 +671,7 @@ div.footer-widget-area .footer-col3 {
     margin-left: 0; } }
 /* line 20, sass/rtl/layout/_footer.scss */
 div.footer-widget-area aside.widget {
-  font-size: 105%; }
+  font-size: 85%; }
 /* line 25, sass/rtl/layout/_footer.scss */
 div.footer-widget-area aside.widget_contact_info_widget i:before {
   margin-right: auto;

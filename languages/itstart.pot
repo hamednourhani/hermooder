@@ -1,14 +1,14 @@
-# Copyright (C) 2015 iTstar
+# Copyright (C) 2016 iTstar
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: hermooder 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
-"POT-Creation-Date: 2015-11-30 20:44:40+00:00\n"
+"POT-Creation-Date: 2016-04-23 12:32:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: iTstar <info@itstar.ir>\n"
 "X-Generator: grunt-wp-i18n 0.5.3\n"
@@ -42,11 +42,11 @@ msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:23
-msgid "Designed by"
+msgid "Designed"
 msgstr ""
 
 #: footer.php:23
-msgid "Farakaranet"
+msgid " by Farakaranet"
 msgstr ""
 
 #: footer.php:27
@@ -130,10 +130,6 @@ msgstr ""
 msgid "Display Contact Information"
 msgstr ""
 
-#: functions.php:378
-msgid "Address : "
-msgstr ""
-
 #: functions.php:379
 msgid "Zip : "
 msgstr ""
@@ -146,7 +142,7 @@ msgstr ""
 msgid "Sms Panel : "
 msgstr ""
 
-#: functions.php:382 functions.php:855
+#: functions.php:382 functions.php:879
 msgid "Email : "
 msgstr ""
 
@@ -214,47 +210,79 @@ msgstr ""
 msgid "Post Category :"
 msgstr ""
 
-#: functions.php:808
+#: functions.php:806
+msgid "Product Name"
+msgstr ""
+
+#: functions.php:806
+msgid "Order Quantity"
+msgstr ""
+
+#: functions.php:817
 msgid "Your Name (required)"
 msgstr ""
 
-#: functions.php:812
+#: functions.php:821
 msgid "Your Email (required)"
 msgstr ""
 
-#: functions.php:815
+#: functions.php:825
 msgid "Your Phone (required)"
 msgstr ""
 
-#: functions.php:819
-msgid "Products List (required)"
+#: functions.php:829
+msgid "Your Mobile Number (Optional)"
 msgstr ""
 
-#: functions.php:823
+#: functions.php:833
+msgid "Your Fax Number (Optional)"
+msgstr ""
+
+#: functions.php:837
+msgid "To Order Products Enter the order quantity for each product."
+msgstr ""
+
+#: functions.php:841
 msgid "More Information (required)"
 msgstr ""
 
-#: functions.php:826 functions.php:867
+#: functions.php:844 functions.php:898
 msgid "Order Products"
 msgstr ""
 
-#: functions.php:853
+#: functions.php:877
 msgid "Name : "
 msgstr ""
 
-#: functions.php:854
+#: functions.php:878
 msgid "Phone Number : "
 msgstr ""
 
-#: functions.php:856
-msgid "Products : "
+#: functions.php:880
+msgid "Mobile : "
 msgstr ""
 
-#: functions.php:869
+#: functions.php:881
+msgid "Fax : "
+msgstr ""
+
+#: functions.php:882
+msgid "Products List : "
+msgstr ""
+
+#: functions.php:886
+msgid "Product Name : "
+msgstr ""
+
+#: functions.php:887
+msgid " - Quantity : "
+msgstr ""
+
+#: functions.php:909
 msgid "Thanks for Ordering Products, We will contact you as soon as posible."
 msgstr ""
 
-#: functions.php:872
+#: functions.php:912
 msgid "An unexpected error occurred"
 msgstr ""
 
@@ -1031,11 +1059,15 @@ msgstr ""
 msgid "The Main Menu"
 msgstr ""
 
-#: library/hermooder.php:309
+#: library/hermooder.php:279
+msgid "The Side Menu"
+msgstr ""
+
+#: library/hermooder.php:310
 msgid "No Related Posts Yet!"
 msgstr ""
 
-#: library/hermooder.php:354
+#: library/hermooder.php:355
 msgid "Read "
 msgstr ""
 
@@ -1045,6 +1077,14 @@ msgstr ""
 
 #: library/post-meta.php:33
 msgid "Categories :"
+msgstr ""
+
+#: sidebar.php:7
+msgid "Products"
+msgstr ""
+
+#: sidebar.php:12
+msgid "Side Menu"
 msgstr ""
 
 #: single-pharmacy.php:27

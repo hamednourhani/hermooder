@@ -18,7 +18,7 @@
 .site-header{
 	.header-inner {
 		@include at-breakpoint($medium){
-			@include background(image-url("header-back.png") 95% -50% no-repeat);
+			@include background(image-url("header-back-new.png") 95% 0% no-repeat);
 		}
 	}
 	div.hero{
@@ -135,6 +135,7 @@ ul.main-nav{
 	padding-left : 40px;
 	padding-right : 40px;
 	margin : 0px auto;
+	font-size : 95%;
 	
 	&>li{
 		display: block;

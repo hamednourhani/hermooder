@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Hermooder\n"
-"POT-Creation-Date: 2016-02-01 13:48+0330\n"
-"PO-Revision-Date: 2016-02-01 13:50+0330\n"
+"POT-Creation-Date: 2016-04-23 15:26+0430\n"
+"PO-Revision-Date: 2016-04-23 15:26+0430\n"
 "Last-Translator: \n"
 "Language-Team: iTstar <itstarir@gmail.com>\n"
 "Language: fa_IR\n"
@@ -52,12 +52,12 @@ msgid "Comments are closed."
 msgstr "دیدگاه ها بسته است."
 
 #: footer.php:23
-msgid "Designed by"
-msgstr "طراحی شده توسط "
+msgid "Designed"
+msgstr "طراحی سایت"
 
 #: footer.php:23
-msgid "Farakaranet"
-msgstr "فراکارانت"
+msgid " by Farakaranet"
+msgstr "توسط فراکارانت"
 
 #: footer.php:27
 msgid "Hermooder © 2015. All Right Reserved"
@@ -140,10 +140,6 @@ msgstr "ابزارک اطلاعات تماس"
 #: functions.php:360
 msgid "Display Contact Information"
 msgstr "اطلاعات تماس را نمایش خواهد داد"
-
-#: functions.php:378
-msgid "Address : "
-msgstr "آدرس : "
 
 #: functions.php:379
 msgid "Zip : "
@@ -301,6 +297,10 @@ msgstr "با تشکر برای سفارش محصولات ، در اولین فر
 msgid "An unexpected error occurred"
 msgstr ""
 "اشکالی در هنگام ارسال درخواست رخ داد لطفا با پشتیبانی سایت تماس حاصل فرمایید"
+
+#: functions.php:1119
+msgid "ltd"
+msgstr ""
 
 #: header.php:64
 msgid "Your Ultimate Depilatory Solution"
@@ -699,6 +699,15 @@ msgstr "تلفن : "
 #: single-pharmacy.php:29
 msgid " Email : "
 msgstr "ایمیل : "
+
+#~ msgid "Designed by"
+#~ msgstr "طراحی شده توسط "
+
+#~ msgid "Farakaranet"
+#~ msgstr "فراکارانت"
+
+#~ msgid "Address : "
+#~ msgstr "آدرس : "
 
 #~ msgid "Products List (required)"
 #~ msgstr "لیست محصولات"

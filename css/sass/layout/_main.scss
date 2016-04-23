@@ -81,7 +81,17 @@
 
 }
 .grid-excerpt{
+
 	font-size : 90%;
+
+}
+.grid-excerpt-title{
+	min-height : 76px;
+}
+.vc_grid-item-mini:hover,
+.vc_grid-item-mini:focus{
+	@extend .def-box-shadow;
+	@extend .def-transition;
 }
 .without-sidebar .primary{
 	@include span-columns(12,12);
@@ -142,7 +152,7 @@
 		margin-bottom : 20px;
 		font-size: 90%;
 		background-color: $grey1;
-		opacity : 0.9;
+		opacity : 1;
 		color : $black2;
 		border-top : 4px solid $blue2;
 		z-index : 9999;
@@ -277,6 +287,7 @@
 			margin : auto;
 		}
 		&.widget_last_products_widget{
+			opacity: 0.9;
 			ul{
 				padding : 0px;
 			}
